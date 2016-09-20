@@ -1,0 +1,142 @@
+<div class="container step-container">
+    <!-- step bar start -->
+    <div class="bar-outr">
+        <div class="progress-step progrs-fill">
+            <span class="stepbx stepbx1">1</span>
+            <span class="stepbx stepbx2">2</span>
+            <span class="stepbx stepbx3">3</span>
+            <span class="stepbx stepbx4">4</span>
+            <span class="stepbx stepbx5">5</span>
+            <div class="progress"></div>
+        </div>
+    </div>
+    <!-- step bar END --> 
+    <!-- Step 1 start -->
+    <div class="wzrd-bx regstpfrst">
+            <div class="vrfy-bx">
+                <h4 class="hlvtca-oblq"><span>Step 1 -</span> Verifying if you’re a human teacher</h4>
+                <img src="img/verify.jpg" alt="verify" />
+            </div>
+            <div class="form-acad hlvetca-lyt">
+                <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.formPassport" ng-submit="vm.savePassport(vm.formPassport.$valid)">
+                    <div class="form-group max-rgstp-frst stpfrm-grp-spc">
+                        <label>Your identification number (NRIC/Passport)</label>
+                        <div class="input-group" >
+                            <input type="text" name="passportNewNo" class="form-control text-uppercase" ng-model="vm.tutor.passportNo" ng-minlength="10" autofocus maxlength="10" required autocomplete="off"/>
+                            <span class="input-group-addon" ng-show="vm.passportstatus" >
+                                <span class="dnt-wry-chk hlvetca-lyt"><i></i>Don’t worry, we’re not tagging you!</span>
+                            </span>
+                            <span class="input-group-addon" ng-show="vm.formPassport.passportNewNo.$invalid && vm.formPassport.passportNewNo.$dirty" >
+                                <span ng-show="vm.formPassport.passportNewNo.$error.required" class="dnt-wry-chk err-chk hlvetca-lyt"><i></i>Passport is required</span>
+                                <span ng-show="vm.formPassport.passportNewNo.$error.minlength" class="dnt-wry-chk err-chk hlvetca-lyt"><i></i>Passport should be of 10 characters</span>
+                            </span>
+                        </div>
+                        <div class="input-group mt-15">
+                            <input type="submit" value="Save" class="ylw-slm-btn" ng-disabled="vm.formPassport.$invalid">
+                        </div>
+                    </div>
+                </form>
+<!--                ngf-select="vm.onAcademicsSelect($file);"-->
+                <div class="form-group grp-bx-shw stpfrm-grp-spc">
+                    <label>Show us what you’ve got! Academic Certificates:</label>
+                    <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.formAcademics" >
+                        <div class="input-group ad-crtf-bx">
+                            <input type="text" class="form-control" name="academicName" ng-model="vm.tutor.academicName" required />
+                            <div class="file-adons">
+                                <input type="file" class="" ng-model="file" ngf-select="" name="file" ngf-pattern="'.pdf,.jpg,.png'" ngf-max-size="2MB" required ngf-model-invalid="errorFile" />	
+                                <a class="ad-certf-lnk" href="javascript:void(0);"><i></i> Add New Certificate</a>
+                            </div>
+                            <span class="input-group-addon">
+                                <input type="submit" class="btn" value="Upload" ng-disabled="vm.formAcademics.$invalid" ng-click="vm.uploadAcademics(file)" />
+                            </span>
+                        </div>
+                    </form>
+                    <div ng-show="vm.tutor.academics.length > 0">
+                                        <div class="taglist sb-tglst-nm" ng-repeat="academic in vm.tutor.academics track by $index">
+                    <a href="javascript:void(0);" ng-click="vm.removeAcademic(academic._id,$index)">{{academic.name}} <span></span> <i class='fa fa-remove'></i></a>
+                    
+                </div>
+                        
+                    </div>
+                    
+                    <div class="form-note-bx"><p>Start uploading from O Levels! Your certs will be put through a check of authenticity.</p>
+                    </div>
+                </div>
+                <div class="form-group grp-bx-shw stpfrm-grp-spc">
+                    <label>Show us what you excel in other than academics!</label>
+                    <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.otherAcademics" >
+                        <div class="input-group ad-crtf-bx">
+                            <input type="text" class="form-control" name="otherName" ng-model="vm.tutor.otherName" required />
+                            <div class="file-adons">
+                                <input type="file" class="" ng-model="file" ngf-select="" name="file" ngf-pattern="'.pdf,.jpg,.png'" ngf-max-size="2MB" required ngf-model-invalid="errorFile"/>
+                                <a class="ad-certf-lnk" href="javascript:void(0);"><i></i> Add New Certificate</a>
+                            </div>
+                            <span class="input-group-addon">
+                                <input type="submit" class="btn" value="Upload" ng-disabled="vm.otherAcademics.$invalid" ng-click="vm.uploadOtherAcademics(file)" />
+                            </span>
+                        </div>
+                    </form>
+                    <div ng-show="vm.tutor.otherAcademics.length > 0">
+                        
+                        <div id="otherdoc_{{$index}}" class="taglist sb-tglst-nm" ng-repeat="otheracademic in vm.tutor.otherAcademics track by $index" >
+                        <a href="javascript:void(0)" ng-click="vm.removeOtherAcademic(otheracademic._id,$index)">{{otheracademic.name}} <span></span><i class='fa fa-remove' ></i></a>
+                    </div>
+                    </div>
+
+                    <div class="form-note-bx"><p>Anything to make you shine! 
+                            E.g. Participation in NDP, sports 
+                            meet or competitions.</p>
+                    </div>
+                </div>
+                <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.formMobile" ng-submit="vm.saveMobile(vm.formMobile.$valid)">
+                    <div class="form-group wdthhalf max-mbl-stp">
+                        <label>Mobile Number</label>
+                        <div class="input-group ad-crtf-bx fntsz20">
+                            <input type="text" class="form-control" name="mobile" ng-model="vm.tutor.verifyMobile.mobileno" ui-mask="+99-9999999999" ui-mask-placeholder ui-mask-placeholder-char="_" model-view-value="true" required autocomplete="off"/>
+                            <span class="tick-scrt-bx" ng-show="vm.formMobile.mobile.$valid && vm.formMobile.mobile.$dirty">
+                                <span class="dnt-wry-chk"><i></i>We’ll keep this a secret.</span>
+                            </span>
+                            <span class="tick-scrt-bx" ng-show="vm.formMobile.mobile.$invalid && vm.formMobile.mobile.$dirty">
+                                <span ng-show="vm.formMobile.mobile.$error.required" class="dnt-wry-chk err-chk hlvetca-lyt"><i></i>Required!.</span>
+                            </span>
+                        </div>
+                        <div class="input-group mt-15">
+                            <input type="submit" value="Send Verification Code" class="ylw-slm-btn" ng-disabled="vm.formMobile.$invalid">
+                        </div>
+<!--                        <span class="vrfy-cd-mbl" ng-show="vm.formMobile.mobile.$valid && vm.formMobile.mobile.$dirty">
+                            <p>Send verification code <a href="javascript:void(0);" ng-click="vm.sendCode();" >Click here</a></p>
+                        </span>-->
+                    </div>    
+                </form>
+                
+                <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.formCode" ng-submit="vm.verifyCode(vm.formCode.$valid)">
+                    <div class="form-group">
+                        <label>Verification Code</label>
+                        <div class="input-group ad-crtf-bx fntsz20">
+                            <input type="text" class="form-control" name="code" ng-model="vm.verifycode" ui-mask="999999" ui-mask-placeholder ui-mask-placeholder-char="_" model-view-value="true" required autocomplete="off" ng-change="vm.resetCodeStatus()" />
+                            <span class="tick-scrt-bx" ng-show="vm.formCode.code.$valid && vm.formCode.code.$dirty" >
+                                <span class="dnt-wry-chk"><i></i>All right! Let’s do this!</span>
+                            </span>
+                            <span class="tick-scrt-bx" ng-show="vm.formCode.code.$invalid && vm.formCode.code.$dirty"  >
+                                <span ng-show="vm.formCode.code.$error.$required" class="dnt-wry-chk err-chk"><i></i>Please enter verification code</span>
+                            </span>
+                            <span class="tick-scrt-bx" ng-show="vm.codestatus" >
+                                <span ng-class=" vm.codestatus.type === 'success' ? '' : 'err-chk' " class="dnt-wry-chk"><i></i>{{vm.codestatus.message}}</span>
+                            </span>
+                        </div>
+                        <div class="input-group mt-15">
+                            <input type="submit" value="Verify" class="ylw-slm-btn" ng-disabled="vm.formCode.$invalid">
+                        </div>
+                        <span class="vrfy-cd-mbl">
+                            <p>Verification code will be sent to &lt; {{vm.tutor.verifyMobile.mobileno}} &gt;</p>
+                            <p>Did not receive code? <a href="javascript:void(0);" ng-click="vm.resendCode();" >Resend code</a></p>
+                        </span>
+                    </div>
+                </form>
+                <div class="form-group text-right">
+                    <input type="button" value="Next to step2!" class="btn btn-step" ng-click="vm.saveStepOne();" >                     
+                </div>
+            </div>
+    </div>  
+    <!-- Step 1 end --> 
+</div>

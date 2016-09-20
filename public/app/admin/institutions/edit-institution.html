@@ -1,0 +1,58 @@
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Edit Institution</li>
+    </ol>
+    <h2>
+        Edit Institution
+    </h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <!--                <div class="box-header with-border">
+                                  
+                                </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+
+                    <alert class="alert" ng-repeat="error in errors" type="danger">{{error}}</alert>
+
+                    <form role="form" name="institutionForm" novalidate>
+                        <div ng-show ="vm.status.message"  uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                        <div class="form-group">
+                            <label>Institution Type</label>
+                            <select class="form-control" name="type" ng-model="vm.institution.type" ng-options="x for x in vm.InstitutionType" required>
+                            </select>
+                            <span class="text-danger" ng-show="(institutionForm.type.$dirty) || institutionForm.$submitted">
+                                <span ng-show="institutionForm.type.$error.required">Institution type is required.</span>
+                            </span>
+                        </div>
+                         <div class="form-group">
+                            <label>Institution Name</label>
+                            <input type="text" class="form-control" name="name" ng-model="vm.institution.name" placeholder="Enter institution name" required>
+                            <span class="text-danger" ng-show="(institutionForm.name.$dirty) || institutionForm.$submitted">
+                                <span ng-show="institutionForm.name.$error.required">Institution name is required.</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <img ng-show="vm.institution.image" ng-src="/images/institutions/{{vm.institution.image}}"/>
+                            <input type="file" ng-show="!vm.institution.image" class="form-control" ngf-select name="file" ng-model="vm.institution.file" accept="image/*" ngf-max-size="2MB"
+                               ngf-model-invalid="errorFiles">
+                             <button class='btn btn-default' ng-show="vm.institution.image" ng-click="vm.deleteImageInstitutions(vm.institution._id,vm.institution.image)" >Delete</button>
+                            <span class="text-danger" ng-show="(institutionForm.file.$dirty) || institutionForm.$submitted">
+                                <span ng-show="institutionForm.file.$error.maxSize">File too large {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</span>
+                                <span ng-show="institutionForm.file.$error.required">Institution image is required.</span>
+                            </span>
+                            <img ng-show="institutionForm.file.$valid" ngf-thumbnail="vm.subject.file" class="thumb"> <button ng-click="vm.subject.file = null" ng-show="vm.subject.file">Remove</button>
+                        </div> 
+                        <div class="box-footer btn-catagory-fix">
+                            <button type="submit" class="btn btn-primary" ng-click="vm.updateInstitution(institutionForm.$valid)" ng-disabled="!institutionForm.$valid">Submit</button>
+                            <a ui-sref="admin.institutions">Cancel</a>
+                        </div>
+                    </form>
+                </div> <!-- box-body -->
+            </div> <!-- box -->
+        </div> <!-- col -->
+    </div> <!-- ..row -->
+</section>

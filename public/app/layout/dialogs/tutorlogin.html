@@ -1,0 +1,51 @@
+<div class="md-modal" >
+    <div class="modal-header">
+        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+        <h4 class="modal-title">Welcome back, {{$ctrl.last.info.firstName}}</h4>
+    </div>
+    <div class="modal-body">
+        <div class="popup-profile">
+            <div class="popup-avatar">
+            	<div class="login-avt-bx">
+                    <div class="login-avt-bxinr" ng-if="$ctrl.last">
+                        <img ng-if="$ctrl.last" ng-src="{{$ctrl.imagePaths.tutorAvatar}}{{$ctrl.last.info.profileImg}}" />
+                    </div>
+                    <div class="login-avt-bxinr" ng-if="!$ctrl.last">
+                        <img ng-if="!$ctrl.last" ng-src="img/user.png" />
+                    </div>
+                </div>       
+            </div>
+            <h4 ng-show="$ctrl.last" >{{$ctrl.last.info.firstName}} {{$ctrl.last.info.lastName}}</h4>
+            <p ng-show="$ctrl.last" >{{$ctrl.last.email}}</p>
+        </div>
+        <div class="popup-pro-ipt">
+            <div class="chc-ttl-inf" ng-show="$ctrl.status">
+                <span>{{$ctrl.status.message}}</span>
+            </div>
+            <form ng-submit="$ctrl.logintutor(loginForm.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="loginForm" >
+                <div class="form-group" ng-show="!$ctrl.last">
+                    <input type="email" name="email" class="form-control" placeholder="Email" ng-model="$ctrl.user.email" required >
+                    <div class="text-center chc-ttl-inf" ng-show="loginForm.email.$submitted || loginForm.email.$touched">
+                        <span ng-show="loginForm.$error.email">Invalid email address.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password" ng-model="$ctrl.user.password" required >
+                    <div class="text-center chc-ttl-inf" ng-show="loginForm.password.$submitted || loginForm.password.$touched">
+                        <span ng-show="loginForm.password.$error.required">Password is required.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-pink-2x" value="Log in to Learn Anything" ng-disabled="loginForm.$invalid">
+                </div>
+            </form>
+            <a href="javascript:void(0);" ng-click="$ctrl.newuserlogin(1);">Not you? Sign in here.</a>
+            <div class="forgot-passwd">
+                <a href="javascript:void(0);" ng-click="$ctrl.newuserlogin(3);">Forgot Password</a>
+            </div>
+            <div class="dnt-hv-acnt">
+                <a href="javascript:void(0);" ng-click="$ctrl.newuserlogin(2);">Don’t have an account? Sign up today!</a>
+            </div>
+        </div>
+    </div>
+</div>

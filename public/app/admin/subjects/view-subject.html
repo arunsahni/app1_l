@@ -1,0 +1,65 @@
+<!--
+view.html : View the detail of Particular Institution.
+@author : Arun Sahani   
+Date : 24-08-2016
+-->
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">View Subject</li>
+    </ol>
+    <h2>
+        View Subject Detail
+    </h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <!--            <div class="box-header">
+                                <h3 class="box-title">Supplier Details</h3>
+                            </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Image</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span><img width='40' ng-show="vm.subject.image" ng-src="/images/subjects/{{vm.subject.image}}"/></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Subject Type</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.subject.type}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Subject Name</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.subject.name}}</span>
+                        </div>
+                    </div>
+
+               
+                    <div class="box-footer clearfix">
+                        <div class="supplier-detail-btn">
+                            <a ui-sref="admin.subjects">
+                                <button type="button" class="btn btn-primary">Back</button>
+                            </a>
+                        </div>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </div>
+</section>

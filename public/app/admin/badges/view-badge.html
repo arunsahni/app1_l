@@ -1,0 +1,60 @@
+<!--
+view.html : View the detail of Particular Badge.
+@author : Arun Sahani   
+Date : 24-08-2016
+-->
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">View Badge</li>
+    </ol>
+    <h2>
+        View Badge
+    </h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Image</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span><img width='40' ng-show="vm.badge.image" ng-src="/images/badges/{{vm.badge.image}}"/></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Name</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.badge.name}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Text</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.badge.texttoDisplay}}</span>
+                        </div>
+                    </div>
+                    <div class="box-footer clearfix">
+                        <div class="supplier-detail-btn">
+                            <a ui-sref="admin.badges">
+                                <button type="button" class="btn btn-primary">Back</button>
+                            </a>
+                        </div>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </div>
+</section>

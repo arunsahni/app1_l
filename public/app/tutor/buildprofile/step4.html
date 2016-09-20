@@ -1,0 +1,193 @@
+<div class="container step-container">
+    <!-- step bar start -->
+    <div class="bar-outr">
+        <div class="progress-step progrs-fill progrs-fill4">
+            <span class="stepbx stepbx1"><a ui-sref="build.step1">1</a></span>
+            <span class="stepbx stepbx2"><a ui-sref="build.step2">2</a></span>
+            <span class="stepbx stepbx3"><a ui-sref="build.step3">3</a></span>
+            <span class="stepbx stepbx4">4</span>
+            <span class="stepbx stepbx5">5</span>
+            <div class="progress"></div>
+        </div>
+    </div>
+    <!-- step bar END --> 
+    <!-- Step 4 start -->
+    <div class="wzrd-bx lbl-spc-dwp">
+        <div class="vrfy-bx">
+            <h4 class="hlvtca-oblq"><span>Step 4 -</span> The last step before you’re good to go!</h4>
+        </div>
+        <div class="form-acad hlvetca-lyt">
+            <div class="form-group">
+                <label>Do you have teaching experience? </label>
+                <div class="tch-bx radius-ipt">
+                    <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.formExperience" ng-submit="vm.saveExperience(vm.formExperience.$valid)">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-6">
+                            <span>Company name</span>
+                            <selectize name="companyName" placeholder='EduNational Agency' options='vm.institutions' config="vm.instituteConfig" ng-model="vm.tutor.institute.companyName" required='true'></selectize>
+                            <!-- <input placeholder="EduNational Agency" type="text" class="form-control" /> -->
+                        </div>
+                        <div class="col-sm-6 col-xs-6">
+                            <span>Position</span>
+                            <input name="position" placeholder="Math Relief Teacher" type="text" class="form-control" ng-model="vm.tutor.institute.position" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-xs-7 col-mntb-6">
+                            <span>Subject(s) taught</span>
+                            <selectize placeholder='Subject' options='vm.subjects' name='subject' config="vm.subjectConfig" ng-model="vm.tutor.institute.subject"  required='true'></selectize>
+                        </div>
+                        <div class="col-sm-5 col-xs-5 col-mntb-6">
+                            <div class="row">
+                                <div class="col-xs-6 lbl-totm">
+                                    <span>Time period</span>
+                                    <input name="startTime" placeholder="2005" type="text" class="form-control" ng-model="vm.tutor.institute.timePeriod.start" required />
+                                    <i>to</i>
+                                </div>
+                                <div class="col-xs-6">
+                                    <span>&nbsp;</span>
+                                    <input name="endTime" placeholder="2008" type="text" class="form-control" ng-model="vm.tutor.institute.timePeriod.end" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <span>Description</span>
+                            <textarea name="description" placeholder="I taught a class of 40 students in the agency on a freelance basis" class="form-control" ng-model="vm.tutor.institute.description" required ></textarea>                            </div>
+                        <div class="col-sm-5">
+                            <span>&nbsp;</span>
+                            <div class="rlvt-fl-lnk">
+                                <input type="file" />
+                                <a href="javascript:void(0);">
+                                    <i></i>Upload relevant documents
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <input type="submit" value="Add Experience " class="ylw-slm-btn" ng-disabled="vm.formExperience.$invalid" /> 
+                        <!-- <input type="submit" value="Add New " class="ylw-slm-btn blu-slim-btn" />  -->
+                    </div>
+                </form>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Boost your profile by answering these five questions! <span class="hlvtca-oblq">(You can also answer later)</span></label>
+                <div class="slct-frm-grp-wrp">
+                    <div class="slct-frm-grp">
+                        <span class="span-lbl">1. How do you evaluate the learning needs of tutees and how do you measure progress?</span>
+                        <div class="slct-bx-qsinr">
+                            <div class="slct-bx-rw">
+                                <select multiple="multiple" class="SlectBox" placeholder="Select your answer (you may tick more than one)" required>
+                                    <option value="Lecture-demonstration">Lecture-demonstration</option>
+                                    <option value="Discussion between tutor and tutee">Discussion between tutor and tutee</option>
+                                    <option value="Recitation of question and answered orally by students">Recitation of question and answered orally by students</option>
+                                    <option value="Textbook assignments">Textbook assignments</option>
+                                </select>
+                            </div>
+                            <div class="slct-bx-rw">
+                                <input type="text" class="form-control hlvetca-lyt plc-hldr-gry" placeholder="If your answer isn’t in the options, you can type it out here." /> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slct-frm-grp">
+                        <span class="span-lbl">2. Which teaching methods do you use?</span>
+                        <div class="slct-bx-qsinr">
+                            <div class="slct-bx-rw">
+                                <select multiple="multiple" class="SlectBox" placeholder="Select your answer (you may tick more than one)" required>
+                                    <option value="Lecture-demonstration">Lecture-demonstration</option>
+                                    <option value="Discussion between tutor and tutee">Discussion between tutor and tutee</option>
+                                    <option value="Recitation of question and answered orally by students">Recitation of question and answered orally by students</option>
+                                    <option value="Textbook assignments">Textbook assignments</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slct-frm-grp">
+                        <span class="span-lbl">3. Do you provide learning materials?</span>
+                        <div class="slct-bx-qsinr">
+                            <div class="slct-bx-rw">
+                                <span class="slct-lbl-li">
+                                    <input id="lrnmttech1" type="checkbox" class="css-checkbox" />
+                                    <label for="lrnmttech1" class="css-label sqr-chk">Yes</label>
+                                </span>
+                                <span class="slct-lbl-li">
+                                    <input id="lrnmttech2" type="checkbox" class="css-checkbox" />
+                                    <label for="lrnmttech2" class="css-label sqr-chk">No</label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slct-frm-grp">
+                        <span class="span-lbl">4. Why is teaching important to you?</span>
+                        <div class="slct-bx-qsinr">
+                            <div class="slct-bx-rw">
+                                <input type="text" class="form-control plc-hldr-gry" placeholder="e.g. It’s important because it is a platform to share knowledge. " />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slct-frm-grp">
+                        <span class="span-lbl">5. What would you be doing if you weren’t teaching?</span>
+                        <div class="slct-bx-qsinr">
+                            <div class="slct-bx-rw">
+                                <input type="text" class="form-control plc-hldr-gry" placeholder="e.g. I’d be a policeman!" />
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+
+            <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="personality" ng-submit="vm.saveStepFour(personality.$valid)">
+                <div ng-show="vm.status.type === 'personality'" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                <div class="form-group">
+                    <label>Your personality matters! Tell us about you!</label>
+                    <div class="slct-frm-grp-wrp">
+                        <span class="fav-ipt-grp">
+                            <img src="img/favrnd.png" alt="favourite" />
+                        </span>
+                        <div class="fun-fct-ipt">
+                            <div class="slct-frm-grp">
+                                <span class="span-lbl">Fun fact</span>
+                                <div class="slct-bx-rw">
+                                    <input type="text" name="funfact" ng-model="vm.tutor.personalityTraits.funFact" placeholder="e.g. I do stand-up comedy in my spare time. Follow me on www.melvinng.com" class="form-control plc-hldr-gry" required>
+                                </div>
+                            </div>
+                            <div class="slct-frm-grp">
+                                <span class="span-lbl">Hobbies</span>
+                                <div class="slct-bx-rw">
+                                    <input type="text" name="hobbies" ng-model="vm.tutor.personalityTraits.hobbies" placeholder="e.g. Diving, riding on dolphins, jumping off cliffs into the ocean, anything adrenaline-related" class="form-control plc-hldr-gry" required>
+                                </div>
+                            </div>
+                            <div class="slct-frm-grp">
+                                <span class="span-lbl">List of favourites</span>
+                                <div class="slct-bx-rw">
+                                    <input type="text" name="favlist" ng-model="vm.tutor.personalityTraits.favList" placeholder="e.g. ALL KINDS OF PAU" class="form-control plc-hldr-gry" required>
+                                </div>
+                            </div>
+                            <div class="slct-frm-grp">
+                                <span class="span-lbl">Favourite Quote</span>
+                                <div class="slct-bx-rw">
+                                    <input type="text" name="favquote" ng-model="vm.tutor.personalityTraits.favQuote" placeholder="e.g. “I am like the wind. You can’t see me but you can feel me.”" class="form-control plc-hldr-gry" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-right">
+                    <input type="submit" class="btn btn-step" value="Start teaching!" >                     
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+    <!-- Step 4 end -->
+
+
+
+
+
+
+
+</div>

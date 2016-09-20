@@ -1,0 +1,86 @@
+<!--
+    view-badges.html : Lising of Badges.
+    @author : Arun Sahani
+    Date : 25-08-2016
+-->
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#!/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Badges</li>
+    </ol>
+    <h2>
+        Manage Badges
+    </h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div flash-message="5000" ></div> 
+                <div class="box-header">
+                    <div style="float:left">
+<!--                        <div class="input-group" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search" ng-model="text">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" ng-click="search(text, searchIn)"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>-->
+                    </div>
+                    <a ui-sref="admin.addbadge"  style="float:right">+ Add Badge</a>
+                </div><!-- /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <div  ng-show ="vm.status.message" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                        <tr ng-if="vm.badges.length > 0">
+                            <th>
+                                Image
+                            </th>
+                            <th>
+<!--                                <a href="javascript:void(0);" ng-click="sort('name')">
+                                    <span class ="fa fa-caret-down" ng-show="sortDir == 'desc' && sortBy == 'name'"></span>
+                                    <span class ="fa fa-caret-up" ng-show="sortDir == 'asc' && sortBy == 'name'"></span>-->
+                                    Name
+                                <!--</a>-->
+                            </th>
+                            <th>
+<!--                                <a href="javascript:void(0);" ng-click="sort('email')">
+                                    <span class ="fa fa-caret-down" ng-show="sortDir == 'desc' && sortBy == 'email'"></span>
+                                    <span class ="fa fa-caret-up" ng-show="sortDir == 'asc' && sortBy == 'email'" ></span>-->
+                                    Text
+                                <!--</a>-->
+                            </th>
+                             <th>
+                                <!-- <a href="javascript:void(0);"> -->
+                                Action
+                                <!-- </a> -->
+                            </th>
+                        </tr>
+                        <tr ng-repeat="badge in vm.badges track by $index" ng-if="vm.badges.length > 0" id="row_{{$index}}" >
+                            <td><img width='20' ng-show="badge.image" ng-src="/images/badges/{{badge.image}}"/></td>
+                            <td>{{badge.name}}</td>
+                            
+                            <td>{{badge.texttoDisplay}}</td>
+                            <td>
+                                <a href="javascript:void(0);">
+                                    <i title="view details" class="fa fa-fw fa-file-o" ui-sref="admin.viewbadge({id: badge._id})"></i>
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <i title="Edit" class="fa fa-fw fa-edit" ui-sref="admin.editbadge({id: badge._id})"></i>  
+                                </a> 
+                                <a href="javascript:void(0);">
+                                    <i title="Delete" class="fa fa-fw fa-remove" ng-click="vm.deleteBadge(badge._id,$index)"></i>
+                                </a>
+                            </td>
+                        </tr>
+                         <tr ng-if="vm.badges.length == 0">
+                            <td colspan="6">No record found!!</td>
+                        </tr>
+                    </table>
+                </div><!-- /.box-body -->
+
+                <div class="box-footer clearfix pagination-fix">
+                    <ul ng-show="vm.totalItems > 10" uib-pagination items-per-page="vm.pageLimit" total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxSize" ng-change="vm.setPage(vm.currentPage)"></ul>
+                </div>
+            </div><!-- /.box -->
+        </div>
+    </div>
+</section>

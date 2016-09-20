@@ -1,0 +1,6 @@
+{
+  "directory": "public/libs/",
+  "analytics": false,
+  "timeout": 120000,
+  "registry": "http://bower.herokuapp.com"
+}

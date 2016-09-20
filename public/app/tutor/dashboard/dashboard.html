@@ -1,0 +1,497 @@
+<div class="row row-cover-spc">
+    <div class="col-sm-9">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="well-box cover-point">
+                    <h4>Your Profile Score</h4>
+                    <div class="point-avatar">
+                        <a href="javascript:void(0);"> <img src="img/points.png" alt="points" /></a>
+                        <strong>Business Class</strong>
+                        <p>{{vm.tutor.profileScore}}</p>
+                        <a class="bsns-grwth" href="javascript:void(0);">Your ticket to Business Growth!</a>
+                    </div>
+                    <div class="grwth-wrp grwth-col-sngl">   
+                        <div class="grwth-col">
+                            <div class="earnlock">
+                                <img src="img/lockpt.png" >
+                                <i></i>
+                            </div>
+                            <p>Unlock First Class 800 points</p>
+                        </div>
+                        <a href="javascript:void(0);">Why boost my profile?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="well-box well-bx-md actvy-bx">
+                    <h4 class="well-title">Recent Activity</h4>
+                    <div class="alertbx">
+                        Your profile is currently <strong>Rookie</strong>. Boost your profile to get a wider exposure for your teaching listing plus marketing boosts from the Learn Anything team to push you higher!
+                        <a href="javascript:void(0);">&times;</a>
+                    </div>
+                    <div class="point-post-wrp" ng-repeat="notification in vm.notifications" >	
+                        <div class="point-post">	
+                            <span>{{notification.points}}</span>
+                            {{notification.description}}
+                        </div>
+                        <i>{{notification.notificationDate| amCalendar }}</i>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="well-box well-bx-md caldash">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <span class="ancmnt-ttl ancmnt-ttl-rgh">
+                                <h3>Calender</h3>
+                                <div style="display:inline-block; min-height:290px;">
+                                    <div uib-datepicker ng-model="dt" class="" datepicker-options="vm.dateOptions"></div>
+                                </div>
+                            </span>
+                            <div class="date"></div>
+                        </div>
+                        <div class="col-sm-8 ancmnt-list">
+                            <h3>My upcoming lessons / activities <span>(You don’t have any lessons. Build your profile to gain exposure!)</span></h3>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <!--                                            <tr>
+                                                                                    <td width="86"><p>16 Mar ‘16</p></td>
+                                                                                    <td><strong>Science Tuition with Michelle at Ang Mo Kio</strong></td>
+                                                                                    <td>12pm - 2pm</td>
+                                                                                    <td><a class="border-blue" href="javascript:void(0);">Check-In Now!</a></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td><p>18 Mar ‘16</p></td>
+                                                                                    <td><strong>Attend Teacher Bootcamp #5 at Bishan Library</strong></td>
+                                                                                    <td>4pm - 6.30pm</td>
+                                                                                    <td><a class="border-red" href="javascript:void(0);">Cancel</a></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td><p>23 Mar ‘16</p></td>
+                                                                                    <td><strong>History Tuition with Tom at Marine Parade</strong></td>
+                                                                                    <td>4pm - 6.30pm</td>
+                                                                                    <td><a class="border-ylw" href="javascript:void(0);">Reschedule</a></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td><p>16 Mar ‘16</p></td>
+                                                                                    <td><strong>Science Tuition with Michelle at Ang Mo Kio</strong></td>
+                                                                                    <td>12pm - 2pm</td>
+                                                                                    <td><a class="border-ylw" href="javascript:void(0);">Reschedule</a></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td><p>18 Mar ‘16</p></td>
+                                                                                    <td><strong>Attend Teacher Bootcamp #5 at Bishan Library</strong></td>
+                                                                                    <td>4pm - 6.30pm</td>
+                                                                                    <td><a class="border-red" href="javascript:void(0);">Cancel</a></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td><p>23 Mar ‘16</p></td>
+                                                                                    <td><strong>History Tuition with Tom at Marine Parade</strong></td>
+                                                                                    <td>4pm - 6.30pm</td>
+                                                                                    <td><a class="border-ylw" href="javascript:void(0);">Reschedule</a></td>
+                                                                                </tr>-->
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="well-box well-bx-md">
+                    <span class="ancmnt-ttl">
+                        <h3>Announcements</h3><p>Most recent</p>
+                    </span>
+                    <!--                            <div class="anouncmnt-rpt">
+                                                    <div class="anouncmnt-avatar">
+                                                        <img src="img/workshop.jpg" alt="workshop" />
+                                                    </div>
+                                                    <div class="ancemnt-dtl">
+                                                        <h4>Writing Lesson Plans e-workshop</h4>
+                                                        <p>Date: 15 March 2016, Tuesday</p>
+                                                        <p>Time: 5pm to 8pm</p>
+                                                        <p>Venue: Bishan Library</p>
+                                                        <p>Price: $50   </p>
+                                                        <a href="javascript:void(0);">Sign up</a>
+                                                    </div>
+                                                </div>
+                                                <div class="anouncmnt-rpt">
+                                                    <div class="anouncmnt-avatar">
+                                                        <img src="img/srtting-tile.jpg" alt="annocement" />
+                                                    </div>
+                                                    <div class="ancemnt-dtl">
+                                                        <h4>Website Maintenance</h4>
+                                                        <p>Date: TODAY</p>
+                                                        <p>Time: 5pm to 8pm</p>                                            
+                                                        <a href="javascript:void(0);">Learn more</a>
+                                                    </div>
+                                                </div>-->
+                    <h4 class="anc-hstry-ttl">Announcement history</h4>
+                    <ul class="anouncmnt-lst">
+                        <!--                                <li>
+                                                            <div class="anouncmnt-time">11.45am</div>
+                                                            <div class="anouncmnt-desc">Website maintenance on 12 March 2016</div>
+                                                            <a href="javascript:void(0);">learn more</a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="anouncmnt-time">Yesterday</div>
+                                                            <div class="anouncmnt-desc"><strong>100</strong> new resources added to Library</div>
+                                                            <a href="javascript:void(0);">learn more</a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="anouncmnt-time">14 Feb ‘16</div>
+                                                            <div class="anouncmnt-desc">How to handle parents workshop for newbies</div>
+                                                            <a href="javascript:void(0);">Sign up</a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="anouncmnt-time">23 Jan ‘16</div>
+                                                            <div class="anouncmnt-desc"><strong>40</strong> new courses added to our Course Page</div>
+                                                            <a href="javascript:void(0);">Access now</a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="anouncmnt-time">13 Jan ‘16</div>
+                                                            <div class="anouncmnt-desc">Creating Lessons E-workshop for new teachers</div>
+                                                            <a href="javascript:void(0);">Sign up</a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="anouncmnt-time">05 Jan ‘16</div>
+                                                            <div class="anouncmnt-desc">Welcome to our launch for Learn Anything</div>
+                                                            <a href="javascript:void(0);">Virtual Tour</a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="anouncmnt-time">05 Jan ‘16</div>
+                                                            <div class="anouncmnt-desc">Welcome to our launch for Learn Anything</div>
+                                                            <a href="javascript:void(0);">Virtual Tour</a>
+                                                        </li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="well-box well-bx-md">
+                    <span class="ancmnt-ttl ancmnt-ttl-rgh">
+                        <h3>My Blog Posts</h3><p>(0 posts)</p>
+                    </span>
+                    <div class="input-group single-searchbx">
+                        <input type="text" name="keyword" placeholder="Find a blog post  ..." class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                    <div class="ref-blg-grd"> 
+                        <!-- Blog post repeat start -->                                       
+                        <div class="ref-blg-rpt"> 
+                            <!--                                    <div class="ref-blg-top">
+                                                                    <div class="ref-blg-avt">
+                                                                        <img src="img/frnd3.jpg" alt="blog post" />
+                                                                    </div>
+                                                                    <div class="ref-blg-dtl">
+                                                                        <div class="ref-blg-wrtr">
+                                                                            <a href="javascript:void(0);" class="hlvtca-mdm">Lenie</a>
+                                                                            <p>Lorem ipsum dolor sit amet</p>
+                                                                        </div>
+                                                                        <a href="javascript:void(0);" class="blg-flw-lnk hlvtca-mdm">
+                                                                            <i class="fa fa-clock-o"></i> Follow
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rf-blg-bdy">
+                                                                    <h3 class="hlvtca-mdm"><a href="javascript:void(0);">How to use your body clock to count time</a></h3>
+                                                                    <time><i class="fa fa-calendar"></i> Jan 4 2014</time>
+                                                                    <p>
+                                                                        This tutorial will walk you through the creation of a simple blo. We’ll be getting creating and configurin logic to list, add, edit, and delete blog posts.
+                                                                    </p>
+                                                                    <ul>
+                                                                        <li><a href="javascript:void(0);"><i class="fa fa-share-alt"></i>Share</a></li>
+                                                                        <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i>Comment</a></li>
+                                                                        <li><a href="javascript:void(0);"><i class="fa fa-star"></i>3 Like</a></li>
+                                                                    </ul>
+                                                                </div>-->
+                        </div>
+                        <!-- Blog post repeat end --> 
+                        <!-- Blog post repeat start -->                                       
+                        <div class="ref-blg-rpt"> 
+                            <!--                                    <div class="ref-blg-top">
+                                                                    <div class="ref-blg-avt">
+                                                                        <img src="img/frnd3.jpg" alt="blog post" />
+                                                                    </div>
+                                                                    <div class="ref-blg-dtl">
+                                                                        <div class="ref-blg-wrtr">
+                                                                            <a href="javascript:void(0);" class="hlvtca-mdm">Lenie</a>
+                                                                            <p>Lorem ipsum dolor sit amet</p>
+                                                                        </div>
+                                                                        <a href="javascript:void(0);" class="blg-flw-lnk hlvtca-mdm">
+                                                                            <i class="fa fa-clock-o"></i> Follow
+                                                                        </a>
+                                                                    </div>
+                                                                </div>-->
+                            <!--                                    <div class="rf-blg-bdy">
+                                                                    <h3 class="hlvtca-mdm"><a href="javascript:void(0);">How to use your body clock to count time</a></h3>
+                                                                    <time><i class="fa fa-calendar"></i> Jan 4 2014</time>
+                                                                    <p>
+                                                                        This tutorial will walk you through the creation of a simple blo. We’ll be getting creating and configurin logic to list, add, edit, and delete blog posts.
+                                                                    </p>
+                                                                    <ul>
+                                                                        <li><a href="javascript:void(0);"><i class="fa fa-share-alt"></i>Share</a></li>
+                                                                        <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i>Comment</a></li>
+                                                                        <li><a href="javascript:void(0);"><i class="fa fa-star"></i>3 Like</a></li>
+                                                                    </ul>
+                                                                </div>-->
+                        </div>
+                        <!-- Blog post repeat end --> 
+
+                        <div class="see-all-lnk">
+                            <a href="javascript:void(0);">See all blog posts</a>
+                        </div>
+                    </div>
+                    <div class="sgst-lst">
+                        <span class="sgst-ttl"><h4>Write and earn credits </h4><p>Suggested titles</p></span>
+                        <ul>
+                            <li><a href="javascript:void(0);">Best ways to learn algebra</a></li>
+                            <li><a href="javascript:void(0);">How to teach English to Primary school students</a></li>
+                            <li><a href="javascript:void(0);">What is the value of Social Studies?</a></li>
+                            <li><a href="javascript:void(0);">Teaching Art History to beginners</a></li>
+                            <li><a href="javascript:void(0);">How to solve Math problems without a calculator?</a></li>
+                            <li><a href="javascript:void(0);">Is classroom education the best way?</a></li>
+                        </ul>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="well-box well-bx-md">
+                    <span class="ancmnt-ttl ancmnt-ttl-rgh">
+                        <h3>My Interviews </h3><p>(0 upcoming)</p>
+                    </span>
+                    <div class="intrvw-bx-wrp">
+                        <!-- Interview box repeat -->
+                        <!--                                <div class="intrvw-bx-rpt">
+                                                            <div class="intrvw-bx-rw">
+                                                                <div class="intrvw-bx-col">
+                                                                    <div class="intrvw-avt-wrp">
+                                                                        <div class="intrvw-avt">
+                                                                            <img src="img/note1.png">
+                                                                        </div>
+                                                                        <h4>Dr. Pavin Ng</h4>
+                                                                        <p>Physics</p>
+                                                                    </div>
+                                                                    <div class="intrvw-bx-cntnt">
+                                                                        <h4>STARTING IN:</h4>
+                                                                        <p>Now</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="intrvw-bx-btn">
+                                                                    <a href="javascript:void(0);" class="pink-link">Go to interview</a>
+                                                                    <a href="javascript:void(0);" class="grey-link">Reschedule</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>-->
+                        <!-- Interview box repeat -->
+                        <!--                                <div class="intrvw-bx-rpt">
+                                                            <div class="intrvw-bx-rw">
+                                                                <div class="intrvw-bx-col">
+                                                                    <div class="intrvw-avt-wrp">
+                                                                        <div class="intrvw-avt">
+                                                                            <img src="img/note4.png">
+                                                                        </div>
+                                                                        <h4>Betty Phua</h4>
+                                                                        <p>Physics</p>
+                                                                    </div>
+                                                                    <div class="intrvw-bx-cntnt">
+                                                                        <h4>STARTING IN:</h4>
+                                                                        <p>0 Days, 12 Hrs</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="intrvw-bx-btn">
+                                                                    <a href="javascript:void(0);" class="darkgrey-link"> Cancel</a>
+                                                                    <a href="javascript:void(0);" class="grey-link">Reschedule</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3 helvtcanwlyt tut-dashbd-tab">
+        <div class="well-box">
+            <h3 class="sdbr-sec-ttl">My Exposure</h3>
+            <!--                    <div class="best-tutor">
+                                    <i></i>
+                                    <span><p>107th </p> Most influential tutor</span>
+                                </div>-->
+            <div class="exps-bx">
+                <div class="exps-bx-cell">
+                    <div class="exps-avatar">
+                        <img src="img/expsview.png" />
+                    </div>
+                    <div class="vw-clk-cnt">
+                        <div class="exps-vw-cnt">
+                            {{vm.tutor.userViews}}
+                        </div>
+                        <div class="exps-vw-lbl">
+                            Views
+                        </div>
+                    </div>
+                </div>
+                <div class="exps-bx-cell fv-cl">
+                    <div class="exps-avatar">
+                        <img src="img/expsfav.png" />
+                    </div>
+                    <div class="vw-clk-cnt">
+                        <div class="exps-vw-cnt">
+                            {{vm.tutor.favClicks}}
+                        </div>
+                        <div class="exps-vw-lbl">
+                            Favourite Clicks
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="exprs-bstk">
+                <a href="javascript:void(0);">Boost my exposure and listing!</a>
+            </div>
+        </div>
+        <div class="well-box jrny-title">
+            <h3 class="jrny-title">Your Teaching Journey</h3>
+            <div class="point-label">
+                <div class="point-progres">
+                    <div class="percent">
+                        <round-progress
+                            max="100"
+                            current="20"
+                            color="#ed217c"
+                            bgcolor="#717070"
+                            radius="44"
+                            stroke="4"
+                            semi="false"
+                            rounded="true"
+                            clockwise="true"
+                            responsive="false"
+                            duration="800"
+                            animation="easeInOutQuart"
+                            animation-delay="0"></round-progress>
+                        <p style="display:none;">20% </p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Point lebel -->
+            <div class="point-label-rpt">
+                <div class="point-lbl-avt">
+                    <img src="img/egg.png">
+                </div>
+                <div class="point-lbl-ct">
+                    <h4>Fundamentals</h4>
+                    <p>Profile Score, Interviews, Calendar MyWallet</p>
+                </div>
+            </div>
+            <!-- Point lebel end -->
+            <!-- Point lebel -->
+            <div class="point-label-rpt">
+                <div class="point-lbl-avt">
+                    <img src="img/egghalf.png">
+                </div>
+                <div class="point-lbl-ct">
+                    <h4>Fundamentals</h4>
+                    <p>Profile Score, Interviews, Calendar MyWallet</p>
+                </div>
+            </div>
+            <!-- Point lebel end -->
+            <!-- Point lebel -->
+            <div class="point-label-rpt">
+                <div class="point-lbl-avt">
+                    <img src="img/eggbrkn.png">
+                </div>
+                <div class="point-lbl-ct">
+                    <h4>Fundamentals</h4>
+                    <p>Profile Score, Interviews, Calendar MyWallet</p>
+                </div>
+            </div>
+            <!-- Point lebel end -->
+        </div>
+
+        <div class="well-box chat-dscsn-bx">
+            <h3>Chat & Discuss (Chatter)</h3>
+            <div class="chat-bx-inner">
+                <ul class="chat-cntct-lst">
+                    <!--                            <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="chat-avatar">
+                                                            <img src="img/frnd1.jpg" />
+                                                        </div>
+                                                        <div class="chat-content">
+                                                            Mary Chan
+                                                            <i class="chatstatus onlinuser"></i>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="chat-avatar">
+                                                            <img src="img/frnd2.jpg" />
+                                                        </div>
+                                                        <div class="chat-content">
+                                                            Benny Yeo
+                                                            <i class="chatstatus onlinuser"></i>
+                                                        </div>
+                                                    </a>    
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="chat-avatar">
+                                                            <img src="img/frnd3.jpg" />
+                                                        </div>
+                                                        <div class="chat-content">
+                                                            Marshall Teo
+                                                            <i class="chatstatus onlinuser"></i>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="chat-avatar">
+                                                            <img src="img/frnd4.jpg" />
+                                                        </div>
+                                                        <div class="chat-content">
+                                                            Susan Lim
+                                                            <i class="chatstatus offlinuser"></i>
+                                                        </div>
+                                                    </a>
+                                                </li>-->
+                </ul>
+                <div class="input-group single-searchbx">
+                    <input type="text" class="form-control" placeholder="Find your friend" name="keyword">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="well-box well-bx-md">
+            <span class="helpbx">
+                <h3>Need help? Ask Lenny anything!</h3>
+                <div class="input-group">
+                    <input type="text" name="keyword" placeholder="I need help with ..." class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </span>
+            <span class="faq-blt helpbx">
+                <h3>FAQs by fellow teachers</h3>
+                <ul>
+                    <li><a href="javascript:void(0);">How do I sell my materials on Marketplace?</a></li>
+                    <li><a href="javascript:void(0);">What happens if my students cancel on me?</a></li>
+                    <li><a href="javascript:void(0);">How many times can I reschedule classes?</a></li>
+                    <li><a href="javascript:void(0);">What are valid reasons?</a></li>
+                    <li><a href="javascript:void(0);">How can I create my own lessons?</a></li>
+                </ul>
+            </span>
+        </div>
+    </div>
+</div>

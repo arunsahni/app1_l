@@ -1,0 +1,48 @@
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Add Bank</li>
+    </ol>
+    <h2>
+        Add Bank
+    </h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <!--                <div class="box-header with-border">
+                                  
+                                </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+
+                    <alert class="alert" ng-repeat="error in errors" type="danger">{{error}}</alert>
+
+                    <form role="form" name="bankForm" novalidate>
+                        <div  ng-show ="vm.status.message" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                        <div class="form-group">
+                            <label>Bank Name</label>
+                            <input type="text" class="form-control" name="name" ng-model="vm.bankDetails.bank" placeholder="Enter Bank Name" required>
+                            <span class="text-danger" ng-show="(bankForm.name.$dirty) || bankForm.$submitted">
+                                <span ng-show="bankForm.name.$error.required">Bank Name is required.</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" ngf-select name="file" ng-model="vm.bankDetails.file" accept="image/*" ngf-max-size="2MB" required
+                           ngf-model-invalid="errorFiles">
+                            <span class="text-danger" ng-show="(bankForm.file.$dirty) || bankForm.$submitted">
+                                <span ng-show="bankForm.file.$error.maxSize">File too large {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</span>
+                                <span ng-show="bankForm.file.$error.required">Bank image is required.</span>
+                            </span>
+                            <img ng-show="bankForm.file.$valid" ngf-thumbnail="vm.bankDetails.file" class="thumb"> <button ng-click="vm.bankDetails.file = null" ng-show="vm.bankDetails.file">Remove</button>
+                        </div> 
+                        <div class="box-footer btn-catagory-fix">
+                            <button type="submit" class="btn btn-primary" ng-click="vm.addBank(bankForm.$valid)" ng-disabled="!bankForm.$valid">Submit</button>
+                            <a ui-sref="admin.banks">Cancel</a>
+                        </div>
+                    </form>
+                </div> <!-- box-body -->
+            </div> <!-- box -->
+        </div> <!-- col -->
+    </div> <!-- ..row -->
+</section>

@@ -1,0 +1,132 @@
+<div class="container step-container">
+    <!-- step bar start -->
+    <div class="bar-outr">
+        <div class="progress-step progrs-fill progrs-fill2">
+            <span class="stepbx stepbx1"><a ui-sref="build.step1">1</a></span>
+            <span class="stepbx stepbx2">2</span>
+            <span class="stepbx stepbx3">3</span>
+            <span class="stepbx stepbx4">4</span>
+            <span class="stepbx stepbx5">5</span>
+            <div class="progress"></div>
+        </div>
+    </div>
+    <!-- step bar END --> 
+    <!-- Step 2 start -->
+    <div class="wzrd-bx wzrd-bx-frmcntrl">
+        <div class="vrfy-bx">
+            <h4 class="hlvtca-oblq"><span>Step 2 -</span> Designing your teaching Portfolio</h4>
+            <img src="img/superstar.png" alt="superstar" />
+        </div>
+        <div class="form-acad hlvetca-lyt frm-grp-spc">
+            <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="step2" ng-submit="vm.saveStepTwo(step2.$valid);">
+                <div class="form-group">
+                    <label>Hello, Brains! Tell us what you’re good at (you have to be certified):</label>
+                    <div class="login-search-slct">
+                        <div class="row">
+                            <span class="col-sm-4 col-xs-6 col-sm-pd-ryt">
+                                <select class="SlectBox">
+                                    <option>Academic</option>
+                                    <option>Enrichment</option>
+                                </select>
+                            </span>
+                            <span class="col-sm-4 col-xs-6 col-sm-pd-lft">
+                                <div ng-dropdown-multiselect="" options="vm.subjects" selected-model="vm.subjectmodel" extra-settings="vm.subjectsettings" group-by="name"></div>
+                            </span>
+                            <span class="col-sm-4 col-xs-12">
+                                <input type="button" value="Add" class="btn-red-add" ng-click="vm.updateSubjectsModel();">
+                            </span>
+                        </div>
+                        <div class="taglist">
+                            <a href="javascript:void(0);" ng-repeat="data in vm.subjectsModel">{{data.name}} ({{data.level}})</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="awsm-frmbx-grp" >
+                    <div class="form-group">
+                        <label ng-show="vm.subjectsModel.length > 0">Awesome! Now, set level and rates, location and tuition arrangement: </label>
+                        <div class="rng-sld-bx">
+                            <div class="range-slide range-slide-last" ng-repeat-start="data in vm.subjectsLevel" >
+                                <span class="range-title">{{data.name}}</span>
+                                <div class="range-slide-wrp" ng-repeat="(i,level) in data.levels track by $index" >
+                                    <div class="range-label">
+                                        {{level.level}}
+                                    </div>
+
+                                    <div class="range-content">
+                                        <div class="comm-rang-sldr">
+                                            <i class="cmn-icon-range fa fa-minus"></i>
+                                            <slider ng-class="rangeslider" ng-model="level.rate" min="vm.sliderOptions.min" step="vm.sliderOptions.step" max="vm.sliderOptions.max" value="10" formatter="vm.formatterFn(value)"></slider>
+                                            <i class="cmn-icon-range fa fa-plus"></i>
+                                        </div>
+                                    </div>
+                                    <div class="range-search">
+                                        <selectize placeholder='Pick location...' options='vm.locations' config="vm.locationConfig" ng-model="level.location" required='true'></selectize>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-repeat-end><br></div>
+                        </div>
+                    </div>
+                    <div class="form-group max-wrp-lgrg">
+                        <label ng-show="vm.subjectsModel.length > 0">When are you free? Set your availability calendar: </label>
+                        <div class="abl-cal-bx"> 
+                            <div class="row">
+                                <!--                            <div class="col-sm-3">
+                                                                <span class="rpt-lbl-cl" style="color:{{data.color}}" ng-repeat="data in vm.subjectsModel" >{{data.name}} ({{data.level}}) 
+                                                                    <i>
+                                                                        <color-picker ng-model="data.color" options="vm.colorOptions" ></color-picker>
+                                                                    </i>
+                                                                </span>
+                                                            </div>-->
+                                <!--                            <div class="col-sm-6">
+                                                                <div class="cal-slt-bx">
+                                                                    <span class="cal-slt-ttl">
+                                                                        <label><i class="fa fa-plus"></i>Create your available slots</label>
+                                                                    </span>   
+                                                                    <div class="slt-clr slt-clr-pdng">
+                                                                        <input type="text" class="form-control" placeholder="A Math (Sec 4) ">
+                                                                        <div class="SumoSelect" tabindex="0"><select class="SlectBox SumoUnder" tabindex="-1">
+                                                                                <option value="85c557">85c557</option>
+                                                                                <option value="54a1d8">54a1d8</option>
+                                                                                <option value="d8a7cd">d8a7cd</option>
+                                                                            </select><p class="CaptionCont SelectBox" title=" 85c557"><span> 85c557</span><label><i></i></label></p><div class="optWrapper"><ul class="options"><li class="opt selected"><label>85c557</label></li><li class="opt"><label>54a1d8</label></li><li class="opt"><label>d8a7cd</label></li></ul></div></div>
+                                                                    </div>
+                                                                    <div class="row slt-clr">
+                                                                        <div class="col-sm-6 col-xs-6">
+                                                                            <div class="slct-clr-dt">
+                                                                                <input type="text" class="form-control date" placeholder="Sunday, 09 March 16">
+                                                                                <i></i>
+                                                                            </div>
+                                                                            <span class="to-lbl-clr">to</span>
+                                                                        </div>
+                                                                        <div class="col-sm-6 col-xs-6">
+                                                                            <div class="slct-clr-dt">
+                                                                                <input type="text" class="form-control date" placeholder="Sunday, 09 March 16">
+                                                                                <i></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="slt-clr">
+                                                                        <input type="text" class="form-control" placeholder="Add notes...">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3 slct-sv-slt">
+                                                                <a href="javascript:void(0);" class="btn-red-add">Add new slot</a>
+                                                                <input type="submit" class="btn-red-add" value="Save slot">
+                                                            </div>-->
+                            </div>
+                            <div class="wk-cal" ng-show="vm.subjectsModel.length > 0" >
+                                <img ng-src="img/wkcal.jpg" alt="calender">
+                            </div>
+                        </div>
+                    </div>     
+                    <div class="form-group text-right" ng-show="vm.subjectsModel.length > 0">
+                        <input type="submit" value="Go to step3!" class="btn btn-step" ng-disabled="step2.$invalid" >                     
+                    </div>
+                </div>                
+            </form>
+        </div>
+    </div>  
+    <!-- Step 2 end --> 
+</div>

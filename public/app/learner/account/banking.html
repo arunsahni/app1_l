@@ -1,0 +1,49 @@
+<div id="banking" class="tab-pane">
+    <div class="bank-rw">
+        <div class="bank-label">
+            Pay to this bank account:
+        </div>
+        <div class="bank-label">
+            <p>{{vm.learner.bankingDetails[0].bankName}}</p>
+            <a href="javascript:void(0);">Show bank details</a>
+        </div>
+<!--        <a class="chng-bnk-btn" href="javascript:void(0);">Change primary bank</a>-->
+    </div>
+    <div class="bank-info">
+        <h4>BANK DETAILS</h4>
+        <dl class="dl-horizontal">
+            <dt>Account number:</dt>
+            <dd>{{vm.learner.bankingDetails[0].accountNumber}}</dd>
+            <dt>Account type: </dt>
+            <dd>{{vm.learner.bankingDetails[0].accountType}}</dd>
+            <dt>Branch code:</dt>
+            <dd>{{vm.learner.bankingDetails[0].branchCode}}</dd>                                    
+        </dl>
+        <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="bank" ng-submit="vm.updateBank(bank.$valid)">
+        <div ng-show="vm.status.type === 'bank'" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+        <div class="bank-inpt-wrp">
+            <div class="bank-inpt">
+                <div class="bank-inpt-col">
+                    <label>Bank name</label>
+                    <selectize name="bankName" placeholder='Select Bank...' options='vm.banks' config="vm.banksConfig" ng-model="vm.learner.bank.bankName" required='true'></selectize>
+                </div>
+                <div class="bank-inpt-col bnk-shrt-ipt">
+                    <label>Branch code</label>
+                    <input type="text" class="form-control" name="branchCode" ng-model="vm.learner.bank.branchCode" required />
+                </div>
+            </div>
+            <div class="bank-inpt">
+                <div class="bank-inpt-col">
+                    <label>Account number</label>
+                    <input type="text" class="form-control" name="accountNumber" ng-model="vm.learner.bank.accountNumber" required />
+                </div>
+                <div class="bank-inpt-col bnk-md-ipt">
+                    <label>Account type</label>
+                    <selectize name="accountType" placeholder='Account Type' options='vm.accountType' config="vm.accountTypeConfig" ng-model="vm.learner.bank.accountType" required='true'></selectize>
+                </div>
+            </div>
+            <input type="submit" class="chng-bnk-btn" value="Add another bank" ng-disabled="bank.$invalid" />
+        </div>
+        </form>
+    </div>
+</div>

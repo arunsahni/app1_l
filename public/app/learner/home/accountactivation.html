@@ -1,0 +1,17 @@
+<!--NUMER COUNTER START -->
+<section class="nm-count text-center">
+    <div class="container">
+        <span class="sec-title-bx"></span>
+        <div class="select-work">
+            <p>{{vm.activationMessage}}</p>
+            <span></span>
+            <div class="choice-type-wrp"> 
+                <div class="choice-type">
+                    <a class="start-learn" ng-if="loginstatus" ui-sref="learner.home" >START LEARNING NOW</a>
+                    <a class="start-learn" ng-if="!loginstatus" ng-click="vm.openmodal();" href="javascript:void(0);" >LOGIN NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--NUMER COUNTER END -->

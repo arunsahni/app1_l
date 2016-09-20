@@ -1,0 +1,79 @@
+<!--
+    view-specialisedareas.html : Lising of Banks.
+    @author : Arun Sahani
+    Date : 25-08-2016
+-->
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#!/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Specialised area</li>
+    </ol>
+    <h2>
+        Manage Specialised area
+    </h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div flash-message="5000" ></div> 
+                <div class="box-header">
+                    <div style="float:left">
+<!--                        <div class="input-group" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search" ng-model="text">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" ng-click="search(text, searchIn)"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>-->
+                    </div>
+                    <a ui-sref="admin.addspecialisedarea"  style="float:right">+ Add Specialised area</a>
+                </div><!-- /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <div  ng-show ="vm.status.message"  uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                        <tr ng-if="vm.specialisedareas.length > 0">
+                            <th>
+                                Title
+                            </th>
+                            <th>
+<!--                                <a href="javascript:void(0);" ng-click="sort('name')">
+                                    <span class ="fa fa-caret-down" ng-show="sortDir == 'desc' && sortBy == 'name'"></span>
+                                    <span class ="fa fa-caret-up" ng-show="sortDir == 'asc' && sortBy == 'name'"></span>-->
+                                   Description
+                                <!--</a>-->
+                            </th>
+                             <th>
+                                <!-- <a href="javascript:void(0);"> -->
+                                Action
+                                <!-- </a> -->
+                            </th>
+                        </tr>
+                        <tr ng-repeat="specialisedarea in vm.specialisedareas track by $index" ng-if="vm.specialisedareas.length > 0" id="row_{{$index}}" >
+                            <td>{{specialisedarea.title}}</td>
+                            
+                            <td>{{specialisedarea.description}}</td>
+                          
+                            <td>
+                                <a href="javascript:void(0);">
+                                    <i title="view details" class="fa fa-fw fa-file-o" ui-sref="admin.viewspecialisedarea({id: specialisedarea._id})"></i>
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <i title="Edit" class="fa fa-fw fa-edit" ui-sref="admin.editspecialisedarea({id: specialisedarea._id})"></i>  
+                                </a> 
+                                <a href="javascript:void(0);">
+                                    <i title="Delete" class="fa fa-fw fa-remove" ng-click="vm.removeSpecialisedarea(specialisedarea._id,$index)"></i>
+                                </a>
+                            </td>
+                        </tr>
+                         <tr ng-if="vm.specialisedareas.length == 0">
+                            <td colspan="6">No record found!!</td>
+                        </tr>
+                    </table>
+                </div><!-- /.box-body -->
+
+                <div class="box-footer clearfix pagination-fix">
+                    <ul ng-show="vm.totalItems > 10" uib-pagination items-per-page="vm.pageLimit" total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxSize" ng-change="vm.setPage(vm.currentPage)"></ul>
+                </div>
+            </div><!-- /.box -->
+        </div>
+    </div>
+</section>

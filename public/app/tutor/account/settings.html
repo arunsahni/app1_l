@@ -1,0 +1,122 @@
+<div id="settings" class="tab-pane fade in active">
+    <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="profile" ng-submit="vm.updateProfile(profile.$valid)">
+        <div ng-show="vm.status.type === 'personal'" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+        <div class="form-group form-group-btmbdr">
+            <label>Your name</label>
+            <div class="multi-ipt-wrp">
+                <div class="acnt-slct-wrp acnt-slct" >
+                    <select name="title" class="SlectBox" ng-model="vm.tutor.personalInfo.title" >
+                        <option ng-selected="{{title.value === vm.tutor.personalInfo.title}}" ng-repeat="title in vm.titles" value="{{title.value}}" ng-selected="{{vm.title}}">{{title.name}}</option>
+                    </select>
+                </div>
+                <div class="acnt-inpt-wrp">
+                    <input placeholder="First name" name="firstname" ng-model="vm.tutor.personalInfo.firstName" type="text" class="form-control" required  />
+                </div>
+                <div class="acnt-inpt-wrp">
+                    <input placeholder="Last name" name="lastname" ng-model="vm.tutor.personalInfo.lastName" type="text" class="form-control" required />
+                </div>
+                <input type="submit" value="Save changes" class="btn btn-acount" ng-disabled="profile.$invalid">
+            </div>
+        </div>
+    </form>
+
+    <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="change" ng-submit="vm.changePassword(change.$valid)">
+        <div ng-show="vm.status.type === 'password'" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+        <div class="form-group">
+            <label>Password</label>
+            <div class="pro-pswd-max">
+                <div class="input-form-rw">
+                    <input name="old_password" type="password" ng-model="vm.tutor.oldpassword" class="form-control" placeholder="Current Password" required />
+                    <!--                <a class="frgt-link" href="javascript:void(0);">Forgot password?</a>-->
+                </div>
+                <div class="input-form-rw">
+                    <input type="password" name="password" ng-model="vm.tutor.newpassword" class="form-control" placeholder="New password" required />
+                </div>
+                <password-strength ng-model="vm.tutor.newpassword"></password-strength>
+                <input type="submit" class="btn btn-acount" value="Reset password" ng-disabled="change.$invalid" >
+            </div>
+        </div>
+    </form>
+
+    <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="changeEmail" ng-submit="vm.changeEmail(changeEmail.$valid)">
+        <div ng-show="vm.status.type === 'email'" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+        <div class="form-group">
+            <label>Email Address</label>
+            <span class="currentemail">Your email is currently <strong>{{vm.tutor.email}}</strong></span>
+            <div class="two-col-acntrw">
+                <div class="two-col-acnt">
+                    <input type="email" name="email" ng-model="vm.tutor.newemail" class="form-control" placeholder="New email address" required/>
+                    <i>Input your email</i>
+                </div>
+                <div class="two-col-acnt">
+                    <!--                                <a class="grn-btn-verfy" href="javascript:void(0);">Send Verification Code</a>-->
+                    <input type="submit" class="grn-btn-verfy" value="Send Verification Email" ng-disabled="changeEmail.$invalid">
+                    <i>To verify your email, click on the link in the email 
+                        sent to &lt;{{vm.tutor.newemail}}&gt; </i>
+                </div>
+            </div>
+            <!--                        <input type="submit" class="btn btn-acount" value="Update email">-->
+        </div>
+    </form>
+    
+    
+    <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="changeMobile" ng-submit="vm.changeMobileNo(changeMobile.$valid)">
+        <div ng-show="vm.status.type === 'mobile'" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+        <div class="form-group">
+            <label>Mobile Number</label>
+            <span class="currentemail">Your mobile is currently<strong> {{vm.tutor.personalInfo.mobileNo}}</strong></span>
+            <div class="two-col-acntrw">
+                <div class="two-col-acnt">
+                    <input type="text" name="newmobile" class="form-control" ng-model="vm.tutor.newmobileno" placeholder="New mobile number" ng-minlength="10" maxlength="10" />
+                    <i>Input your 10-digit mobile number</i>
+                </div>
+                <div class="two-col-acnt">
+                    <input type="submit" class="grn-btn-verfy" value="Send Verification Code" ng-disabled="changeMobile.$invalid">
+                    <i>Input the verification code sent to &lt;{{vm.tutor.newmobileno}}&gt; </i>
+                    <div class="input-group verify-codebx">
+                        <input type="text" name="code" class="form-control" ng-model="vm.tutor.code" placeholder="" >
+                        <span class="input-group-addon"> 
+                            <input type="button" class="btn grn-btn-verfy" value="Verify" ng-click="vm.sendCode();"  />
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <div class="form-group">
+        <label>Your accounts</label>
+        <div class="curt-probx-rw">
+            <div class="curt-probx ct-active">
+                <h4>Current profile</h4>
+                <div class="crnt-pro-avt">
+                    <img src="img/crntpro.png" />
+                </div>
+                <p>Teacher account <i class="fa fa-times"></i></p>
+            </div>
+<!--            <div class="curt-probx">
+                <h4>&nbsp;</h4>
+                <div class="crnt-pro-avt">
+                    <img src="img/owlct.png" />
+                </div>
+                <p>Parent account <i class="fa fa-times"></i></p>
+            </div>-->
+        </div>
+<!--        <div class="pswd-acnt">
+            <span class="pswd-acnt-lbl">*Password required to proceed</span>
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-addon"> 
+                    <input type="submit" value="Switch to account!" class="btn btn-acount grn-btn-verfy">
+                </span>
+            </div>
+            <i>Invalid password. Please try again</i>
+        </div>-->
+<!--        <div class="form-action t-ds-rmv">
+            <input type="submit" value="Remove Account" class="btn btn-acount reb-btn">
+            <i class="shad-info">Are you sure? This action cannot be undone.</i>
+        </div>-->
+
+    </div>
+</div>

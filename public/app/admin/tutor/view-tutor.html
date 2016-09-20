@@ -1,0 +1,233 @@
+<!--
+view-tutor.html : View the detail of Particular Tutor.
+@author : Arun Sahani   
+Date : 24-08-2016
+-->
+
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">View Tutor</li>
+    </ol>
+    <h2>
+        View Tutor Detail
+    </h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <!--            <div class="box-header">
+                                <h3 class="box-title">Supplier Details</h3>
+                            </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>First Name :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.tutor.personalInfo.firstName}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Last Name :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.tutor.personalInfo.lastName}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Email :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.tutor.email}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Mobile Number :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.tutor.personalInfo.mobileNo}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Address :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.tutor.address.address}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Tutor Status :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.tutor.accountStatus}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Profile completeness :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.tutor.buildstage}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Academics Documents:</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div ng-repeat="qual in vm.tutor.academics track by $index">
+                                <a href="javascript:void(0)"> {{qual.fileName}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Other than Academics Documents:</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div ng-repeat="other in vm.tutor.otherAcademics track by $index">
+                                <a href="javascript:void(0)"> {{other.fileName}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Supporting Documents :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div ng-repeat="support in vm.tutor.supportingDocs track by $index">
+                                <a href="javascript:void(0)"> {{support.fileName}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Teaching Experience Documents :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div ng-repeat="exp in vm.tutor.teachingExp track by $index">
+                                <a href="javascript:void(0)"> {{exp.documents}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Teaching Subjects :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div ng-repeat="sub in vm.tutor.subjectTeaches track by $index">
+                                <div> {{sub.subjectName}}</div>
+                                <div> {{sub.level}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Specialization :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div ng-repeat="spec in vm.tutor.specialzation track by $index">
+                                <a href="javascript:void(0)"> {{spec}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Bank Details :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div ng-repeat="banking in vm.tutor.bankingDetails track by $index">
+                               <div>{{banking.bankName}}</div>
+                               <div>{{banking.accountType}}</div>
+                               <div>{{banking.accountNumber}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Payout Frequency :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                          <span>{{vm.tutor.payoutFrequency}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Refund Policy :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                          <span>{{vm.tutor.refundPolicy}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Allot Badge :</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div ng-dropdown-multiselect="" options="vm.badgeslist" selected-model="vm.badgemodel" 
+                                  extra-settings="vm.badgesettings" ></div>
+                           
+<!--                            <select class="form-control" name="badge" ng-model="vm.tutor.selectedbadge" 
+                                    ng-options="x.name for x in vm.badgeslist" required>
+                            </select>-->
+                        </div>
+                    </div>
+                    <div class="box-footer clearfix">
+                        <div class="supplier-detail-btn">
+                            <a ui-sref="admin.tutors">
+                                <button type="button" class="btn btn-primary">Back</button>
+                            </a>
+                            <button type="button" class="btn btn-primary" ng-click="vm.verifyTutor()">Verify Tutor</button>
+                            <button type="button" class="btn btn-primary" ng-click="vm.manageStatus(true)" ng-show="vm.tutor.accountStatus !== true">Activate</button>
+                            <button type="button" class="btn btn-danger"  ng-click="vm.manageStatus(false)" ng-show="vm.tutor.accountStatus !== false">De-activate</button>
+                        </div>
+                    </div>
+                    
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </div>
+</section>

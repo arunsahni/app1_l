@@ -1,0 +1,117 @@
+<!--
+view.html : View the detail of Particular Learner.
+@author : Arun Sahani   
+Date : 24-08-2016
+-->
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">View Announcement</li>
+    </ol>
+    <h2>
+        View Announcement
+        
+    </h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <!--            <div class="box-header">
+                                <h3 class="box-title">Supplier Details</h3>
+                            </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Image</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span><img width='40' ng-show="vm.announcement.image" ng-src="/images/announcement/{{vm.announcement.image}}"/></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Title</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.announcement.title}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Announcement Date</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.announcement.announcementDate | date}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Start Time</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.announcement.startTime}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>End Time</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.announcement.endTime}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Venue</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.announcement.venue}}</span>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>URL</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.announcement.url}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Price ($)</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.announcement.price}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="box-footer clearfix">
+                        <div class="supplier-detail-btn">
+                            <a ui-sref="admin.announcements">
+                                <button type="button" class="btn btn-primary">Back</button>
+                            </a>
+                        </div>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </div>
+</section>

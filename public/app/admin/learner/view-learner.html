@@ -1,0 +1,102 @@
+<!--
+view-learner.html : View the detail of Particular Learner.
+@author : Arun Sahani   
+Date : 24-08-2016
+-->
+
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">View Learner</li>
+    </ol>
+    <h2>
+        View Learner Detail
+        
+    </h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <!--            <div class="box-header">
+                                <h3 class="box-title">Supplier Details</h3>
+                            </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.learner.personalInfo.firstName}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Last Name</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.learner.personalInfo.lastName}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Email:</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.learner.email}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Mobile Number:</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.learner.personalInfo.mobileNo}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Address:</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.learner.address.address}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="supplier-label">
+                                <label>Learner Status:</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span>{{vm.learner.accountStatus}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="box-footer clearfix">
+                        <div class="supplier-detail-btn">
+                            <a ui-sref="admin.learners">
+                                <button type="button" class="btn btn-primary">Back</button>
+                            </a>
+                            <button type="button" class="btn btn-primary" ng-click="vm.manageStatus(true)" ng-show="vm.learner.accountStatus !== true">Activate</button>
+                            <button type="button" class="btn btn-danger"  ng-click="vm.manageStatus(false)" ng-show="vm.learner.accountStatus !== false">De-activate</button>
+                            
+                        </div>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </div>
+</section>

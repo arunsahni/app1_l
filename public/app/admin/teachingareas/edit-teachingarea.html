@@ -1,0 +1,45 @@
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Edit Specialised area</li>
+    </ol>
+    <h2>
+        Edit Specialised area
+    </h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <!--                <div class="box-header with-border">
+                                  
+                                </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+
+                    <alert class="alert" ng-repeat="error in errors" type="danger">{{error}}</alert>
+
+                    <form role="form" name="specialisedareaForm" novalidate>
+                        <div  ng-show ="vm.status.message" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" ng-model="vm.specialisedarea.title" placeholder="Enter Title" required>
+                            <span class="text-danger" ng-show="(specialisedareaForm.title.$dirty) || specialisedareaForm.$submitted">
+                                <span ng-show="specialisedareaForm.title.$error.required">Title is required.</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" name="description" ng-model="vm.specialisedarea.description" placeholder="Enter Description" required>
+                            <span class="text-danger" ng-show="(specialisedareaForm.description.$dirty) || specialisedareaForm.$submitted">
+                                <span ng-show="specialisedareaForm.description.$error.required">Description is required.</span>
+                            </span>
+                        </div>
+                        <div class="box-footer btn-catagory-fix">
+                            <button type="submit" class="btn btn-primary" ng-click="vm.editSpecialisedarea(specialisedareaForm.$valid)" ng-disabled="!specialisedareaForm.$valid">Submit</button>
+                            <a ui-sref="admin.specialisedareas">Cancel</a>
+                        </div>
+                    </form>
+                </div> <!-- box-body -->
+            </div> <!-- box -->
+        </div> <!-- col -->
+    </div> <!-- ..row -->
+</section>

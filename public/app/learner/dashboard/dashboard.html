@@ -1,0 +1,532 @@
+<div class="row row-cover-spc">
+    <div class="col-sm-9">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="well-box">
+                    <span class="side-title-mmbr">
+                        <h4>Member Since</h4>
+                        <p>{{vm.learner.createdDate}}</p>
+                    </span>
+                    <span class="side-title-mmbr side-title-mmbr-hd">
+                        <h4>Linked Accounts</h4>
+                        <!--                                <div class="link-acount-bx">
+                                                            <a href="javascript:void(0);">
+                                                                <span>
+                                                                    <img src="img/linkacount1.jpg" alt="linked acount" />
+                                                                </span>
+                                                                <p>Marvin Ng, Father</p>
+                                                            </a>
+                                                        </div>
+                                                        <div class="link-acount-bx">
+                                                            <a href="javascript:void(0);">
+                                                                <span>
+                                                                    <img src="img/linkacount2.jpg" alt="linked acount" />
+                                                                </span>
+                                                                <p>Lenie Chow, Mother</p>
+                                                            </a>
+                                                        </div>-->
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="well-box well-bx-md actvy-bx">
+                    <h4 class="well-title">Recent Activity</h4>
+                    <div class="alertbx">
+                        Welcome to Learn Anything! It's going to be a great learning adventure for you. Start by searching for a tutor and then experiment on our website through "Your Learning Journey"
+                        <a href="javascript:void(0);">&times;</a>
+                    </div>
+                    <div class="point-post-wrp" ng-repeat="notification in vm.notifications" >	
+                        <div class="point-post">	
+                            <span>{{notification.points}}</span>
+                            {{notification.description}}
+                        </div>
+                        <i>{{notification.notificationDate| amCalendar }}</i>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="well-box well-bx-md caldash">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <span class="ancmnt-ttl ancmnt-ttl-rgh">
+                                <h3>Calender</h3>
+                                <div style="display:inline-block; min-height:290px;">
+                                    <div uib-datepicker ng-model="dt" class="" datepicker-options="vm.dateOptions"></div>
+                                </div>
+                            </span>
+                            <div class="date"></div>
+                        </div>
+                        <div class="col-sm-8 ancmnt-list">
+                            <h3>My upcoming lessons / activities</h3>
+                            <!--                                    <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <td width="86"><p>16 Mar ‘16</p></td>
+                                                                            <td><strong>History tuition with Dr. Pavin Ng at Bishan</strong></td>
+                                                                            <td>12pm - 2pm</td>
+                                                                            <td><a class="border-blue" href="javascript:void(0);">Retrieve Code</a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><p>18 Mar ‘16</p></td>
+                                                                            <td><strong>A Math lesson with Sally Yeo at Bishan Public Library</strong></td>
+                                                                            <td>4pm - 6.30pm</td>
+                                                                            <td><a class="border-red" href="javascript:void(0);">Reschedule</a></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="well-box well-bx-md min-hyt-welbx">
+                    <span class="ancmnt-ttl">
+                        <h3>Announcements</h3><p>Most recent</p>
+                    </span>
+                    <!--                            <div class="anouncmnt-rpt">
+                                                    <div class="anouncmnt-avatar">
+                                                        <img src="img/workshop.jpg" alt="workshop" />
+                                                    </div>
+                                                    <div class="ancemnt-dtl">
+                                                        <h4>Writing Lesson Plans e-workshop</h4>
+                                                        <p>Date: 15 March 2016, Tuesday</p>
+                                                        <p>Time: 5pm to 8pm</p>
+                                                        <p>Venue: Bishan Library</p>
+                                                        <p>Price: $50   </p>
+                                                        <a href="javascript:void(0);">Sign up</a>
+                                                    </div>
+                                                </div>
+                                                <div class="anouncmnt-rpt">
+                                                    <div class="anouncmnt-avatar">
+                                                        <img src="img/srtting-tile.jpg" alt="annocement" />
+                                                    </div>
+                                                    <div class="ancemnt-dtl">
+                                                        <h4>Website Maintenance</h4>
+                                                        <p>Date: TODAY</p>
+                                                        <p>Time: 5pm to 8pm</p>                                            
+                                                        <a href="javascript:void(0);">Learn more</a>
+                                                    </div>
+                                                </div>-->
+                    <!--                            <ul class="anouncmnt-lst">
+                                                    <li>
+                                                        <div class="anouncmnt-time">11.45am</div>
+                                                        <div class="anouncmnt-desc">Website maintenance on 12 March 2016</div>
+                                                        <a href="javascript:void(0);">learn more</a>
+                                                    </li>
+                                                </ul>-->
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="well-box well-bx-md">
+                    <span class="ancmnt-ttl ancmnt-ttl-rgh">
+                        <h3>My Blog Posts</h3><p>(0 posts)</p>
+                    </span>
+                    <div class="input-group single-searchbx">
+                        <input type="text" name="keyword" placeholder="I need help with ..." class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                    <div class="buzz-bx">
+                        <div class="buzz-avtr">
+                            <img src="img/buzz.png" alt="article" />
+                        </div>
+                        <div class="buzz-ct">
+                            <p>Write your first article! </p>
+                            <a href="javascript:void(0);">Click here</a>
+                        </div>
+                    </div>
+                    <div class="sgst-lst">
+                        <span class="sgst-ttl"><h4>Write and earn credits </h4><p>Suggested titles</p></span>
+                        <ul>
+                            <li><a href="javascript:void(0);">Best ways to learn algebra</a></li>
+                            <li><a href="javascript:void(0);">How to teach English to Primary school students</a></li>
+                            <li><a href="javascript:void(0);">What is the value of Social Studies?</a></li>
+                            <li><a href="javascript:void(0);">Teaching Art History to beginners</a></li>
+                            <li><a href="javascript:void(0);">How to solve Math problems without a calculator?</a></li>
+                            <li><a href="javascript:void(0);">Is classroom education the best way?</a></li>
+                        </ul>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="well-box well-bx-md">
+                    <span class="ancmnt-ttl ancmnt-ttl-rgh">
+                        <h3>My Interviews </h3><p>(0)</p>
+                    </span>
+                    <!--                            <div class="intrvw-bx-wrp">
+                                                     Interview box repeat 
+                                                    <div class="intrvw-bx-rpt">
+                                                        <div class="intrvw-bx-rw">
+                                                            <div class="intrvw-bx-col">
+                                                                <div class="intrvw-avt-wrp">
+                                                                    <div class="intrvw-avt">
+                                                                        <img src="img/note1.png">
+                                                                    </div>
+                                                                    <h4>Dr. Pavin Ng</h4>
+                                                                    <p>Physics</p>
+                                                                </div>
+                                                                <div class="intrvw-bx-cntnt">
+                                                                    <h4>STARTING IN:</h4>
+                                                                    <p>Now</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="intrvw-bx-btn">
+                                                                <a class="pink-link" href="javascript:void(0);">Go to interview</a>
+                                                                <a class="grey-link" href="javascript:void(0);">Reschedule</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                     Interview box repeat 
+                                                    <div class="intrvw-bx-rpt">
+                                                        <div class="intrvw-bx-rw">
+                                                            <div class="intrvw-bx-col">
+                                                                <div class="intrvw-avt-wrp">
+                                                                    <div class="intrvw-avt">
+                                                                        <img src="img/note4.png">
+                                                                    </div>
+                                                                    <h4>Betty Phua</h4>
+                                                                    <p>Physics</p>
+                                                                </div>
+                                                                <div class="intrvw-bx-cntnt">
+                                                                    <h4>STARTING IN:</h4>
+                                                                    <p>0 Days, 12 Hrs</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="intrvw-bx-btn">
+                                                                <a class="darkgrey-link" href="javascript:void(0);"> Cancel</a>
+                                                                <a class="grey-link" href="javascript:void(0);">Reschedule</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-3 helvtcanwlyt stdnt-dash-side">
+        <div class="well-box well-bx-md">
+            <span class="helpbx">
+                <h3>Need help? Ask Lenny anything!</h3>
+                <div class="input-group">
+                    <input type="text" name="keyword" placeholder="I need help with ..." class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </span>
+            <span class="faq-blt helpbx">
+                <h3>FAQs by fellow teachers</h3>
+                <ul>
+                    <li><a href="javascript:void(0);">How do I sell my materials on Marketplace?</a></li>
+                    <li><a href="javascript:void(0);">What happens if my students cancel on me?</a></li>
+                    <li><a href="javascript:void(0);">How many times can I reschedule classes?</a></li>
+                    <li><a href="javascript:void(0);">What are valid reasons?</a></li>
+                    <li><a href="javascript:void(0);">How can I create my own lessons?</a></li>
+                </ul>
+            </span>
+        </div>
+
+
+        <div class="well-box chat-dscsn-bx">
+            <h3>Chat & Discuss (Chatter)</h3>
+            <div class="chat-bx-inner">
+                <p>You don’t have any contacts to chat with yet. Find and add a friend!</p>
+                <div class="input-group single-searchbx">
+                    <input type="text" class="form-control" placeholder="I need help with ..." name="keyword">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="well-box learn-trip">
+            <h3 class="side-stp-ttl">Your Learning Journey</h3>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width:10%">
+                </div>
+            </div>
+            <div class="ttl-prgrs">
+                <span>10%</span>
+                <i>Progress</i>
+            </div>
+            <ul class="note-bx">
+                <li>	
+                    <a href="javascript:void(0);">
+                        <i class="note-icon"></i>
+                        <p>Your notes</p>                                    
+                    </a>
+                </li>
+                <li>	
+                    <a href="javascript:void(0);">	
+                        <i class="tutor-icon"></i>
+                        <p>Search tutors</p>
+                    </a>                                    
+                </li>
+                <li>	
+                    <a href="javascript:void(0);">	
+                        <i class="fav-tut-icon"></i>
+                        <p>Favourites</p>                                    
+                    </a>
+                </li>
+                <li>	
+                    <a href="javascript:void(0);">	
+                        <i class="bagpack-icon"></i>
+                        <p>Your bagpack</p>                         
+                    </a>           
+                </li>
+                <li>
+                    <a href="javascript:void(0);">		
+                        <i class="cal-icon"></i>
+                        <p>Calendar</p>                         
+                    </a>           
+                </li>
+                <li>	
+                    <a href="javascript:void(0);">	
+                        <i class="homwwork-icon"></i>
+                        <p>Submit Homework</p>                         
+                    </a>           
+                </li>
+                <li>	
+                    <a href="javascript:void(0);">	
+                        <i class="interview-icon"></i>
+                        <p>Interviews</p>   
+                    </a>                                 
+                </li>
+                <li>	
+                    <a href="javascript:void(0);">	
+                        <i class="preogress-icon"></i>
+                        <p>My Progress</p>                         
+                    </a>           
+                </li>
+                <li>	
+                    <a href="javascript:void(0);">	
+                        <i class="review-icon"></i>
+                        <p>Review tutors</p>                         
+                    </a>           
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="well-box well-bx-md note-acs">
+            <div class="note-list">
+                <h4 class="note-title">My Notes <a href="javascript:void(0);">(Click to access All Notes)</a></h4>
+                <!--                        <ul>
+                                            <li>
+                                                <a href="javascript:void(0);">Note on Dr. Pavin Ng</a>
+                                                <p>Added yesterday</p>
+                                                <div class="sub-popover">
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note1.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            <h4>Note on <a href="javascript:void(0);">Dr. Pavin Ng</a></h4>
+                                                            Stays super near to where I live. 3 yrs
+                                                            of experience. Check with mom if she
+                                                            knows her from same school! &gt;.&lt;
+                                                        </div>
+                                                    </div>
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note1.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            Came out 3 times in my searches; but she not free on Wednesdays :(
+                                                        </div>
+                                                    </div>
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note1.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            Her hobbies are so interesting! Make 
+                                                            a note to ask her about them during
+                                                            the video interview
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Notes on Lily Soh</a>
+                                                <p>Added yesterday</p>
+                                                <div class="sub-popover">
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note2.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            <h4>Note on <a href="javascript:void(0);">Lily Shoh</a></h4>
+                                                            Stays super near to where I live. 3 yrs
+                                                            of experience. Check with mom if she
+                                                            knows her from same school! &gt;.&lt;
+                                                        </div>
+                                                    </div>
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note2.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            Came out 3 times in my searches; but she not free on Wednesdays :(
+                                                        </div>
+                                                    </div>
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note2.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            Her hobbies are so interesting! Make 
+                                                            a note to ask her about them during
+                                                            the video interview
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a  href="javascript:void(0);">Note on Betty Phua</a>
+                                                <p>Added yesterday</p>
+                                                <div class="sub-popover">
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note4.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            <h4>Note on <a href="javascript:void(0);">Betty Phua</a></h4>
+                                                            Stays super near to where I live. 3 yrs
+                                                            of experience. Check with mom if she
+                                                            knows her from same school! &gt;.&lt;
+                                                        </div>
+                                                    </div>
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note4.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            Came out 3 times in my searches; but she not free on Wednesdays :(
+                                                        </div>
+                                                    </div>
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note4.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            Her hobbies are so interesting! Make 
+                                                            a note to ask her about them during
+                                                            the video interview
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Note on Tan Wei Ping</a>
+                                                <p>Added yesterday</p>
+                                                <div class="sub-popover">
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note3.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            <h4>Note on <a href="javascript:void(0);">Tan Wei Ping</a></h4>
+                                                            Stays super near to where I live. 3 yrs
+                                                            of experience. Check with mom if she
+                                                            knows her from same school! &gt;.&lt;
+                                                        </div>
+                                                    </div>
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note3.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            Came out 3 times in my searches; but she not free on Wednesdays :(
+                                                        </div>
+                                                    </div>
+                                                    <div class="popover-rw">
+                                                        <div class="popover-avatar-wrp">
+                                                            <div class="popover-avatar">
+                                                                <img src="img/note3.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="popover-contentbx">
+                                                            Her hobbies are so interesting! Make 
+                                                            a note to ask her about them during
+                                                            the video interview
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>-->
+            </div>
+            <div class="fav-list">
+                <h4 class="note-title">My Favourited Tutors</h4>
+                <ul>
+                    <!--   <li>
+                          <a href="javascript:void(0);">
+                              <div class="fav-avatar">
+                                  <img src="img/note1.png" />
+                              </div>
+                              <p>Dr. Pavin Ng</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="javascript:void(0);">
+                              <div class="fav-avatar">
+                                  <img src="img/note2.png" />
+                              </div>
+                              <p>Lily Soh</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="javascript:void(0);">
+                              <div class="fav-avatar">
+                                  <img src="img/note4.png" />
+                              </div>
+                              <p>Betty Phua</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="javascript:void(0);">
+                              <div class="fav-avatar">
+                                  <img src="img/note3.png" />
+                              </div>
+                              <p>Tan Wei Ping</p>
+                          </a>
+                      </li>-->
+                </ul>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

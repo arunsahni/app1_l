@@ -1,0 +1,25 @@
+<div class="cover-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="acnt-title" id="account">My Account</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 acnt-ui">
+                <ul class="nav nav-tabs nav-tab-dash">
+                    <li ui-sref-active="active"><a ui-sref="tutor.account.settings">Settings</a></li>
+                    <li ui-sref-active="active"><a ui-sref="tutor.account.notifications" >Notifications</a></li>
+                    <li ui-sref-active="active"><a ui-sref="tutor.account.profile">Profile</a></li>
+                    <li ui-sref-active="active"><a ui-sref="tutor.account.banking">Banking</a></li>
+                </ul>
+                <div class="tab-content wel-bx-lg">
+                    <div ui-view="settings" ></div>
+                    <div ui-view="notification" ></div>
+                    <div ui-view="profile" ></div>
+                    <div ui-view="banking" ></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

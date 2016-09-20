@@ -1,0 +1,339 @@
+<!-- BANNER START -->
+<section class="banner"> 
+    <nav class="navbar navbar-default nav-sub">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">		
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar2" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="anon.learner" >Hey, Learners!</a></li>
+                    <li><a ui-sref="anon.parent-static" >Hey, Parents!</a></li>
+                    <li><a ui-sref="anon.parent-learner" >Testimonials</a></li>
+                    <li class="active"><a ui-sref="anon.ethical-service" >Ethical Service Guidelines</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div id="myCarousel" class="carousel slide slidebannr inerbanner parentlearn" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active background parallax" ng-parallax pattern="'img/ethicalbanner.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/ethicalbanner.jpg);" >
+                <div class="container">
+                    <div class="carousel-caption crasl-iner-ct">
+                        <h3>Ethical Service Guidelines</h3>
+                        <p>As a Learner or Tutor, these guidelines 
+                            should help regulate the learning process
+                            for both parties.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item background parallax" ng-parallax pattern="'img/parent.jpg'"  data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/parent.jpg);">
+                <div class="carousel-caption crasl-iner-ct">
+                    <h3>Why pick Learn Anything?</h3>
+                    <p>Our Learners and Parents share why they enjoy using our platform!</p>
+                </div>
+            </div>
+            <div class="item background parallax" ng-parallax pattern="'img/banner1.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/banner1.jpg);">
+                <div class="carousel-caption crasl-iner-ct">
+                    <h3>Want the best for your child?</h3>
+                    <p>Learn Anything is your solution to your child’s 
+                        educational development and fulfilment.</p>
+                </div>
+            </div>
+            <div class="item background parallax" ng-parallax pattern="'img/parentlearner.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/parentlearner.jpg);">
+                <div class="carousel-caption crasl-iner-ct">
+                    <h3>Take control of your learning</h3>
+                    <p>Always be a step ahead of everyone else with our
+                        up-to-date resources and lesson plans. Choose to 
+                        quicken your pace or slow it down - it’s entirely up
+                        to you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- BANNER END -->
+<!-- REGISTRATION FORM START -->
+<section class="reg-blk">
+    <div class="container">
+        <div class="learn-rg-bx">
+            <div class="lrn-sm-share">
+                <a class="lrn-more-lnk" href="javascript:void(0);">Learn Now</a>
+                <div class="bnc-arw-wrp"> 
+                    <span class="bounce-arrow"></span>
+                </div>    
+                <a class="lrn-fb-login" href="javascript:void(0);" ng-click="vm.authenticate('facebook')" ><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                <span class="lrn-rg-bx-frm">
+                    <form ng-submit="vm.fastsignuplearner(vm.fastSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.fastSignup">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select class="SlectBox" >
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname"  />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" ng-model="vm.user.email" />
+                            <i ng-show="vm.fastSignup.email.$invalid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up"  ng-disabled="vm.fastSignup.$invalid" />
+                        </div>
+                    </form>
+                </span>
+            </div>
+            <div class="bnc-arw-wrp ethclsrvs-bnc-arw"> 
+                <span class="bounce-arrow"></span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- REGISTRATION FORM END -->
+<!-- ETHICAL SERVICE START -->
+<section class="tut-lrn-ethclblk">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="img/ethcaltut.png" alt="Tutor and Learner " />
+            </div>
+            <div class="col-sm-9">
+                <h2>Tutor and Learner Ethical Service Guidelines</h2>
+                <p>All Learn Anything Tutors and Learners, upon registration, have agreed to abide by the Ethical Service Guidelines to ensure both parties are protected in the course of lesson engagement. Upon violation of any of the guidelines, they will be subjected to Learn Anything’s review and charged with penalities accordingly.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ETHICAL SERVICE END -->
+<!-- SERVICE GUIDLINE START -->
+<section class="quidline-list">
+    <div class="container">
+        <div class="quidline-inner">
+            <div class="quidline-rpt">
+                <h4>Tutor’s Ethical Service Guidelines</h4>
+                <ol>
+                    <li>
+                        <p>Tutor will maintain sound mental and physical health to perform his/her duties. Tutor will not be disrespectful or 
+                            behave in a derogatory way towards the Learner</p>
+                        <ol>
+                            <li><p>Verbal abuse: vulgar name-calling, mocking, insulting</p></li>
+                            <li><p>Physical abuse or sexual harassment</p></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p>Tutor will not expose Learner to embarrassment and disparagement</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not divulge private and confidential information given by Tutor to third parties unless consented by 					Learner or Learn Anything Pte Ltd</p>
+                    </li>
+                    <li>
+                        <p>Tutor will bear responsibility to protect Learner from conditions detrimental to health, learning and safety if:</p>
+                        <ol>
+                            <li><p>If tuition is not held at home, but in a public place</p></li>
+                            <li><p>If there is no parent/guardian present in the tuition space except for yourself</p></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p>Tutor will take full responsibility of teaching the Learner and must not send replacement tutors on his/her 						behalf</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not use his/her professional relationship with Learner for reasons other than advancing the learning 					experience with Learner</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not use the professional relationship with Learner to his/her advantage by conducting or initiating 					other business / commercial activities during lessons time.</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not provide false teaching experience and/or qualifications information to Learn Anything or the 					Learner. He/she is held accountable to all credentials he/her has listed</p>
+                    </li>
+
+                    <li>
+                        <p>Tutor will not discriminate Learner based on any of these grounds: racial, gender, marital status, sexual 						orientation, social and/or cultural differences. </p>
+                    </li>
+                    <li>
+                        <p>Tutor will provide top-notch teaching service, adding to the learning experience any of the aforementioned 					learning practices and methods as listed in his/her teaching profile</p>
+                    </li>
+                    <li>
+                        <p>Tutor will only use his/her own teaching material, public texts (textbooks and worksheets), and/or the 						resources provided by Learn Anything. He/she will not infringe on another’s Intellectual property or claim 					another’s resources as his/her own</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not threaten, bribe, force or harass Learner to continue or renew his/her services in the event the 					lesson package has ended or is discontinued. </p>
+                    </li>
+                    <li>
+                        <p>Tutor will honor any special/miscellaneous teaching agreement or arrangement that was agreed upon at time of engagement with Learner:</p>
+                        <ol>
+                            <li><p>As discussed during the video interview</p></li>
+                            <li><p>As discussed in electronic mail</p></li>
+                            <li><p>As discussed in other communication platforms</p></li>
+                        </ol>
+                        <p>Upon violation of this, Tutor will be required to show evidence of botched contract as proof.</p>
+                    </li>
+                    <li>
+                        <p>Tutor will be penalised by Learn Anything for continuous cancellation or rescheduling that involves 							multiple/severe inconveniencing to the Learner, even if it is done during the grace period.</p>
+                        <br />
+                        <p>Learner can cancel the lesson package with no penalty charges incurred if Tutor violates any of the ethical 					service guidelines listed above.</p>
+                    </li>
+                </ol>
+            </div>
+            <div class="quidline-rpt">
+                <h4>Learner’s Ethical Service Guidelines</h4>
+                <ol>
+                    <li>
+                        <p>Tutor will maintain sound mental and physical health to perform his/her duties. Tutor will not be disrespectful or 
+                            behave in a derogatory way towards the Learner</p>
+                        <ol>
+                            <li><p>Verbal abuse: vulgar name-calling, mocking, insulting</p></li>
+                            <li><p>Physical abuse or sexual harassment</p></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p>Tutor will not expose Learner to embarrassment and disparagement</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not divulge private and confidential information given by Tutor to third parties unless consented by 					Learner or Learn Anything Pte Ltd</p>
+                    </li>
+                    <li>
+                        <p>Tutor will bear responsibility to protect Learner from conditions detrimental to health, learning and safety if:</p>
+                        <ol>
+                            <li><p>If tuition is not held at home, but in a public place</p></li>
+                            <li><p>If there is no parent/guardian present in the tuition space except for yourself</p></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p>Tutor will take full responsibility of teaching the Learner and must not send replacement tutors on his/her 						behalf</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not use his/her professional relationship with Learner for reasons other than advancing the learning 					experience with Learner</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not use the professional relationship with Learner to his/her advantage by conducting or initiating 					other business / commercial activities during lessons time.</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not provide false teaching experience and/or qualifications information to Learn Anything or the 					Learner. He/she is held accountable to all credentials he/her has listed</p>
+                    </li>
+
+                    <li>
+                        <p>Tutor will not discriminate Learner based on any of these grounds: racial, gender, marital status, sexual 						orientation, social and/or cultural differences. </p>
+                    </li>
+                    <li>
+                        <p>Tutor will provide top-notch teaching service, adding to the learning experience any of the aforementioned 					learning practices and methods as listed in his/her teaching profile</p>
+                    </li>
+                    <li>
+                        <p>Tutor will only use his/her own teaching material, public texts (textbooks and worksheets), and/or the 						resources provided by Learn Anything. He/she will not infringe on another’s Intellectual property or claim 					another’s resources as his/her own</p>
+                    </li>
+                    <li>
+                        <p>Tutor will not threaten, bribe, force or harass Learner to continue or renew his/her services in the event the 					lesson package has ended or is discontinued. </p>
+                    </li>
+                    <li>
+                        <p>Tutor will honor any special/miscellaneous teaching agreement or arrangement that was agreed upon at time of engagement with Learner:</p>
+                        <ol>
+                            <li><p>As discussed during the video interview</p></li>
+                            <li><p>As discussed in electronic mail</p></li>
+                            <li><p>As discussed in other communication platforms</p></li>
+                        </ol>
+                        <p>Upon violation of this, Tutor will be required to show evidence of botched contract as proof.</p>
+                    </li>
+                    <li>
+                        <p>Tutor will be penalised by Learn Anything for continuous cancellation or rescheduling that involves 							multiple/severe inconveniencing to the Learner, even if it is done during the grace period.</p>
+                        <br />
+                        <p>Learner can cancel the lesson package with no penalty charges incurred if Tutor violates any of the ethical 					service guidelines listed above.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SERVICE GUIDLINE END -->
+<!-- SERVICE GUIDLINE MESSAGE START -->
+<section class="gry-msg-bx">
+    <div class="container">	
+        <p>Learner/Tutor can make an appeal to Learn Anything Helpdesk via <a href="javascript:void(0);">Inbox</a>, email at <a href="mailto:helpfulowl@learnanything.sg"> helpfulowl@learnanything.sg</a> or 
+            call our customer service hotline at 6791 7317.</p>
+        <p>Tutor/Learner is also encouraged to visit the <a href="javascript:void(0);">Dispute Policy</a> page to further understand circumstances under which 
+            cancellation or rescheduling cases do not merit a straightforward resolution and require the mediation of Learn Anything.
+        </p>
+    </div>
+</section>
+<!-- SERVICE GUIDLINE MESSAGE END -->
+<!-- TODAYS JOIN START -->
+<section class="join-tdy-blk parent-signup background parallax" ng-parallax pattern="'img/parentsignup.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/parentsignup.jpg);">
+    <div class="container max-container">
+        <div class="row">
+            <div class="col-sm-6 join-info">
+                <h2>Join 7,000 </h2>
+                <p>other learners and parents today.</p> 
+            </div>                
+
+
+
+            <div class="col-sm-6 text-center">	
+                <div class="signup-join-bx">
+                    <a class="lrn-fb-login" href="javascript:void(0);" ng-click="vm.authenticate('facebook')" ><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                    <span class="lrn-rg-bx-frm">
+                       <form ng-submit="vm.fastsignuplearner(vm.fastSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.fastSignup">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select class="SlectBox" >
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname"  />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" ng-model="vm.user.email" />
+                            <i ng-show="vm.fastSignup.email.$invalid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up"  ng-disabled="vm.fastSignup.$invalid" />
+                        </div>
+                    </form>
+                    </span>
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<!-- TODAYS JOIN END -->

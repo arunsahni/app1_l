@@ -1,0 +1,52 @@
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Add Location</li>
+    </ol>
+    <h2>
+        Add Location
+    </h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <!--                <div class="box-header with-border">
+                                  
+                                </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+
+                    <alert class="alert" ng-repeat="error in errors" type="danger">{{error}}</alert>
+
+                    <form role="form" name="locationForm" novalidate>
+                        <div  ng-show ="vm.status.message" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                        <div class="form-group">
+                            <label>Location Name</label>
+                            <input type="text" class="form-control" name="locname" ng-model="vm.locationDetails.name" placeholder="Enter Location Name" required>
+                            <span class="text-danger" ng-show="(locationForm.locname.$dirty) || locationForm.$submitted">
+                                <span ng-show="locationForm.locname.$error.required">Location Name is required.</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter region</label>
+                            <input type="text" class="form-control" name="region" ng-model="vm.locationDetails.region" placeholder="Enter Region" required>
+                            <span class="text-danger" ng-show="(locationForm.region.$dirty) || locationForm.$submitted">
+                                <span ng-show="locationForm.region.$error.required">Region is required.</span>
+                            </span>
+                        </div>
+                         <div class="form-group">
+                            <label>Select Color</label>
+                            <input type="text" class="form-control" name="color" ng-model="vm.locationDetails.color" placeholder="Enter Color" required>
+                            <span class="text-danger" ng-show="(locationForm.color.$dirty) || locationForm.$submitted">
+                                <span ng-show="locationForm.color.$error.required">Color is required.</span>
+                            </span>
+                        </div>
+                        <div class="box-footer btn-catagory-fix">
+                            <button type="submit" class="btn btn-primary" ng-click="vm.create(locationForm.$valid)" ng-disabled="!locationForm.$valid">Submit</button>
+                            <a ui-sref="admin.locations">Cancel</a>
+                        </div>
+                    </form>
+                </div> <!-- box-body -->
+            </div> <!-- box -->
+        </div> <!-- col -->
+    </div> <!-- ..row -->
+</section>

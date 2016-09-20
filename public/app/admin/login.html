@@ -1,0 +1,59 @@
+<style type="text/css" class="ng-scope">
+    .skin-red .wrapper, .skin-red .main-sidebar, .skin-red .left-side {background-color: #ecf0f5 !important;}
+    .content-wrapper, .right-side, .main-footer {margin-left: 0px !important;}
+    .skin-green .wrapper, .skin-green .main-sidebar, .skin-green .left-side {background-color: #ecf0f5 !important;}
+    .content {margin-left: 430px !important;}
+</style>
+<div class="login-box">
+  <div class="login-logo">
+    <a href="javascript:void(0);">Learn Anything</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+    
+    <!--<alert class="alert" ng-repeat="error in errors" type="danger">{{error.message}}</alert>-->
+    <div flash-message="10000" ></div>
+    <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}" ></span>
+    <form name="loginForm"  novalidate>
+        <div class="control-group form-group has-feedback">
+         
+            <input type="email" class="form-control" placeholder="email" name="email" ng-model="vm.user.email" required autofocus>
+         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+         <p>
+            <span class="text-danger" ng-show="(loginForm.email.$dirty && loginForm.email.$invalid) || loginForm.$submitted">
+                <span ng-show="loginForm.email.$error.required">Email is required.</span>
+                <span ng-show="loginForm.email.$error.email">Invalid Email.</span>
+            </span>
+         </p>
+        </div>
+
+        <div class="control-group form-group has-feedback">
+          
+          <input type="password" class="form-control" placeholder="password" name="password" ng-model="vm.user.password" required>
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          <p>
+            <span class="text-danger" ng-show="(loginForm.password.$dirty) || loginForm.$submitted">
+                <span ng-show="loginForm.password.$error.required">Password is required.</span>
+            </span>
+         </p>
+        </div>
+        <div class="row">
+<!--        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> Remember Me
+            </label>
+          </div>
+        </div>-->
+        
+        <div class="col-xs-4">
+          <button type="submit" ng-click="vm.loginstaff(loginForm.$valid)" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        </div>
+      </div>
+      </form>
+<!--    <a href="#/forgotPassword">Forgot password?</a><br>-->
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->

@@ -1,0 +1,18 @@
+<div class="modal-header" >
+<!--    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$ctrl.closeModal();"><span aria-hidden="true">&times;</span></button>-->
+    <h4 class="modal-title" id="myModalLabel">Want full access to the dashboard and tuition tools?</h4>
+</div>
+<div ng-show="!$ctrl.verificationstatus" class="modal-body lock-mail-modal">
+    <img src="img/verifylock.png" alt="lock account">
+    <div class="verfy-btn-bx">
+        <a data-dismiss="modal" data-toggle="modal" href="javascript:void(0);">Verify email</a>
+        <p>Proceed to build your profile!</p>
+    </div>
+</div>
+<div ng-show="$ctrl.verificationstatus" class="modal-body lock-mail-modal">
+    <img src="img/unlock.png" alt="lock account">
+    <div class="verified-btn-bx">
+        <p>Email verified</p>
+        <span><a href="javascript:void(0);" ng-click="$ctrl.buildprofile();" data-dismiss="modal">Proceed to build your profile!</a></span>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container" ng-controller="HeaderController as vm">
+    <nav class="navbar navbar-default custom-nav">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">		
+                <span class="sr-only">Toggle navigation</span>
+                <div class="icon-bar-wrp">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+            </button>
+            <a class="teach-btn" ui-sref="anon.why-teach-with-us" >Why teach with us?</a>
+        </div>
+        <a class="navbar-brand" ui-sref="anon.home"><img src="img/logo.png" /></a>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="javascript:void(0);" data-toggle="dropdown">Log in</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:void(0);" ng-click="vm.modalopen('learnerlogin.html','md-modal','md');">Log in as a Learner</a></li>
+                        <li><a ng-href="tutor" ng-click="vm.modalcheck($event,1);" >Log in as a Tutor</a></li>
+                    </ul>
+                </li>
+                <li class="signup-link">
+                    <a href="javascript:void(0);" data-toggle="dropdown">Sign up</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:void(0);" ng-click="vm.modalopen('learnersignup.html','tutormodal learnerModal','lg');">Sign up as a Learner</a></li>
+                        <li><a ng-href="tutor" ng-click="vm.modalcheck($event,2);" >Sign up as a Tutor</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a class="teach-btn mbl-teach-btn" ui-sref="anon.why-teach-with-us">Why teach with us?</a>
+        </div><!--/.nav-collapse -->
+    </nav>
+</div>
+	

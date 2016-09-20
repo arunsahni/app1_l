@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-default custom-nav" ng-show="loginstatus">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">		
+                <span class="sr-only">Toggle navigation</span>
+                <div class="icon-bar-wrp">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+            </button>
+            <a class="teach-btn" ng-href="/#!/why-teach-with-us">Why teach with us?</a>
+        </div>
+        <a class="navbar-brand" href="javascript:void(0);"><img src="img/logo.png" /></a>
+
+        <div id="navbar2" class="navbar-collapse collapse">
+            <div class="search-hdr">
+                <div class="input-group">
+                    <select class="SlectBox">
+                        <option>All</option>
+                        <option>Tutor</option>
+                        <option>Learner</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="I want to learn" name="keyword">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+                <div class="notify-icon" ng-controller="NotificationController as vm">
+                    <a href="javascript:void(0);" data-toggle="dropdown">
+                        <i class="fa fa-bell"></i>
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <h4 class="title-notify"> Notification </h4>
+                        <ul class="notify-list-bx"  >
+                            <li ng-repeat="notification in vm.notifications" >
+                                <a href="javascript:void(0);">
+                                    <span>{{notification.points}}</span> 
+                                    <p>{{notification.description}}</p>
+                                    <i>{{notification.notificationDate  | amCalendar }}</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>	
+            </div>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,249 @@
+<!-- BANNER START -->
+<section class="banner"> 
+    <nav class="navbar navbar-default nav-sub">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">		
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar2" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="anon.why-teach-with-us" >Why Teach with Us?</a></li>
+                    <li class="active" ><a ui-sref="anon.grow-business" >Grow Your Business</a></li>
+                    <li><a ui-sref="anon.tutor-toolkit" >Your Own Tutor Toolkit</a></li>
+                    <li><a ui-sref="anon.tutor-testimonials" >Testimonials</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div id="myCarousel" class="carousel slide slidebannr inerbanner tutorbanner" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner tutstmnl-bx-bsns" role="listbox">
+            <div class="item active" style="background-image:url(img/growbsns.jpg); background-position:left center;">
+                <div class="container">
+                    <div class="carousel-caption crasl-iner-ct">
+                        <div class="carsl-wrp">
+                            <h3>Grow <i>your Business</i> </h3>
+                        </div>
+                        <p>Let it take a life of its own as you do
+                            what you do best: teaching. We offer
+                            to propel your business and teaching
+                            reputation for you with our packages
+                            and wealth of business tools.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item " style="background:url(img/parentlearner.jpg)">
+                <div class="carousel-caption crasl-iner-ct">
+                    <div class="carsl-wrp">
+                        <h3>What do people say? </h3>
+                    </div>
+                    <p>“It’s an easy way to keep track of all 
+                        of your tuition appointments.
+                        I really believe that it makes a happy 
+                        and well organised tutor! A must-have!”
+                        - John Tan Fuyan, ex-MOE Teacher</p>
+                </div>
+            </div>
+            <div class="item " style="background:url(img/learner.jpg)">
+                <div class="carousel-caption crasl-iner-ct">
+                    <div class="carsl-wrp">
+                        <h3>What do people say? </h3>
+                    </div>
+                    <p>“It’s an easy way to keep track of all 
+                        of your tuition appointments.
+                        I really believe that it makes a happy 
+                        and well organised tutor! A must-have!”
+                        - John Tan Fuyan, ex-MOE Teacher</p>
+                </div>
+            </div>
+            <div class="item " style="background:url(img/banner1.jpg)">
+                <div class="carousel-caption crasl-iner-ct">
+                    <div class="carsl-wrp">
+                        <h3>What do people say? </h3>
+                    </div>
+                    <p>“It’s an easy way to keep track of all 
+                        of your tuition appointments.
+                        I really believe that it makes a happy 
+                        and well organised tutor! A must-have!”
+                        - John Tan Fuyan, ex-MOE Teacher</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- BANNER END -->
+<!-- REGISTRATION FORM START -->
+
+<section class="reg-blk tutor-toolkit-reg">
+    <div class="container">
+        <div class="learn-rg-bx">
+            <div class="lrn-sm-share">
+                <a class="lrn-more-lnk" href="javascript:void(0);">Start Now</a>
+                <div class="bnc-arw-wrp"> 
+                    <span class="bounce-arrow"></span>
+                </div>    
+                <a class="lrn-fb-login" href="javascript:void(0);" ng-click="vm.authenticate('facebook')"><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                <span class="lrn-rg-bx-frm">
+                     <form ng-submit="vm.fastsignuptutor(vm.fastSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.fastSignup">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select class="SlectBox" >
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                    <option>Miss.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname"  />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" ng-model="vm.user.email" />
+                            <i ng-show="vm.fastSignup.email.$invalid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up"  ng-disabled="vm.fastSignup.$invalid" />
+                        </div>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- REGISTRATION FORM END -->
+<!-- SON LEARNING START -->
+<div class="container">
+    <div class="learner-title">	
+        <h2>Grow your business: <span>Be SEO Listed</span></h2>
+        <div class="bnc-arw-wrp"> 
+            <span class="bounce-arrow pnk-bnc-arw"></span>
+        </div>
+    </div>
+</div>
+<section class="background parallax incs-gbs" ng-parallax pattern="'img/gbs1.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/gbs1.jpg);">
+    <div class="container">
+        <div class="incs-pos">
+            <p>Increase your exposure.</p>
+            <span>Be found.</span>
+        </div>
+    </div>
+</section>
+<section class="col-2-img">
+    <div class="col-bg-cmn">
+    </div>
+    <div class="col-bg-cmn col-bg-ryt">
+    </div>
+    <div class="container" >
+        <div class="incs-pos pos-cnt-b">
+            <p>No agent fees.</p>
+        </div>
+
+
+        <div class="incs-pos">
+            <p>Wider Reach.</p>
+        </div>
+
+    </div>
+</section>
+<!-- SON LEARNING END -->
+<!-- PARENT LEARNER GALLERY START -->
+<section class="background parallax incs-gbs-mac" ng-parallax pattern="'img/gbs4.jpg'" data-img-width="100%" data-img-height="100%" data-diff="75" style="background-image:url(img/gbs4.jpg);">
+    <a class="incs-gbs-lnk" href="javascript:void(0);"></a>
+
+</section>
+<!-- PARENT LEARNER GALLERY END -->
+
+<section class="tut-badge-blk">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="img/tutorbadge.jpg" alt="stand out crowed" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tool-bg-msg">
+                    <p>There are many more tools to draw learners to your profile and to help you grow your business! What are you waiting for?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TODAYS JOIN START -->
+<section class="join-tdy-blk parent-signup background parallax" ng-parallax pattern="'img/parentsignup.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/parentsignup.jpg);">
+    <div class="container max-container">
+        <div class="row">
+            <div class="col-sm-6 join-info">
+                <h2>Join 1,000 </h2>
+                <p>other tutors today.</p> 
+            </div>
+            <div class="col-sm-6 text-center">	
+                <div class="signup-join-bx">
+                    <a href="javascript:void(0);" class="lrn-fb-login" ng-click="vm.authenticate('facebook')" ><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                    <span class="lrn-rg-bx-frm">
+                        <form ng-submit="vm.fastsignuptutor(vm.fastSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.fastSignup">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select class="SlectBox" >
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                    <option>Miss.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname"  />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" ng-model="vm.user.email" />
+                            <i ng-show="vm.fastSignup.email.$invalid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up"  ng-disabled="vm.fastSignup.$invalid" />
+                        </div>
+                    </form>
+                    </span>
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<!-- TODAYS JOIN END -->

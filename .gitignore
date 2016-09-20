@@ -1,0 +1,17 @@
+.svn/*
+
+nbproject/*
+
+node_modules/*
+
+public/libs/*
+
+public/fonts/*
+
+public/font-awesome/*
+
+public/img/*
+
+public/images/*
+
+public/css/skins/*

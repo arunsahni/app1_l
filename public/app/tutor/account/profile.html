@@ -1,0 +1,878 @@
+<div id="profile" class="tab-pane">
+    <span class="tab-title">
+        <h4>My Profile</h4>
+        <a class="ylw-slm-btn" href="javascript:void(0);">Preview profile on new page</a>
+    </span>
+    <div class="tab-pro-wrp">
+        <dl class="dl-horizontal">
+            <dt>
+                Full name:   
+            </dt>
+            <dd class="hlvetca-lyt">	
+                <div class="sub-dl">
+                    <div class="sub-dt">
+                        {{vm.tutor.personalInfo.title}} {{vm.tutor.personalInfo.firstName}} {{vm.tutor.personalInfo.lastName}}
+                    </div>
+                    <div class="sub-dd">
+
+                        <div class="pro-toggle">
+                            <div class="switch">
+                                <input type="checkbox" class="cmn-toggle cmn-toggle-round" id="shw-pro-1">
+                                <label for="shw-pro-1"></label>
+                            </div>
+                        </div>
+                        <div class="pro-tgl-info">
+                            Do not show title on my profile
+                        </div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>
+                Email:     
+            </dt>
+            <dd class="hlvetca-lyt">	
+                <div class="sub-dl">
+                    <div class="sub-dt">
+                        {{vm.tutor.email}}
+                    </div>
+                    <div class="sub-dd">
+
+                        <div class="pro-toggle">
+                            <div class="switch">
+                                <input type="checkbox" class="cmn-toggle cmn-toggle-round" id="shw-pro-2">
+                                <label for="shw-pro-2"></label>
+                            </div>
+                        </div>
+                        <div class="pro-tgl-info">
+                            Do not show email on profile
+                        </div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+<!--        <dl class="dl-horizontal">
+            <dt>
+                Contact Details:     
+            </dt>
+            <dd class="hlvetca-lyt">	
+                <div class="sub-dl">
+                    <div class="sub-dt">
+                        {{vm.tutor.personalInfo.mobileNo}}
+                    </div>
+                    <div class="sub-dd">
+
+                        <div class="pro-toggle">
+                            <div class="switch">
+                                <input type="checkbox" class="cmn-toggle cmn-toggle-round" id="shw-pro-3">
+                                <label for="shw-pro-3"></label>
+                            </div>
+                        </div>
+                        <div class="pro-tgl-info">
+                            Do not show this on my profile
+                        </div>
+                    </div>
+                </div>
+            </dd>
+        </dl>-->
+<!--        <dl class="dl-horizontal">
+            <dt>
+
+            </dt>
+            <dd class="hlvetca-lyt">	
+                <div class="sub-dl">
+                    <label>Add new number</label>
+                    <div class="input-group">
+                        <div class="phone-plc">	
+                            <input type="text" class="form-control" placeholder="+ 65" />
+                        </div>
+                        <div class="phone-val">
+                            <input type="text" class="form-control" placeholder="+ 6791 7317" />
+                        </div>
+                        <span class="input-group-addon">
+                            <input type="submit" class="btn btn-custom" value="Add to Contact Details" />
+                        </span>
+                    </div>
+                </div>
+            </dd>
+        </dl>-->
+<!--        <div class="vrfy-lst">
+            <div class="vrfy-lst-inr">
+                <img src="img/verifylogo.png" />
+                <p>You’re verified!</p>
+            </div>
+            <div class="vrfy-lst-inr">
+                <img src="img/hellologo.png" />
+                <p>Met face-to-face</p>
+            </div>
+        </div>-->
+    </div>
+    <div class="pro-abt-blk">
+        <div class="pro-abt-inr">
+
+            <span class="pro-abt-ttl">
+                <h4>About me</h4>
+                <p>Write a charming introduction for your profile. Be yourself, be quirky.</p>
+            </span>
+            <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="description" ng-submit="vm.updateDescription(description.$valid)">
+                <div ng-show="vm.status.type === 'description'" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                <div class="fun-wrp">
+                    <div class="abt-fun-intro">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h3>Create a fun intro:</h3>
+                                <div class="sub-pro-wrp">
+                                    <div class="pro-abt-avt">
+                                        <div class="pro-abt-avtinr">
+                                            <img ng-show="vm.tutor.personalInfo.profileImg" ng-src="{{vm.imagePaths.tutorAvatar}}{{vm.tutor.personalInfo.profileImg}}" />
+                                            <img ng-show="!vm.tutor.personalInfo.profileImg" ng-src="images/tutor/avatar/user.png" />
+                                        </div>
+                                        <a href="javascript:void(0);">View full profile</a>
+                                    </div>
+                                    <div class="pro-abt-cntnt">
+                                        <h4>{{vm.tutor.personalInfo.title}} {{vm.tutor.personalInfo.firstName}} {{vm.tutor.personalInfo.lastName}}</h4>
+                                        <div class="rtng-rvw-ttl">
+                                            <span class="rating-star-wrp">
+                                                <span class="get-rating">
+                                                </span>
+                                                <span class="ttl-rating">
+                                                </span>
+                                            </span>
+                                            <span class="pro-rvw-cnt">(0)</span>
+                                        </div>
+                                        <!--                                    <p>BsC in Mathematics, BA in English Literature</p>-->
+                                        <i>{{vm.tutor.description}}</i>
+                                        <div class="lsn-pro-tagwrp">
+                                            <div class="lsn-pro-tag">
+                                                Lessons
+                                            </div>
+                                            <div class="lsn-pro-taglst">
+                                                <!--                                            <a href="javascript:void(0);">Maths</a>
+                                                                                            <a href="javascript:void(0);">English</a>
+                                                                                            <a href="javascript:void(0);">Chemistry</a>
+                                                                                            <a href="javascript:void(0);">Litarature</a>
+                                                                                            <a href="javascript:void(0);">Econs</a>
+                                                                                            <a href="javascript:void(0);">Poetry</a>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 pro-nt-bxryt">
+                                <div class="pro-nt-bx">
+                                    <i></i>
+                                    <label class="hlvtca-mdm">MY NOTES</label>
+                                    <textarea class="form-control"></textarea>
+                                    <input class="btn hlvtca-mdm" type="submit" value="ADD NOTES " />
+                                    <em>Your notes are added to dashboard</em>
+                                    <a class="vw-pro-btn" href="javascript:void(0);">View Profile</a>
+                                    <a class="cntct-tut-btn" href="javascript:void(0);">Contact Tutor</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-grp">
+                        <label>Now you create your own awesome introduction:</label>
+                        <textarea class="form-control" ng-model="vm.tutor.description"></textarea>
+                    </div>
+                    <div class="form-action">
+                        <input type="submit" value="Save Changes" class="ylw-slm-btn" ng-disabled="description.$invalid" />
+                    </div>
+                </div>    
+
+            </form>
+            
+        </div>
+    </div>
+    <!-- My credential start -->    
+    <div class="pro-crdl-wrp">
+        <div class="row">
+            <div class="col-sm-5">
+                <span class="pro-abt-ttl">
+                    <h4>My credentials</h4>
+                </span>
+                <ul class="crdl-list">
+                    <li>
+                        <div class="tabledisplay">
+                            <div class="celldisplay">
+                                <img src="img/crdtl1.png" alt="creadentials" />
+                            </div>
+                        </div>
+                        <p>APAC Trainer</p>
+                    </li>
+                    <li>
+                        <div class="tabledisplay">
+                            <div class="celldisplay">
+                                <img src="img/crdtl2.png" alt="creadentials" />
+                            </div>
+                        </div>     
+                        <p>ESL Certified</p>                                                         
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="tabledisplay">
+                                <div class="celldisplay">
+                                    <i></i>
+                                </div>
+                            </div>
+                            <p>Add credentials</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="crdtl-ipt-bx">
+                    <div class="form-grp">
+                        <input type="text"  placeholder="Title" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Add image"  />
+                        <span class="input-group-addon">
+                            <a class="ylw-slm-btn">Upload</a>
+                            <input type="file">
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-7"> 
+            	<div class="form-grp">
+                    <div class="row row-6"> 
+                        <div class="col-sm-5 col-xs-6">
+                            <label>Organisation</label>
+                            <input class="form-control drkgryplc" type="text" placeholder="APAC" />
+                        </div>
+                        <div class="col-sm-7 col-xs-6">
+                            <label>Name of Certification</label>
+                            <input class="form-control drkgryplc" type="text" placeholder="Name of Certification" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-grp">
+                    <div class="row row-sm-3"> 
+                        <div class="col-sm-3 col-xs-4">
+                            <label>Date started</label>
+                            <input class="form-control drkgryplc text-center" type="text" placeholder="2005" />
+                        </div>
+                        <div class="col-sm-3 col-xs-4">
+                            <label>Date obtained</label>
+                            <input class="form-control drkgryplc text-center" type="text" placeholder="2006" />
+                        </div>
+                        <div class="col-sm-6 col-xs-4">
+                            <div class="inpt-fl-wrp">
+                                <a href="javascript:void(0);">
+                                    <i></i> 	
+                                    Upload relevant documents
+                                </a>
+                                <input type="file" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-action">
+                    <input type="submit" value="Add teaching exp" class="ylw-slm-btn" />
+                </div>
+            </div>
+            <div class="crdntl-adlnk">
+                <a href="javascript:void(0);">
+                    <div class="tabledisplay">
+                        <div class="celldisplay">
+                            <i></i>
+                        </div>
+                    </div>
+                    <p>Add credentials</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- My credential end --> 
+    <!-- My teaching experience start -->     
+    <div class="pro-crdl-wrp">
+        <div class="row">
+            <div class="col-sm-5">
+                <span class="pro-abt-ttl">
+                    <h4>My teaching experience</h4>
+                </span>
+                <ul class="crdl-list">
+                    <li>
+                        <div class="tabledisplay">
+                            <div class="celldisplay">
+                                <img src="img/stell.png" alt="My teaching experience" />
+                            </div>
+                        </div>   
+                        <p>Stella Maris Secondary School 2007 - 2009</p>
+                    </li>
+                    <li>
+                        <div class="tabledisplay">
+                            <div class="celldisplay">
+                                <img src="img/edunational.png" alt="My teaching experience" />
+                            </div>
+                        </div>
+                        <p>EduNational Agency 2005 - 2006</p>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="tabledisplay">
+                                <div class="celldisplay">
+                                    <i></i>
+                                </div>
+                            </div>
+                            <p>Add teaching experience</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="crdtl-ipt-bx">
+                    <div class="form-grp">
+                        <input type="text"  placeholder="Title" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Add image"  />
+                        <span class="input-group-addon">
+                            <a class="ylw-slm-btn">Upload</a>
+                            <input type="file">
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-7"> 
+                <div class="form-grp">
+                    <div class="row row-6"> 
+                        <div class="col-sm-5 col-xs-6">
+                            <label>Company name</label>
+                            <input class="form-control drkgryplc" type="text" placeholder="APAC" />
+                        </div>
+                        <div class="col-sm-7 col-xs-6">
+                            <label>Position</label>
+                            <input class="form-control drkgryplc" type="text" placeholder="Name of Certification" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-grp">
+                    <div class="row"> 
+                        <div class="col-sm-7 col-xs-6 pdng-ryt-6">
+                            <label>Subject(s) taught</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-sm-5 col-xs-6 pdng-lft-6">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>Time period</label>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <input class="form-control drkgryplc text-center" type="text" placeholder="2005" />
+                                    <i class="dt-dstnc">to</i>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <input class="form-control drkgryplc text-center" type="text" placeholder="2006" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-grp">
+                    <div class="row row-6"> 
+                        <div class="col-sm-7">
+                            <label>Description</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="inpt-fl-wrp">
+                                <a href="javascript:void(0);">
+                                    <i></i> 	
+                                    Upload relevant documents
+                                </a>
+                                <input type="file">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-action">
+                    <input type="submit" value="Add teaching exp" class="ylw-slm-btn" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- My teaching experience end --> 
+    <!-- My teaching experience start -->     
+    <div class="pro-crdl-wrp">
+        <div class="row">
+            <div class="col-sm-5">
+                <span class="pro-abt-ttl">
+                    <h4>My education</h4>
+                </span>
+                <ul class="crdl-list">
+                    <li>
+                        <div class="tabledisplay">
+                            <div class="celldisplay">
+                                <img src="img/meris.png" alt="My education" />
+                            </div>
+                        </div>   
+                        <p>Stella Maris Secondary School 2007 - 2009</p>
+
+                    </li>
+                    <li>
+                        <div class="tabledisplay">
+                            <div class="celldisplay">
+                                <img src="img/pioneer.png" alt="My education" />
+                            </div>
+                        </div>
+                        <p>Pioneer Primary School 2000 - 2007</p>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="tabledisplay">
+                                <div class="celldisplay">
+                                    <i></i>
+                                </div>
+                            </div>
+                            <p>Add teaching experience</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="crdtl-ipt-bx">
+                    <div class="form-grp">
+                        <input type="text"  placeholder="Title" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Add image"  />
+                        <span class="input-group-addon">
+                            <a class="ylw-slm-btn">Upload</a>
+                            <input type="file">
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-7"> 
+                <div class="form-grp">
+                    <div class="row"> 
+                        <div class="col-sm-7 col-xs-6 pdng-ryt-6">
+                            <label>School name</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-sm-5 col-xs-6 pdng-lft-6">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>Time period</label>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <input class="form-control drkgryplc text-center" type="text" placeholder="2005" />
+                                    <i class="dt-dstnc">to</i>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <input class="form-control drkgryplc text-center" type="text" placeholder="2008" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-grp">
+                    <div class="row row-6"> 
+                        <div class="col-sm-7">
+                            <label>Programme enrolled in</label>
+                            <input type="text" placeholder="Degree in Mechanical Engineering" class="form-control" />
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="inpt-fl-wrp">
+                                <a href="javascript:void(0);">
+                                    <i></i> 	
+                                    Upload relevant documents
+                                </a>
+                                <input type="file">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-action">
+                    <input type="submit" value="Add School" class="ylw-slm-btn" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- My teaching experience end -->  
+
+    <!-- Gallery start -->  
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="pro-abt-ttl glry-abt-ttl">
+                <h4>My Gallery</h4>
+            </span>
+        </div>
+    </div>
+    <div class="row gly-blk">
+        <div class="col-sm-8">
+            <ul>
+                <li>
+                    <div class="gallery-grid">
+                        <a href="javascript:void(0);"> 
+                            <img src="img/gallery1.jpg" alt="gallery">
+                            <span>Video of Math Creative Programme</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid">
+                        <a href="javascript:void(0);"> 
+                            <img src="img/gallery2.jpg" alt="gallery">
+                            <span>Video of Math Creative in Progress</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="lastRow">
+                    <div class="gallery-grid">
+                        <a href="javascript:void(0);"> 
+                            <img src="img/gallery3.jpg" alt="gallery">
+                            <span>Video of Math Creative Programme</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="lastRow">
+                    <div class="gallery-grid">
+                        <a href="javascript:void(0);"> 
+                            <img src="img/gallery4.jpg" alt="gallery">
+                            <span>Video of Math Creative in Progress</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="lastRow linkaddphoto">
+                    <div class="gallery-grid">
+                        <a href="javascript:void(0);">
+                            <i></i>
+                            <p>Add Photo or Video</p>
+                        </a>
+                        <input type="file" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-4 glry-iptgrd">
+            <div class="frm-grp">
+                <div class="inpt-fl-wrp">
+                    <a href="javascript:void(0);">
+                        <i></i>Upload Media
+                    </a>
+                    <input type="file">
+                </div>
+            </div>
+            <div class="frm-grp"> 
+                <label>Organisation / School</label>
+                <input type="text" class="form-control drkgryplc" placeholder="Math School for Creative" />
+            </div>
+            <div class="frm-grp"> 
+                <label>Title</label>
+                <input type="text" class="form-control drkgryplc" placeholder="Math Creative Programme Submission" />
+            </div>
+            <div class="frm-grp"> 
+                <label>Description</label>
+                <textarea class="form-control drkgryplc" placeholder="Math Creative Programme came up with a proposal on how to handle Math in a most creative way."></textarea>
+            </div>
+            <div class="form-action">
+                <input type="submit" value="Add media" class="ylw-slm-btn" />
+            </div>
+        </div>
+    </div>
+    <!-- Gallery end -->  
+    <div class="sbjct-blk">
+        <span class="pro-abt-ttl">
+            <h4>Subjects</h4>
+            <a class="hide-sec-btn" href="javascript:void(0);"> <i>-</i>  Hide section</a>
+        </span>
+        <div class="sbjt-add-blk">
+            <div class="blk-verfy">
+                <div class="verfy-label">
+                    Verified subjects: 
+                </div>
+                <div class="verfy-tab-bx">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#home">E Math</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#menu1">A Math</a>   
+                            <p>Click subject to edit</p>                                       
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#menu2">Mathematics</a>
+                            <p>Click subject to edit</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row add-subjct">
+                <div class="col-sm-12">
+                    <label>Add new subject</label>
+                </div>
+                <div class="col-sm-7">
+                    <textarea class="form-control"></textarea>
+                </div>
+                <div class="col-sm-5">
+                    <div class="inpt-fl-wrp">
+                        <a href="javascript:void(0);">
+                            <i></i> 	
+                            Upload relevant documents/certs
+                        </a>
+                        <input type="file">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <input class="btnslm-red-add" type="submit" value="Submit for verification" />
+                    <p>It will take up to 3 working days for us to verify your subject</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <span class="sbjct-tab-ttl"> E Math </span>
+                <div class="sbjct-well-bx">
+                    <div class="sbjct-grd-grd">
+                        <span class="helvtcanwlyt">Subject Grade</span>
+                        <label>O Levels</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="sbjct-grd-cntnt">
+                        <span class="helvtcanwlyt">Subject Level</span>
+                        <ul>
+                            <li>
+                                <div class="blu-chkbx">
+                                    <input type="radio" name="sbjctlvl" class="css-checkbox" id="grd-chk">
+                                    <label class="css-label" for="grd-chk">Primary Level</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="blu-chkbx">
+                                    <input type="radio" name="sbjctlvl" class="css-checkbox" id="grd-chk2">
+                                    <label class="css-label" for="grd-chk2">Pre-tertiary Level</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="blu-chkbx">
+                                    <input type="radio" name="sbjctlvl" class="css-checkbox" id="grd-chk3">
+                                    <label class="css-label" for="grd-chk3">Secondary Level</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="blu-chkbx">
+                                    <input type="radio" name="sbjctlvl" class="css-checkbox" id="grd-chk4">
+                                    <label class="css-label" for="grd-chk4">University Level</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="chrg-val">
+                        <label class="helvtcanwlyt">How much are you charging? (Per hour)</label> - You can edit value only once a day per subject 
+                    </div>
+                    <div class="sbct-grd-range">
+                        <div class="sbjct-rang-label">
+                            Secondary
+                        </div>
+                        <div class="sbjct-rang-cntnt">
+                        </div>
+                        <div class="sbjct-rang-actn">
+                            <a class="grn-btn-verfy" href="javascript:void(0);">Locked</a>
+                            <a class="grey-btn" href="javascript:void(0);">Edit value</a>
+                        </div>
+                    </div>
+                  </div>  
+                  <div class="sbct-pitch-wrp"> 
+                        <span class="sbct-pitch-ttl">Subject pitch</span>
+                        <div class="fun-wrp">
+                            <div class="abt-fun-intro">
+                                <div class="pro-scrn-bx">
+                                    <div class="probx-nm-adrw">
+                                        <h4>{{vm.tutor.personalInfo.firstName}}</h4>
+                                        <ul>
+                                            <li>
+                                                <img src="img/bul1.jpg">
+                                            </li>
+                                            <li>
+                                                <img src="img/bul2.jpg">
+                                            </li>
+                                            <li>
+
+                                            </li>
+                                            <li>
+
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-9">
+                                        <div class="sub-pro-wrp">
+                                            <div class="pro-abt-avt">
+                                                <div class="pro-abt-avtinr">
+                                                    <img ng-show="vm.tutor.personalInfo.profileImg"  ng-src="{{vm.imagePaths.tutorAvatar}}{{vm.tutor.personalInfo.profileImg}}" />
+                                                    <img ng-show="!vm.tutor.personalInfo.profileImg"  ng-src="images/tutor/avatar/user.png" />
+                                                </div>
+                                                <div class="rtng-rvw-ttl">
+                                                    <span class="rating-star-wrp">
+                                                        <span class="get-rating">
+                                                        </span>
+                                                        <span class="ttl-rating">
+                                                        </span>
+                                                    </span>
+                                                    <span class="pro-rvw-cnt">(0)</span>
+                                                </div>
+                                            </div>
+                                            <div class="pro-abt-cntnt">
+                                                <div class="lsn-pro-tagwrp">
+                                                    <div class="lsn-pro-taglst">
+<!--                                                        <a class="active" href="javascript:void(0);">Maths</a>
+                                                        <a href="javascript:void(0);">Biology</a>
+                                                        <a href="javascript:void(0);">Chemistry</a>
+                                                        <a href="javascript:void(0);">Litarature</a>
+                                                        <a href="javascript:void(0);">Computer Engineering</a>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ttr-tsmsg">  
+                                            <p>Hi I'm Amy, a.k.a. the queen of Math. I've been doing it for 10 years now. Let's checkmate difficulties together.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 pro-nt-bxryt">
+                                        <div class="pro-nt-bx">
+                                            <i></i>
+                                            <label class="hlvtca-mdm">MY NOTES</label>
+                                            <textarea class="form-control"></textarea>
+                                            <input class="btn hlvtca-mdm" type="submit" value="ADD NOTES " />
+                                            <em>Your notes are added to dashboard</em>
+                                            <a class="vw-pro-btn" href="javascript:void(0);">View Profile</a>
+                                            <a class="cntct-tut-btn" href="javascript:void(0);">Contact Tutor</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-grp">
+                                <label>Create your stunning pitch!</label>
+                                <textarea class="form-control" placeholder="“The magic of Math is that it sometimes just doesn’t add up. What do you do then? You figure out where the loopholes are, and you stitch them up yourself.”"></textarea>
+                            </div>
+                            <div class="form-action">
+                                <input type="submit" value="Save Changes" class="ylw-slm-btn" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slct-bst-pro">
+                        <div class="form-group">
+                            <label>Boost your profile by answering these five questions! <span class="hlvtca-oblq">(You can also answer later)</span></label>
+                            <div class="slct-frm-grp-wrp">
+                                <div class="slct-frm-grp">
+                                    <span class="span-lbl">1. How do you evaluate the learning needs of tutees and how do you measure progress?</span>
+                                    <div class="slct-bx-qsinr">
+                                        <div class="slct-bx-rw">
+                                            <select multiple="multiple" class="SlectBox" placeholder="Select your answer (you may tick more than one)" required>
+                                                <option value="Lecture-demonstration">Lecture-demonstration</option>
+                                                <option value="Discussion between tutor and tutee">Discussion between tutor and tutee</option>
+                                                <option value="Recitation of question and answered orally by students">Recitation of question and answered orally by students</option>
+                                                <option value="Textbook assignments">Textbook assignments</option>
+                                            </select>
+                                        </div>
+                                        <div class="slct-bx-rw">
+                                            <input type="text" class="form-control hlvetca-lyt plc-hldr-gry" placeholder="If your answer isn’t in the options, you can type it out here." /> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slct-frm-grp">
+                                    <span class="span-lbl">2. Which teaching methods do you use?</span>
+                                    <div class="slct-bx-qsinr">
+                                        <div class="slct-bx-rw">
+                                            <select multiple="multiple" class="SlectBox" placeholder="Select your answer (you may tick more than one)" required>
+                                                <option value="Lecture-demonstration">Lecture-demonstration</option>
+                                                <option value="Discussion between tutor and tutee">Discussion between tutor and tutee</option>
+                                                <option value="Recitation of question and answered orally by students">Recitation of question and answered orally by students</option>
+                                                <option value="Textbook assignments">Textbook assignments</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slct-frm-grp">
+                                    <span class="span-lbl">3. Do you provide learning materials?</span>
+                                    <div class="slct-bx-qsinr">
+                                        <div class="slct-bx-rw">
+                                            <span class="slct-lbl-li">
+                                                <input id="lrnmttech1" type="checkbox" class="css-checkbox" />
+                                                <label for="lrnmttech1" class="css-label sqr-chk">Yes</label>
+                                            </span>
+                                            <span class="slct-lbl-li">
+                                                <input id="lrnmttech2" type="checkbox" class="css-checkbox" />
+                                                <label for="lrnmttech2" class="css-label sqr-chk">No</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slct-frm-grp">
+                                    <span class="span-lbl">4. Why is teaching important to you?</span>
+                                    <div class="slct-bx-qsinr">
+                                        <div class="slct-bx-rw">
+                                            <input type="text" class="form-control plc-hldr-gry" placeholder="e.g. It’s important because it is a platform to share knowledge. " />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slct-frm-grp">
+                                    <span class="span-lbl">5. What would you be doing if you weren’t teaching?</span>
+                                    <div class="slct-bx-qsinr">
+                                        <div class="slct-bx-rw">
+                                            <input type="text" class="form-control plc-hldr-gry" placeholder="e.g. I’d be a policeman!" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="personality" ng-submit="vm.updatePersonality(personality.$valid)">
+                            <div ng-show="vm.status.type === 'personality'" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                            <div class="form-group">
+                                <label>Discover more about {{vm.tutor.personalInfo.firstName}}</label>
+                                <div class="slct-frm-grp-wrp">
+                                    <div class="fun-fct-ipt">
+                                        <div class="slct-frm-grp">
+                                            <span class="span-lbl">Fun fact</span>
+                                            <div class="slct-bx-rw">
+                                                <input type="text" name="funfact" ng-model="vm.tutor.personalityTraits.funFact" placeholder="e.g. I do stand-up comedy in my spare time. Follow me on www.melvinng.com" class="form-control plc-hldr-gry" required>
+                                            </div>
+                                        </div>
+                                        <div class="slct-frm-grp">
+                                            <span class="span-lbl">Hobbies</span>
+                                            <div class="slct-bx-rw">
+                                                <input type="text" name="hobbies" ng-model="vm.tutor.personalityTraits.hobbies" placeholder="e.g. Diving, riding on dolphins, jumping off cliffs into the ocean, anything adrenaline-related" class="form-control plc-hldr-gry" required>
+                                            </div>
+                                        </div>
+                                        <div class="slct-frm-grp">
+                                            <span class="span-lbl">List of favourites</span>
+                                            <div class="slct-bx-rw">
+                                                <input type="text" name="favlist" ng-model="vm.tutor.personalityTraits.favList" placeholder="e.g. ALL KINDS OF PAU" class="form-control plc-hldr-gry" required>
+                                            </div>
+                                        </div>
+                                        <div class="slct-frm-grp">
+                                            <span class="span-lbl">Favourite Quote</span>
+                                            <div class="slct-bx-rw">
+                                                <input type="text" name="favquote" ng-model="vm.tutor.personalityTraits.favQuote" placeholder="e.g. “I am like the wind. You can’t see me but you can feel me.”" class="form-control plc-hldr-gry" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-action">
+                                            <input type="submit" value="Save Changes" class="ylw-slm-btn" ng-disabled="personality.$invalid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <h3>Menu 1</h3>
+                <p>Some content in menu 1.</p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <h3>Menu 2</h3>
+                <p>Some content in menu 2.</p>
+            </div>
+        </div>
+    </div>
+</div>

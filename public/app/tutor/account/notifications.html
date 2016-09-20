@@ -1,0 +1,119 @@
+<div id="notifications" class="tab-pane">
+    <div class="notify-stngrw">
+        <span class="notfy-ttl">
+            <h4>Push notifications</h4>
+            <p>Enable notifications on my device(s)</p>
+        </span>
+        <div class="notify-prvw-bx">
+            <span class="notify-prvw-rw">
+                <h4>Mobile</h4>
+                <p>{{vm.tutor.personalInfo.mobileNo}}</p>
+                <span class="chkbx-wrp"> 
+                    <div class="switch">
+                        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="vm.alert.mobileNotifications" ng-change="vm.alertNotifications();">
+                        <label for="cmn-toggle-1"></label>
+                    </div>
+                </span>
+            </span>
+            <span class="notify-prev">
+                <img src="img/previewios.jpg" />
+                <p>Preview of notification on iOS</p>
+            </span>
+        </div>
+    </div>
+    <div class="notify-table">
+        <ul>
+            <li class="tbl-title-row">
+                <div class="notify-desc-col"> Email alert me for... </div>
+                <div class="notify-chang">Email Frequency </div>
+                <div class="notify-attrbt">SMS</div>
+            </li>
+            <li>
+                <div class="notify-desc-col">Announcements</div>
+                <div class="notify-chang">
+                    <select class="SlectBox">
+                        <option>All Alerts</option>
+                        <option>None</option>
+                    </select>
+                </div>
+                <div class="notify-attrbt">
+                    <div class="switch">
+                        <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="vm.alert.announcements.smsAlerts" ng-change="vm.alertNotifications();">
+                        <label for="cmn-toggle-2"></label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="notify-desc-col">MyWallet notifications</div>
+                <div class="notify-chang">
+                    <select class="SlectBox">
+                        <option>Payment due</option>
+                    </select>
+                </div>
+                <div class="notify-attrbt">
+                    <div class="switch">
+                        <input id="cmn-toggle-3" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="vm.alert.myWallet.smsAlerts" ng-change="vm.alertNotifications();">
+                        <label for="cmn-toggle-3"></label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="notify-desc-col">Trainings by Learn Anything</div>
+                <div class="notify-chang">
+                    <select class="SlectBox">
+                        <option>Weekly</option>
+                    </select>
+                </div>
+                <div class="notify-attrbt">
+                    <div class="switch">
+                        <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="vm.alert.trainingsBylearnanything.smsAlerts" ng-change="vm.alertNotifications();">
+                        <label for="cmn-toggle-4"></label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="notify-desc-col">New student bookings</div>
+                <div class="notify-chang">
+                    <select class="SlectBox">
+                        <option>None</option>
+                    </select>
+                </div>
+                <div class="notify-attrbt">
+                    <div class="switch">
+                        <input id="cmn-toggle-5" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="vm.alert.newStudentbookings.smsAlerts" ng-change="vm.alertNotifications();">
+                        <label for="cmn-toggle-5"></label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="notify-desc-col">Lesson reminders/changes</div>
+                <div class="notify-chang">
+                    <select class="SlectBox">
+                        <option>Every time</option>
+                    </select>
+                </div>
+                <div class="notify-attrbt">
+                    <div class="switch">
+                        <input id="cmn-toggle-6" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="vm.alert.lessonReminders.smsAlerts" ng-change="vm.alertNotifications();">
+                        <label for="cmn-toggle-6"></label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="notify-desc-col">Interview requests</div>
+                <div class="notify-chang">
+                    <select class="SlectBox">
+                        <option>Every time</option>
+                    </select>
+                </div>
+                <div class="notify-attrbt">
+                    <div class="switch">
+                        <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="vm.alert.interviewRequests.smsAlerts" ng-change="vm.alertNotifications();">
+                        <label for="cmn-toggle-7"></label>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <span class="sms-cndtn">*Phone charges apply for SMS</span>
+    </div>
+</div>

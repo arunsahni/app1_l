@@ -1,0 +1,321 @@
+<section class="banner"> 
+    <nav class="navbar navbar-default nav-sub">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">		
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar2" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="anon.why-teach-with-us" >Why Teach with Us?</a></li>
+                    <li><a ui-sref="anon.grow-business" >Grow Your Business</a></li>
+                    <li class="active"><a ui-sref="anon.tutor-toolkit" >Your Own Tutor Toolkit</a></li>
+                    <li><a ui-sref="anon.tutor-testimonials" >Testimonials</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div id="myCarousel" class="carousel slide slidebannr inerbanner tutorbanner" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active" style="background-image:url(img/tutorbanner.jpg);">
+                <div class="container">
+                    <div class="carousel-caption crasl-iner-ct">
+                        <div class="carsl-wrp">
+                            <h3>Be a super tutor </h3>
+                            <strong>... without trying too hard!</strong>
+                        </div>
+                        <p>With our wide range of tools to help make teaching easier, you don’t have to struggle to manage the usual things
+                            that slow your teaching down.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item " style="background:url(img/banner1.jpg)">
+                <div class="carousel-caption crasl-iner-ct">
+                    <div class="carsl-wrp">
+                        <h3>Be a super tutor </h3>
+                        <strong>... without trying too hard!</strong>
+                    </div>
+                    <p>With our wide range of tools to help make teaching easier, you don’t have to struggle to manage the usual things
+                        that slow your teaching down.</p>
+                </div>
+            </div>
+            <div class="item " style="background:url(img/banner1.jpg)">
+                <div class="carousel-caption crasl-iner-ct">
+                    <div class="carsl-wrp">
+                        <h3>Be a super tutor </h3>
+                        <strong>... without trying too hard!</strong>
+                    </div>
+                    <p>With our wide range of tools to help make teaching easier, you don’t have to struggle to manage the usual things
+                        that slow your teaching down.</p>
+                </div>
+            </div>
+            <div class="item " style="background:url(img/banner1.jpg)">
+                <div class="carousel-caption crasl-iner-ct">
+                    <div class="carsl-wrp">
+                        <h3>Be a super tutor </h3>
+                        <strong>... without trying too hard!</strong>
+                    </div>
+                    <p>With our wide range of tools to help make teaching easier, you don’t have to struggle to manage the usual things
+                        that slow your teaching down.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- BANNER END -->
+<!-- REGISTRATION FORM START -->
+<section class="reg-blk tutor-toolkit-reg">
+    <div class="container">
+        <div class="learn-rg-bx">
+            <div class="lrn-sm-share">
+                <a class="lrn-more-lnk" href="javascript:void(0);">Start Now</a>
+                <div class="bnc-arw-wrp"> 
+                    <span class="bounce-arrow"></span>
+                </div>    
+                <a class="lrn-fb-login" href="javascript:void(0);" ng-click="vm.authenticate('facebook')" ><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                <span class="lrn-rg-bx-frm">
+                     <form ng-submit="vm.fastsignuptutor(vm.fastSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.fastSignup">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select class="SlectBox" >
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                    <option>Miss.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname"  />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" ng-model="vm.user.email" />
+                            <i ng-show="vm.fastSignup.email.$invalid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up"  ng-disabled="vm.fastSignup.$invalid" />
+                        </div>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- REGISTRATION FORM END -->
+<!-- TEACHING TOOL START -->
+<div class="container">
+    <div class="learner-title">	
+        <h2>Who says teaching has to be hard?</h2>
+        <div class="bnc-arw-wrp"> 
+            <span class="bounce-arrow pnk-bnc-arw"></span>
+        </div>
+    </div>
+</div>
+<section class="tch-tl-wrp background parallax" ng-parallax pattern="'img/powertut.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/powertut.jpg);">
+    <div class="container">
+        <div class="tch-tl-msg">
+            <h2>Powerful Teaching Tools.</h2>
+            <a href="javascript:void(0);"></a>
+        </div>
+    </div>
+</section>
+<!-- TEACHING TOOL END -->
+<!-- TEST TOOL START -->
+<section class="tutor-test-blk dx-comm-hdp">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-tblcell-6 text-center">
+                <img src="img/texttl1.png" alt="tutor tool" />
+            </div>
+            <div class="col-sm-6 col-tblcell-6">
+                <h2>Readiness Tests</h2>
+                <p>Learn Anything helps you gauge the readiness of your students through pre-tests taken for every subject/level. This will help you analyse the students' strengths and weaknesses.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- TEST TOOL END -->
+<!-- DIAGNOSTIC BOX START -->
+<section class="row-acount dashreg-para-hd blu-halfbg">
+    <div class="container">
+        <div class="row revrs-row-statc">
+            <div class="col-sm-6 ylw-grd-col col-equl-pd">
+                <h2>Diagnostic Results</h2>
+                <p>After completion of Readiness Test, the results will be shown to the tutor. Based on the diagnostic results, you can decide how to plan the rest of the lessons with the student.
+                </p>
+                <div class="imac-box">
+                    <img src="img/graph.png" alt="graph" />    
+                </div> 
+            </div>
+            <div class="col-sm-6 orng-grd-col col-equl-pd">
+                <h2>Lesson Plans</h2>
+                <p>Tutors design age-appropriate lesson plans by taking reference from the MOE syllabus.    </p>
+                <div class="imac-box">
+                    <img src="img/imacmini.png" alt="graph" />    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>	
+<!-- DIAGNOSTIC BOX END -->
+<!-- PREGORESS REPORT START -->
+<section class="tutor-test-blk dx-comm-hdp">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-tblcell-6 text-center">
+                <img src="img/texttl1.png" alt="tutor tool" />
+            </div>
+            <div class="col-sm-6 col-tblcell-6">
+                <h2>Progress Reports</h2>
+                <p>Learn Anything eases parents’ worries by helping to generate progress reports that reflect the learner’s progress through the lesson journey. </p>
+                <ul>
+                    <li>~ Milestone Test Report (overall improvement)</li>
+                    <li>~ Graded Assignments (step-by-step improvement)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PREGORESS REPORT END -->
+<!-- WIZARD HELP START -->
+<section class="tutor-test-blk skyblu-bg dx-comm-hdp">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-tblcell-6">
+                <h2>Wizardry Help: Wise Owl</h2>
+                <p>Our Wise Owl wizard generator helps you create teaching resources and plans from scratch! They are used to support you in the development of teaching resources and learning activities for your students.</p>
+            </div>
+            <div class="col-sm-6 col-tblcell-6 text-center">
+                <img src="img/wizard.png" alt="tutor tool" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- WIZARD HELP END -->
+<!-- EFFICIENT ORGANISATION START -->
+<section class="tch-tl-wrp background parallax" ng-parallax pattern="'img/orgbanner.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/orgbanner.jpg);">
+    <div class="container">
+        <div class="tch-tl-msg">
+            <h2>Efficient Organisation..</h2>
+            <a href="javascript:void(0);"></a>
+        </div>
+    </div>
+</section>
+<!-- EFFICIENT ORGANISATION END -->
+<!-- OVERDUE PAYMENT START -->
+<section class="ylw-blk dashreg-para-hd ovrdu-blk">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <img alt="secure payment" src="img/securepay.png">
+            </div>
+            <div class="col-sm-7">
+                <div class="scp-cntnt">
+                    <h2>Say goodbye to overdue
+                        payment with MyWallet!</h2>
+                    <p>You can decide when you want to have the money transferred to your account: weekly, bi-weekly, or monthly. No more payment delays! No more excuses!
+                        Be paid on time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- OVERDUE PAYMENT END -->
+<!-- PLAN LESSION START -->  
+<section class="row-acount dx-reg dashreg-para-hd">
+    <div class="container">
+        <div class="row revrs-row-statc">
+            <div class="col-sm-6 ylw-grd-col col-equl-pd">
+                <h2>Be in the Know</h2>
+                <p>Factsheets of your students help you monitor and keep track of your student’s progress and learning development
+                </p>
+                <div class="factsheet-bx">
+                    <img src="img/booktray.png" alt="factsheet of student" />  
+                </div>
+            </div>
+            <div class="col-sm-6 orng-grd-col col-equl-pd">
+                <h2>Plan lessons easily</h2>
+                <p>Plan your lessons, reschedule or propose new dates all in one place! Any changes will be updated in your Calendar... and viola!    </p>
+                <div class="factsheet-bx">
+                    <img src="img/caltray.png" alt="student lesson plan " />   
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PLAN LESSON END --> 
+<!-- TODAYS JOIN START -->
+<section class="join-tdy-blk parent-signup background parallax" ng-parallax pattern="'img/tutortoolkit.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/tutortoolkit.jpg);">
+    <div class="container max-container">
+        <div class="row">
+            <div class="col-sm-6 join-info">
+                <h2>Join 1,000 </h2>
+                <p>other tutors today.</p> 
+            </div>
+            <div class="col-sm-6 text-center">	
+                <div class="signup-join-bx">
+                    <a href="javascript:void(0);" ng-click="vm.authenticate('facebook')" class="lrn-fb-login"><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                    <span class="lrn-rg-bx-frm">
+                        <form ng-submit="vm.fastsignuptutor(vm.fastSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.fastSignup">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select class="SlectBox" >
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                    <option>Miss.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname"  />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" ng-model="vm.user.email" />
+                            <i ng-show="vm.fastSignup.email.$invalid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up"  ng-disabled="vm.fastSignup.$invalid" />
+                        </div>
+                    </form>
+                    </span>
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<!-- TODAYS JOIN END -->

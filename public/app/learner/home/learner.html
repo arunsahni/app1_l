@@ -1,0 +1,786 @@
+<!-- BANNER START -->
+<section class="banner"> 
+    <nav class="navbar navbar-default nav-sub">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">		
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar2" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a ui-sref="anon.learner" >Hey, Learners!</a></li>
+                    <li><a ui-sref="anon.parent-static" >Hey, Parents!</a></li>
+                    <li><a ui-sref="anon.parent-learner" >Testimonials</a></li>
+                    <li><a ui-sref="anon.ethical-service" >Ethical Service Guidelines</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div id="myCarousel" class="carousel slide slidebannr inerbanner" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active" style="background:url(img/learner.jpg)">
+                <div class="container">
+                    <div class="carousel-caption crasl-iner-ct">
+                        <h3>Take control of your learning</h3>
+                        <p>Always be a step ahead of everyone else with our
+                            up-to-date resources and lesson plans. Choose to 
+                            quicken your pace or slow it down - it’s entirely up
+                            to you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item " style="background:url(img/banner1.jpg)">
+                <div class="carousel-caption crasl-iner-ct">
+                    <h3>Take control of your learning</h3>
+                    <p>Always be a step ahead of everyone else with our
+                        up-to-date resources and lesson plans. Choose to 
+                        quicken your pace or slow it down - it’s entirely up
+                        to you.</p>
+                </div>
+            </div>
+            <div class="item " style="background:url(img/banner1.jpg)">
+                <div class="carousel-caption crasl-iner-ct">
+                    <h3>Take control of your learning</h3>
+                    <p>Always be a step ahead of everyone else with our
+                        up-to-date resources and lesson plans. Choose to 
+                        quicken your pace or slow it down - it’s entirely up
+                        to you.</p>
+                </div>
+            </div>
+            <div class="item " style="background:url(img/banner1.jpg)">
+                <div class="carousel-caption crasl-iner-ct">
+                    <h3>Take control of your learning</h3>
+                    <p>Always be a step ahead of everyone else with our
+                        up-to-date resources and lesson plans. Choose to 
+                        quicken your pace or slow it down - it’s entirely up
+                        to you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- BANNER END -->
+<!-- REGISTRATION FORM START -->
+<section class="reg-blk learner-reg-blk">
+    <div class="container">
+        <div class="learn-rg-bx">
+            <div class="lrn-sm-share">
+                <a class="lrn-more-lnk" href="javascript:void(0);">Learn Now</a>
+                <div class="bnc-arw-wrp"> 
+                    <span class="bounce-arrow"></span>
+                </div>    
+                <a class="lrn-fb-login" href="javascript:void(0);" ng-click="vm.authenticate('facebook')" ><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                <span class="lrn-rg-bx-frm">
+                     <form ng-submit="vm.fastsignuplearner(vm.fastSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.fastSignup">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select id="upperTitle" class="SlectBox" ng-model="vm.user.title" ng-change="vm.getUpperTitle();" >
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                    <option>Miss.</option>
+                                    <option>Dr.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname"  />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" ng-model="vm.user.email" />
+                            <i ng-show="vm.fastSignup.email.$invalid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up"  ng-disabled="vm.fastSignup.$invalid" />
+                        </div>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- REGISTRATION FORM END -->
+<!-- WHY LEARN START -->
+<section class="why-learn">
+    <div class="container">
+        <div class="learner-title">	
+            <h2>Why pick Learn Anything?</h2>
+            <div class="bnc-arw-wrp"> 
+                <span class="bounce-arrow"></span>
+            </div>
+        </div>
+    </div>	
+    <div class="learner-bx background parallax" ng-parallax pattern="'img/leaners.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/leaners.jpg);">
+        <div class="container text-right">
+            <div class="learn-bx-cap">
+                <span>We cater to all kinds</span>
+                <strong>of learners</strong>
+                <p>From Math to Music, Physics to Photography
+                    Chemistry to Crafts, English to Engineering</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- WHY LEARN END -->   
+<!-- SINGLE LINE MESSAGE START --> 
+<section class="learn-msg-blk">
+    <div class="container">
+        <div class="learn-msg-cap">
+            <h2>As an eager learner, you’d want all 
+                the help you can get to master a skill
+                or a daunting subject. <span>We provide
+                    you with the tools to do so more effortlessly.</span></h2>
+        </div>
+    </div>
+</section>   
+<!-- SINGLE LINE MESSAGE END -->  
+<!-- CHOOSE EXPERT STRAT -->
+<section class="exprt-blk">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 text-center">
+                <img src="img/exprt-hnd.png">
+            </div>
+            <div class="col-sm-7">
+                <h2>You get to choose only from experts.</h2>
+                <p>All our tutors are either experienced or equipped with the know-how. When you pick, you’ll be picking from the cream of the crop.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CHOOSE EXPERT END -->
+<!-- DECISION START -->
+<section class="decsn-blk">
+    <div class="container dcsn-container">
+        <span class="dcsn-title">
+            <h2>Intuitive Decision Making</h2>
+            <p>Interview your selected tutor and make notes. Favourite them. Send them messages. Get to know all about them. Compare your shortlisted tutors if you’re spoilt for choice... and let Wise Owl choose who is the best fit for you!</p>
+        </span>
+        <div class="comp-inst">
+            <img src="img/dcsnmkng.png" />
+        </div>
+        <div style="display:none;">
+            <div class="compare-bx">
+                <span  class="cmpr-ttl">
+                    My choices allows you to retrieve your notes or teachers that you have shortlisted. Call on wise owl and set up appointments for interview with your interested tutors.
+                </span>
+                <div class="fav-tut">
+                    <h3>Favourited Tutor & Notes</h3>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile selected-tut">
+                                <div class="tut-img">
+                                    <img src="img/fav.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav2.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav3.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav4.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile selected-tut">
+                                <div class="tut-img">
+                                    <img src="img/fav5.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slctd-tut-dtl-wrp">
+                    <div class="slctd-tut-dtl">
+                        <div class="slctd-tut-ct">
+                            <span class="slctd-tut-info">
+                                <p>Lily Chance</p> 
+                                <i>BSc, Physics, NUS</i>
+                            </span>
+                            <h3>Profile</h3>
+                            <div class="tut-cmpr-cntnt">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <dl class="dl-horizontal">
+                                            <dt>Teaches:</dt>
+                                            <dd>Physics, A Mathes, English</dd>
+                                            <dt>Location:</dt>
+                                            <dd>Eunos</dd>
+                                            <dt>Age:</dt>
+                                            <dd>32</dd>
+                                            <dt>Speical Skills:</dt>
+                                            <dd>DSA</dd>
+                                            <dt>Fees:</dt>
+                                            <dd>$45 per hours</dd>
+                                            <dt>Refund Policy:</dt>
+                                            <dd>Strict</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-sm-5 comp-btn-wrp">
+                                        <a class="setup-intrv" href="javascript:void(0);">Set Up Interview</a>
+                                        <a class="setup-comp" href="javascript:void(0);">Compare</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tuts-not-bx">
+                            <h4>My Notes</h4>
+                            <p>She is seems to have a lot of exp in teaching... at my alma mater. Maybe I can try asking her for discounts hehe </p>
+                            <a href="javascript:;void(0);">View in my notes </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comp-slctd-bx">
+                <h2>Comparison Corner (2) - <i>You can choose upto three tutors for comparisons  </i></h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- DECISION END -->
+<!-- ORGANISED LEARNING START -->
+<section class="decsn-blk bludcsn-bg wytxt-clr">
+    <div class="container dcsn-container">
+        <span class="dcsn-title">
+            <h2>Organised Learning:</h2>
+            <span>Lesson Plans, Tests, Progress Charts</span>
+            <p>Be thoroughly equipped for learning. Structure, quality and guaranteed improvement will head your way with our powerful tools for learning and organisation.</p>
+        </span>
+        <div class="comp-inst">
+            <img src="img/organisedlearner.png" />
+        </div>
+        <div style="display:none;">
+            <div class="compare-bx">
+                <span  class="cmpr-ttl">
+                    My choices allows you to retrieve your notes or teachers that you have shortlisted. Call on wise owl and set up appointments for interview with your interested tutors.
+                </span>
+                <div class="fav-tut">
+                    <h3>Favourited Tutor & Notes</h3>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile selected-tut">
+                                <div class="tut-img">
+                                    <img src="img/fav.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav2.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav3.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav4.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile selected-tut">
+                                <div class="tut-img">
+                                    <img src="img/fav5.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slctd-tut-dtl-wrp">
+                    <div class="slctd-tut-dtl">
+                        <div class="slctd-tut-ct">
+                            <span class="slctd-tut-info">
+                                <p>Lily Chance</p> 
+                                <i>BSc, Physics, NUS</i>
+                            </span>
+                            <h3>Profile</h3>
+                            <div class="tut-cmpr-cntnt">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <dl class="dl-horizontal">
+                                            <dt>Teaches:</dt>
+                                            <dd>Physics, A Mathes, English</dd>
+                                            <dt>Location:</dt>
+                                            <dd>Eunos</dd>
+                                            <dt>Age:</dt>
+                                            <dd>32</dd>
+                                            <dt>Speical Skills:</dt>
+                                            <dd>DSA</dd>
+                                            <dt>Fees:</dt>
+                                            <dd>$45 per hours</dd>
+                                            <dt>Refund Policy:</dt>
+                                            <dd>Strict</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-sm-5 comp-btn-wrp">
+                                        <a class="setup-intrv" href="javascript:void(0);">Set Up Interview</a>
+                                        <a class="setup-comp" href="javascript:void(0);">Compare</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tuts-not-bx">
+                            <h4>My Notes</h4>
+                            <p>She is seems to have a lot of exp in teaching... at my alma mater. Maybe I can try asking her for discounts hehe </p>
+                            <a href="javascript:;void(0);">View in my notes </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comp-slctd-bx">
+                <h2>Comparison Corner (2) - <i>You can choose upto three tutors for comparisons  </i></h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ORGANISED LEARNING END -->
+<!-- MY CALENDER PLAN START -->
+<section class="decsn-blk skybludcsn-bg wytxt-clr">
+    <div class="container dcsn-container">
+        <span class="dcsn-title">
+            <h2>My Calendar: <i>Easy Planning</i></h2>
+            <p>Confirm, change, reschedule or cancel... all in one place! Our Check-in and Check-out feature helps you monitor the tutor’s presence/absence for every lesson.</p>
+        </span>
+        <div class="comp-inst">
+            <img src="img/weeklyschdl.png" />
+        </div>
+        <div style="display:none;">
+            <div class="compare-bx">
+                <span  class="cmpr-ttl">
+                    My choices allows you to retrieve your notes or teachers that you have shortlisted. Call on wise owl and set up appointments for interview with your interested tutors.
+                </span>
+                <div class="fav-tut">
+                    <h3>Favourited Tutor & Notes</h3>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile selected-tut">
+                                <div class="tut-img">
+                                    <img src="img/fav.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav2.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav3.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav4.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile selected-tut">
+                                <div class="tut-img">
+                                    <img src="img/fav5.jpg" />
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slctd-tut-dtl-wrp">
+                    <div class="slctd-tut-dtl">
+                        <div class="slctd-tut-ct">
+                            <span class="slctd-tut-info">
+                                <p>Lily Chance</p> 
+                                <i>BSc, Physics, NUS</i>
+                            </span>
+                            <h3>Profile</h3>
+                            <div class="tut-cmpr-cntnt">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <dl class="dl-horizontal">
+                                            <dt>Teaches:</dt>
+                                            <dd>Physics, A Mathes, English</dd>
+                                            <dt>Location:</dt>
+                                            <dd>Eunos</dd>
+                                            <dt>Age:</dt>
+                                            <dd>32</dd>
+                                            <dt>Speical Skills:</dt>
+                                            <dd>DSA</dd>
+                                            <dt>Fees:</dt>
+                                            <dd>$45 per hours</dd>
+                                            <dt>Refund Policy:</dt>
+                                            <dd>Strict</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-sm-5 comp-btn-wrp">
+                                        <a class="setup-intrv" href="javascript:void(0);">Set Up Interview</a>
+                                        <a class="setup-comp" href="javascript:void(0);">Compare</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tuts-not-bx">
+                            <h4>My Notes</h4>
+                            <p>She is seems to have a lot of exp in teaching... at my alma mater. Maybe I can try asking her for discounts hehe </p>
+                            <a href="javascript:;void(0);">View in my notes </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comp-slctd-bx">
+                <h2>Comparison Corner (2) - <i>You can choose upto three tutors for comparisons  </i></h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- MY CALENDER PLAN END -->
+<!-- AUTOMATED PAYMENT START -->
+<section class="decsn-blk">
+    <div class="container dcsn-container">
+        <span class="dcsn-title">
+            <h2> Automated Payment: No more worries!</h2>
+            <p>Our Check-In and Check-Out system ensures that all of the tutors’ attendance is well accounted for... so that you can have a stress-free time paying them. Learn Anything will receive your payment for all lessons and dispense it to the tutor according to his/her payment frequency.</p>
+        </span>
+        <div class="comp-inst">
+            <img src="img/automated.png">
+        </div>
+        <div style="display:none;">
+            <div class="compare-bx">
+                <span class="cmpr-ttl">
+                    My choices allows you to retrieve your notes or teachers that you have shortlisted. Call on wise owl and set up appointments for interview with your interested tutors.
+                </span>
+                <div class="fav-tut">
+                    <h3>Favourited Tutor &amp; Notes</h3>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile selected-tut">
+                                <div class="tut-img">
+                                    <img src="img/fav.jpg">
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav2.jpg">
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav3.jpg">
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile">
+                                <div class="tut-img">
+                                    <img src="img/fav4.jpg">
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="fav-tut-tile selected-tut">
+                                <div class="tut-img">
+                                    <img src="img/fav5.jpg">
+                                </div>
+                                <h4>Lily Chance</h4>
+                                <p>Physics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slctd-tut-dtl-wrp">
+                    <div class="slctd-tut-dtl">
+                        <div class="slctd-tut-ct">
+                            <span class="slctd-tut-info">
+                                <p>Lily Chance</p> 
+                                <i>BSc, Physics, NUS</i>
+                            </span>
+                            <h3>Profile</h3>
+                            <div class="tut-cmpr-cntnt">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <dl class="dl-horizontal">
+                                            <dt>Teaches:</dt>
+                                            <dd>Physics, A Mathes, English</dd>
+                                            <dt>Location:</dt>
+                                            <dd>Eunos</dd>
+                                            <dt>Age:</dt>
+                                            <dd>32</dd>
+                                            <dt>Speical Skills:</dt>
+                                            <dd>DSA</dd>
+                                            <dt>Fees:</dt>
+                                            <dd>$45 per hours</dd>
+                                            <dt>Refund Policy:</dt>
+                                            <dd>Strict</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-sm-5 comp-btn-wrp">
+                                        <a href="javascript:void(0);" class="setup-intrv">Set Up Interview</a>
+                                        <a href="javascript:void(0);" class="setup-comp">Compare</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tuts-not-bx">
+                            <h4>My Notes</h4>
+                            <p>She is seems to have a lot of exp in teaching... at my alma mater. Maybe I can try asking her for discounts hehe </p>
+                            <a href="javascript:;void(0);">View in my notes </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comp-slctd-bx">
+                <h2>Comparison Corner (2) - <i>You can choose upto three tutors for comparisons  </i></h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody><tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody></table>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- AUTOMATED PAYMENT END -->
+<!-- QUESTION BOX STRAT -->
+<section class="question-blk">
+    <div class="container max-container">
+        <div class="row">
+            <h2 class="col-sm-12">Still have more questions? <span>Drop us a message!</span></h2>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-5 col-md-4">
+                <input type="text" class="form-control" placeholder="Your name" />
+            </div>
+            <div class="col-xs-7 col-md-5">
+                <input type="text" class="form-control" placeholder="Email address" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <textarea class="form-control" placeholder="Type message here..."></textarea>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-7">
+                <input class="btn btn-custom" type="submit" value="Send Message" />
+            </div>
+            <div class="col-xs-5 text-right msg-lngth-info">
+                <p>0/1000 characters</p>
+            </div>
+        </div>
+        <p class="qustn-thnx-msg">Thank you for your message! We’ll get back to you in 3 days time.</p>
+    </div>
+</section>
+<!-- QUESTION BOX END -->
+<!-- TODAYS JOIN START -->
+<section class="join-tdy-blk background parallax" ng-parallax pattern="'img/signup.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/signup.jpg);">
+    <div class="container max-container">
+        <div class="row">
+            <div class="col-sm-6 join-info">
+                <h2>Join 6,000 </h2>
+                <p>other learners today!</p>
+            </div>
+            <div class="col-sm-6 text-center">	
+                <div class="signup-join-bx">
+                    <a class="lrn-fb-login" href="javascript:void(0);" ng-click="vm.authenticate('facebook')" ><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                    <span class="lrn-rg-bx-frm">
+                         <form ng-submit="vm.lowerFastSignUp(vm.lowerForm.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.lowerForm">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select id="lowerTitle" class="SlectBox" onchange="vm.getLowerTitle();" >
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Miss.">Miss.</option>
+                                    <option value="Dr.">Dr.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" name="firstname" class="form-control" placeholder="First Name" ng-model="vm.lower.firstName" required />
+                                    <i ng-show="vm.lowerForm.firstname.$invalid && vm.lowerForm.firstname.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.lowerForm.firstname.$valid && vm.lowerForm.firstname.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" name="lastname" class="form-control" placeholder="Last Name" ng-model="vm.lower.lastName" required />
+                                    <i ng-show="vm.lowerForm.lastname.$invalid && vm.lowerForm.lastname.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.lowerForm.lastname.$valid && vm.lowerForm.lastname.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label ng-show="vm.lowerForm.lastname.$invalid && vm.lowerForm.lastname.$dirty" class="labl-instrct">A confirmation email will be sent here</label>   
+                        </div>     
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Email" ng-model="vm.lower.email" required />
+                            <i ng-show="vm.lowerForm.email.$invalid && vm.lowerForm.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.lowerForm.email.$valid && vm.lowerForm.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.lowerForm.email.$valid && vm.lowerForm.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up" ng-disabled="vm.lowerForm.$invalid" />
+                        </div>
+                    </form>
+                    </span>
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<!-- TODAYS JOIN END -->
+<!-- ATTENDENT LESSION START -->
+<section class="atnd-blk text-center">
+    <div class="container">
+        <h2>Number of lessons <span>attended by Learners</span></h2>
+        <div class="counter-learn"> 
+            <ul>
+                <li>1</li>
+                <li class="stick-coma">,</li>
+                <li>4</li>
+                <li>4</li>
+                <li>3</li>
+                <li class="stick-coma">,</li>
+                <li>2</li>
+                <li>5</li>
+                <li>2</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ATTENDENT LESSION END -->

@@ -1,0 +1,118 @@
+<div id="banking" class="tab-pane">
+    <div class="row bnk-ps-tp">
+    	<div class="col-sm-5">
+            <div class="bank-rw">
+                <div class="bank-label">
+                    Pay to this bank account:
+                </div>
+                <div class="bank-label">
+                    <p>{{vm.tutor.bankingDetails[0].bankName}}</p>
+                    <a href="javascript:void(0);">Show bank details</a>
+                </div>
+        <!--        <a class="chng-bnk-btn" href="javascript:void(0);">Change primary bank</a>-->
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <a class="prmry-bnk-lk" href="javascript:void(0);">Change primary bank</a>
+            <div class="prmry-bnk-slct">
+                <img src="../images/tutor/academic-docs/dbsbank.jpg" />  
+            </div>
+        </div>
+    </div>
+    <div class="bank-info">
+        <div class="row shwhd-bnkdtl">
+            <div class="col-xs-12 col-sm-6">
+                <h4>BANK DETAILS</h4>
+                <dl class="dl-horizontal">
+                    <dt>Account number:</dt>
+                    <dd>{{vm.tutor.bankingDetails[0].accountNumber}}</dd>
+                    <dt>Account type: </dt>
+                    <dd>{{vm.tutor.bankingDetails[0].accountType}}</dd>
+                    <dt>Branch code:</dt>
+                    <dd>{{vm.tutor.bankingDetails[0].branchCode}}</dd>                                    
+                </dl>
+            </div>
+            
+        </div>
+        <div class="row">
+        	<div class="col-sm-5 pd-rt-0">
+                <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="bank" ng-submit="vm.updateBank(bank.$valid)">
+                <div ng-show="vm.status.type === 'bank'" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                <div class="bank-inpt-wrp">
+                    <div class="bank-inpt">
+                        <div class="bank-inpt-col">
+                            <label>Bank name</label>
+                            <selectize name="bankName" placeholder='Select Bank...' options='vm.banks' config="vm.banksConfig" ng-model="vm.tutor.bank.bankName" required='true'></selectize>
+                        </div>
+                        <div class="bank-inpt-col bnk-shrt-ipt">
+                            <label>Branch code</label>
+                            <input type="text" class="form-control" name="branchCode" ng-model="vm.tutor.bank.branchCode" required />
+                        </div>
+                    </div>
+                    <div class="bank-inpt">
+                        <div class="bank-inpt-col">
+                            <label>Account number</label>
+                            <input type="text" class="form-control" name="accountNumber" ng-model="vm.tutor.bank.accountNumber" required />
+                        </div>
+                        <div class="bank-inpt-col bnk-md-ipt">
+                            <label>Account type</label>
+                            <selectize placeholder='Account Type' options='vm.accountType' config="vm.accountTypeConfig" ng-model="vm.tutor.bank.accountType" required='true'></selectize>
+                        </div>
+                    </div>
+                    <input type="submit" class="chng-bnk-btn" value="Add another bank" ng-disabled="bank.$invalid" />
+                </div>
+                </form>
+            </div>
+            <div class="col-sm-7">
+<!--            	<ul class="bank-add-lst">
+                	<li>
+                    	<div class="bnk-lg-mn">
+                   			<img src="../images/tutor/academic-docs/iob.png" />                       
+                        </div>
+                        <div class="bnk-actn-ct">
+                        	<div>
+                            	<a class="prm-bnk-st" href="javascript:void(0);">Use as Primary</a>
+                            </div>
+                            <div>
+                            	<a class="rmv-bnk-st" href="javascript:void(0);">Remove Bank</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="bnk-lg-mn">
+                   			<img src="../images/tutor/academic-docs/ocbcbank.png" />                       
+                        </div>
+                        <div class="bnk-actn-ct">
+                        	<div>
+                            	<a class="prm-bnk-st" href="javascript:void(0);">Use as Primary</a>
+                            </div>
+                            <div>
+                            	<a class="rmv-bnk-st" href="javascript:void(0);">Remove Bank</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="bnk-lg-mn">
+                   			<img src="../images/tutor/academic-docs/iob.png" />                       
+                        </div>
+                        <div class="bnk-actn-ct">
+                        	<div>
+                            	<a class="prm-bnk-st" href="javascript:void(0);">Use as Primary</a>
+                            </div>
+                            <div>
+                            	<a class="rmv-bnk-st" href="javascript:void(0);">Remove Bank</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function() {
+    $(".bank-label a").click(function(){
+		$(".shwhd-bnkdtl").slideToggle();
+	});
+});
+</script>

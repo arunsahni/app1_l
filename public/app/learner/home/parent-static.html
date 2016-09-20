@@ -1,0 +1,349 @@
+<!-- BANNER START -->
+<section class="banner"> 
+    <nav class="navbar navbar-default nav-sub">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">		
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar2" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="anon.learner" >Hey, Learners!</a></li>
+                    <li class="active"><a ui-sref="anon.parent-static" >Hey, Parents!</a></li>
+                    <li><a ui-sref="anon.parent-learner" >Testimonials</a></li>
+                    <li><a ui-sref="anon.ethical-service" >Ethical Service Guidelines</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div id="myCarousel" class="carousel slide slidebannr parentbanner" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active" style="background:url(img/parent.jpg) left center ;">
+                <div class="container">
+                    <div class="carousel-caption crasl-iner-ct">
+                        <div class="parent-box">
+                            <h3>Want the best for your child?</h3>
+                            <p>Learn Anything is your solution to your child’s 
+                                educational development and fulfilment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background:url(img/parent.jpg) left center ;">
+                <div class="container">
+                    <div class="carousel-caption crasl-iner-ct">
+                        <div class="parent-box">
+                            <h3>Want the best for your child?</h3>
+                            <p>Learn Anything is your solution to your child’s 
+                                educational development and fulfilment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background:url(img/parent.jpg) left center ;">
+                <div class="container">
+                    <div class="carousel-caption crasl-iner-ct">
+                        <div class="parent-box">
+                            <h3>Want the best for your child?</h3>
+                            <p>Learn Anything is your solution to your child’s 
+                                educational development and fulfilment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background:url(img/parent.jpg) left center ;">
+                <div class="container">
+                    <div class="carousel-caption crasl-iner-ct">
+                        <div class="parent-box">
+                            <h3>Want the best for your child?</h3>
+                            <p>Learn Anything is your solution to your child’s 
+                                educational development and fulfilment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- BANNER END -->
+<!-- REGISTRATION FORM START -->
+<section class="reg-blk parent-reg-blk">
+    <div class="container">
+        <div class="learn-rg-bx">
+            <div class="lrn-sm-share">
+                <a class="lrn-more-lnk" href="javascript:void(0);">Create an account</a>
+                <div class="bnc-arw-wrp prntlytbl-bnc"> 
+                    <span class="bounce-arrow"></span>
+                </div>    
+                <a class="lrn-fb-login" href="javascript:void(0);" ng-click="vm.authenticate('facebook')" ><i class="fa fa-facebook"></i> Sign in with Facebook</a>
+                <span class="lrn-rg-bx-frm">
+                     <form ng-submit="vm.fastsignuplearner(vm.fastSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.fastSignup">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select class="SlectBox" >
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname"  />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" ng-model="vm.user.email" />
+                            <i ng-show="vm.fastSignup.email.$invalid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up"  ng-disabled="vm.fastSignup.$invalid" />
+                        </div>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- REGISTRATION FORM END -->
+<!-- WHY LEARN START -->
+<section class="why-learn">
+    <div class="container">
+        <div class="learner-title">	
+            <h2>Let your child soar and more!</h2>
+            <div class="bnc-arw-wrp prntdarkbl-bnc"> 
+                <span class="bounce-arrow"></span>
+            </div>
+        </div>
+    </div>	
+    <div class="child-learner">
+        <div class="learner-common">
+            <img src="img/childleft.png" />
+        </div>
+        <div class="learner-common learner-right">
+            <img src="img/childryt.png" />
+        </div>
+        <div class="container">
+            <div class="mdl-bx-cntnt">
+                <span>Your child can be a</span>
+                <strong>360<sup>o</sup> Learner</strong>
+                <p>Learn anything; from Math to Music, Physics to Photography Chemistry to Crafts</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- WHY LEARN END -->   
+<!-- SINGLE LINE MESSAGE START --> 
+<section class="parent-trst-blk">
+    <div class="container">
+        <div class="parent-trst-msg">
+            <h2>Parents Trust <span> Commitment</span></h2>
+            <div class="trst-rw">
+                <div class="trust-cell">
+                    <img src="img/parentturst.png" alt="parent trust" />
+                </div>
+                <div class="trust-cell">
+                    <p>
+                        Our Parents’ Trust certification ensures that our standards are of high quality. 
+                        We are committed to providing top-notch and holistic education for all learners. 
+                    </p>
+                    <div class="trust-bnce">
+                        <span class="bounce-arrow"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>   
+<!-- SINGLE LINE MESSAGE END -->  
+<!-- CHOOSE EXPERT STRAT -->
+<section class="exprt-blk parent-exprt-blk">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-7 text-center">
+                &nbsp;
+            </div>
+            <div class="col-sm-6 col-md-5">
+                <h2>Verified tutors</h2>
+                <p>Our tutors have to undergo a 30-step verification process and an interview with us in order to qualify as a Learn Anything Tutor.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CHOOSE EXPERT END -->
+
+
+<!-- QUESTION BOX END -->
+<!-- REVIEW BLOCK START -->
+<section class="rvw-blk dashreg-para-hd">
+    <div class="container">
+        <div class="row revrs-row-statc">
+            <div class="col-sm-6 col-equl-pd lytylw-bg">
+                <h2>Objective reviews</h2>
+                <p>The reviews for tutors or schools are real and objective, provided by customers who have gone through the learning experience.</p>
+                <img src="img/ratingbx.png" alt="rating" />
+            </div>
+            <div class="col-sm-6 col-equl-pd lytgrn-bg">
+                <h2>Easy decision making</h2>
+                <p>Finding a good tutor or a school for your child can be a daunting task. Our Wise Owl will advise you on the best choice tailored to your child’s needs.</p>
+                <img src="img/compare.png" alt="compare" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- REVIEW BLOCK END -->
+<!-- QUALITY CONTENT BLOCK START -->
+<section class="blue-graphic dashreg-para-hd">
+    <div class="container">
+        <div class="qlty-cntnt-bx">
+            <h2>High quality content</h2>
+            <p>Because every registered tutor is verified and accredited, we can ensure top-notch quality listings and content for your child. </p>
+        </div>
+    </div>
+</section>	
+<!-- QUALITY CONTENT BLOCK END -->
+<section class="row-acount dashreg-para-hd">
+    <div class="container">
+        <div class="row revrs-row-statc">
+            <div class="col-sm-6 ylw-grd-col col-equl-pd">
+                <h2>Linked Accounts</h2>
+                <p>Having a linked account with your child allows you to monitor your child’s learning journey.
+                </p>
+                <div class="prtstc-acnt-rw">
+                    <div class="prtstc-acnt-wrp">
+                        <div class="prtstc-acnt">
+                            <img src="img/daughter.png" alt="daughter account">
+                        </div>
+                        <span>Daughter</span>
+                    </div>
+                    <div class="prtstc-acnt-wrp">
+                        <div class="prtstc-acnt">
+                            <img src="img/son.png" alt="son account">
+                        </div>
+                        <span>son</span>
+                    </div>
+                </div>    
+            </div>
+            <div class="col-sm-6 orng-grd-col col-equl-pd">
+                <h2>Dispute Policy</h2>
+                <p>Leave sticky situations to us. We will handle any disagreements to help make the learning journey smooth and easy for everyone.    </p>
+                <div class="prtstc-acnt-rw">
+                    <div class="prtstc-acnt-wrp">
+                        <img src="img/chatbulb.png" alt="chat with parents" />
+                    </div>
+
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<!-- LINIKED ACCOUNT BOX END -->
+<!-- SECURE PAYMENT START -->
+<section class="ylw-blk dashreg-para-hd">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <img src="img/securepay.png" alt="secure payment" />
+            </div>
+            <div class="col-sm-7">
+                <div class="scp-cntnt">
+                    <h2>Secure payment & privacy</h2>
+                    <p>With MyWallet, parents need not fret about payment every week/month or about missing payment to tutors. Learn Anything handles the monetary process so it frees you up for other things.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SECURE PAYMENT END -->
+<!-- TODAYS JOIN START -->
+<section class="join-tdy-blk parent-signup background parallax" ng-parallax pattern="'img/parentsignup.jpg'" data-img-width="1300" data-img-height="620" data-diff="75" style="background-image:url(img/parentsignup.jpg);">
+    <div class="container max-container">
+        <div class="row">
+            <div class="col-sm-6 join-info">
+                <h2>Join 500 </h2>
+                <p>other parents today.</p> 
+            </div>
+            <div class="col-sm-6 text-center">	
+                <div class="signup-join-bx">
+                    <a class="lrn-fb-login" href="javascript:void(0);" ng-click="vm.authenticate('facebook')" ><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                    <span class="lrn-rg-bx-frm">
+                         <form ng-submit="vm.fastsignuplearner(vm.fastSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.fastSignup">
+                        <div class="form-group sngl-frm-rw">
+                            <div class="gndr-slct">
+                                <select class="SlectBox" >
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                </select>
+                            </div>
+                            <div class="form-rw">
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-col-2">
+                                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname"  />
+                                    <i ng-show="vm.fastSignup.name.$invalid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="vm.fastSignup.name.$valid && vm.fastSignup.name.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" ng-model="vm.user.email" />
+                            <i ng-show="vm.fastSignup.email.$invalid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <i ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                            <label ng-show="vm.fastSignup.email.$valid && vm.fastSignup.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-custom" type="submit" value="Sign up"  ng-disabled="vm.fastSignup.$invalid" />
+                        </div>
+                    </form>
+                    </span>
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<!-- TODAYS JOIN END -->
+<!-- ATTENDENT LESSION START -->
+<section class="atnd-blk text-center">
+    <div class="container">
+        <h2>Number of parents & learners <span>who have created accounts</span></h2>
+        <div class="counter-learn"> 
+            <ul>
+                <li>1</li>
+                <li class="stick-coma">,</li>
+                <li>4</li>
+                <li>4</li>
+                <li>3</li>
+                <li class="stick-coma">,</li>
+                <li>2</li>
+                <li>5</li>
+                <li>2</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ATTENDENT LESSION END -->

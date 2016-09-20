@@ -1,0 +1,84 @@
+<div class="cover-main">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="cover-wrap">
+                    <div class="cover-info">
+                        <ul>	
+                            <li class="name-cover">
+                                <a href="javascript:void(0);" ui-sref="learner.home" >Hello, {{vm.learner.personalInfo.firstName}}</a>
+                            </li>
+                            <li class="cover-logout">
+                                <a href="javascript:void(0);" ng-click="vm.logout();" >Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cover-pic-wrp">
+                        <div class="cover-pic">
+                            <img ng-src="{{vm.imagePaths.learnerAvatar}}{{vm.learner.personalInfo.profileImg}}" alt="cover picture" />
+                        </div>
+                        <span class="cover-edit-link">
+                            <div class="chng-cvr-lnk">
+                                <a href="javascript:void(0);"><i></i></a>
+                                <button type="file" ngf-select="vm.uploadFiles($file, $invalidFiles)" accept="image/*" ngf-min-height="290" ngf-min-width="290" ngf-max-size="1MB">File</button>
+                            </div>
+                            <p>Change cover photo</p>
+                        </span>
+                        <div ng-show="vm.errFile" class="chc-ttl-inf" >
+                            Please resolve the following error - {{vm.errFile.$error}} {{vm.errFile.$errorParam}} 
+                        </div>
+                        <div ng-show="vm.errorMsg" class="chc-ttl-inf">
+                            {{vm.errorMsg}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+
+                <nav class="navbar navbar-default stdntdashnav-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbardash" aria-expanded="false" aria-controls="navbar">		
+                            <span class="sr-only">Toggle navigation</span>
+                            <div class="icon-bar-wrp">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="navbardash collapse dashboard-nav" id="navbardash">
+                        <ul>
+                            <li ui-sref-active="active">
+                                <a href="javascript:void(0);" ui-sref="learner.account.settings">My Account</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">My Teachers </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">Inbox</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">MyWallet </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">Calendar</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">My Backpack </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">My Choices</a>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </nav>
+
+            </div>
+        </div>
+        <div ui-view="dashboard" ></div>
+        <div ui-view="account" ></div> 
+    </div>
+</div>
+<!-- COVER END -->

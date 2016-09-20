@@ -1,0 +1,69 @@
+
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Edit Tutor</li>
+    </ol>
+    <h2>
+        Edit Tutor
+    </h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <!--                <div class="box-header with-border">
+                                  
+                                </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+
+                    <alert class="alert" ng-repeat="error in errors" type="danger">{{error}}</alert>
+
+                    <form role="form" name="tutorForm" novalidate>
+                        <div ng-show ="vm.status.message"  uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" name="name" ng-model="vm.tutor.personalInfo.firstName" placeholder="Enter Tutor First Name" required>
+                            <span class="text-danger" ng-show="(tutorForm.name.$dirty) || tutorForm.$submitted">
+                                <span ng-show="tutorForm.name.$error.required">Tutor First name is required.</span>
+                            </span>
+                        </div>
+                         <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" name="lastname" ng-model="vm.tutor.personalInfo.lastName" placeholder="Enter Tutor Last Name" required>
+                            <span class="text-danger" ng-show="(tutorForm.lastname.$dirty) || tutorForm.$submitted">
+                                <span ng-show="tutorForm.lastname.$error.required">Tutor Last name is required.</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" ng-model="vm.tutor.email" placeholder="Enter Tutor Email" required>
+                            <span class="text-danger" ng-show="(tutorForm.email.$dirty && tutorForm.email.$invalid) || tutorForm.$submitted">
+                                <span ng-show="tutorForm.email.$error.required">Email is required.</span>
+                                <span ng-show="tutorForm.email.$error.email">Invalid Email.</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input type="number" class="form-control" name="mobile" ng-minlength="10" ng-model="vm.tutor.personalInfo.mobileNo" placeholder="Enter Tutor Mobile Number"  required>
+                            <span class="text-danger" ng-show="(tutorForm.mobile.$dirty) || tutorForm.$submitted">
+                                <span ng-show="tutorForm.mobile.$error.required">Mobile Number is required.</span>
+                                <span ng-show="tutorForm.mobile.$error.minlength">Minimum Mobile Number length is 10.</span>
+                            </span>
+                        </div>  
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" class="form-control" name="address" ng-model="vm.tutor.address.address" placeholder="Enter Tutor Address" required>
+                            <span class="text-danger" ng-show="(tutorForm.address.$dirty) || tutorForm.$submitted">
+                                <span ng-show="tutorForm.address.$error.required">Tutor Address is required.</span>
+                            </span>
+                        </div>  
+                        <div class="box-footer btn-catagory-fix">
+                            <button type="submit" class="btn btn-primary" ng-click="vm.update(tutorForm.$valid)" ng-disabled="!tutorForm.$valid">Update</button>
+                            <a ui-sref="admin.tutors">Cancel</a>
+                        </div>
+                    </form>
+                </div> <!-- box-body -->
+            </div> <!-- box -->
+        </div> <!-- col -->
+    </div> <!-- ..row -->
+</section>

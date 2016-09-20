@@ -1,0 +1,98 @@
+<!-- TUTOR SIGNUP MODAL START -->
+<div class="modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+            <h4 class="modal-title">HELLO, HERE’S TO A WONDERFUL PARTNERSHIP!</h4>
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-8">
+                    <ul class="modal-listbx">
+                        <li><i>1</i>Access all your students’ details & learning journey</li>
+                        <li><i>2</i>Manage your schedule and tuition payment</li>
+                        <li><i>3</i>Communicate with parents / learners about progress</li>
+                        <li><i>4</i>Manage a professional teacher profile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="modal-signup">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="{{$ctrl.faststatus.class}}" style="margin-top:18px;">
+                            {{$ctrl.faststatus.message}}
+                        </div>
+                        <div class="signup-left">
+                            <span class="signup-title">FAST sign up with:</span>
+                            <form ng-submit="$ctrl.fastsignuptutor($ctrl.fastsignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="$ctrl.fastSignup">
+                                <div class="form-group" ng-class="($ctrl.fastSignup.email.$invalid && $ctrl.fastSignup.email.$dirty) ? 'labl-wrng' : ''" >
+                                    <input type="email" name="email" class="form-control" placeholder="Email address" ng-model="$ctrl.fastuser.email" required autofocus/> 
+                                    <i ng-show="$ctrl.fastSignup.email.$invalid && $ctrl.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="$ctrl.fastSignup.email.$valid && $ctrl.fastSignup.email.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-group" ng-class="($ctrl.fastSignup.password.$invalid && $ctrl.fastSignup.password.$dirty) ? 'labl-wrng' : ''" >
+                                    <input type="password" name="password" class="form-control" placeholder="Password" ng-model="$ctrl.fastuser.password" ng-minlength="8" /> 
+                                    <i ng-show="$ctrl.fastSignup.password.$invalid && $ctrl.fastSignup.password.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="$ctrl.fastSignup.password.$valid && $ctrl.fastSignup.password.$dirty" class="chkbx-ipt"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input class="btn btn-custom btn-block" type="submit" value="Sign up" ng-disabled="$ctrl.fastSignup.$invalid" />
+                                </div>
+                            </form>
+                            <div class="form-group">
+                                <a href="javascript:void(0);" class="lrn-fb-login" ng-click="$ctrl.authenticate('facebook')"><i class="fa fa-facebook"></i> Sign in with facebook</a>
+                            </div>
+                            <div class="form-group">
+                                <a href="javascript:void(0);" class="lrn-fb-login google-login" ng-click="$ctrl.authenticate('google')" >Sign in with Google</a>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-sm-7">
+                        <div class="{{$ctrl.status.class}}" style="margin-top:18px;">
+                            {{$ctrl.status.message}}
+                        </div>
+                        <div class="signup-right">
+                            <span class="signup-title">Sign up here:</span>
+                            <form ng-submit="$ctrl.register($ctrl.slowSignup.$valid)" accept-charset="UTF-8" role="form" class="form-signin" novalidate name="$ctrl.slowSignup">
+                                <div class="form-group" ng-class="($ctrl.slowSignup.name.$invalid && $ctrl.slowSignup.name.$dirty) ? 'labl-wrng' : ''" >
+                                    <input type="text" name="name" class="form-control" placeholder="Lenie Chow" ng-model="$ctrl.slowuser.name" required /> 
+                                    <i ng-show="$ctrl.slowSignup.name.$invalid && $ctrl.slowSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="$ctrl.slowSignup.name.$valid && $ctrl.slowSignup.name.$dirty" class="chkbx-ipt"></i>
+                                    <label ng-show="$ctrl.slowSignup.name.$valid && $ctrl.slowSignup.name.$dirty"  class="labl-instrct">Great name, {{$ctrl.slowuser.name}}!</label>
+                                </div>
+                                <div class="form-group" ng-class="($ctrl.slowSignup.email.$invalid && $ctrl.slowSignup.email.$dirty) ? 'labl-wrng' : ''" >
+                                    <input type="email" name="email" class="form-control" placeholder="lenichow@gmail.com" ng-model="$ctrl.slowuser.email" required />
+                                    <i ng-show="$ctrl.slowSignup.email.$invalid && $ctrl.slowSignup.email.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="$ctrl.slowSignup.email.$valid && $ctrl.slowSignup.email.$dirty" class="chkbx-ipt"></i>
+                                    <label ng-show="signUp.email.$valid && signUp.email.$dirty" class="labl-instrct">A confirmation email will be sent here</label>
+                                </div>
+                                <div class="form-group" ng-class="($ctrl.slowSignup.password.$invalid && $ctrl.slowSignup.password.$dirty) ? 'labl-wrng' : ''" >
+                                    <input type="password" name="password" class="form-control" placeholder="*******" ng-model="$ctrl.slowuser.password" ng-minlength="8" required /> 
+                                    <i ng-show="$ctrl.slowSignup.password.$invalid && $ctrl.slowSignup.password.$dirty" class="chkbx-ipt"></i>
+                                    <i ng-show="$ctrl.slowSignup.password.$valid && $ctrl.slowSignup.password.$dirty" class="chkbx-ipt"></i>
+                                    <label ng-show="$ctrl.slowSignup.password.$invalid && $ctrl.slowSignup.password.$dirty" class="labl-instrct">Your password is too short. Try again</label>
+                                </div>
+                                <div class="form-group-wrp">
+                                    <strong>Next, choose a name for your profile!</strong>
+                                    <div class="form-group" ng-class="($ctrl.slowSignup.profilename.$invalid && $ctrl.slowSignup.profilename.$dirty) ? 'labl-wrng' : ''" >
+                                        <input type="text" name="profilename" class="form-control" placeholder="www.learnanything.sg/Leniechow" ng-model="$ctrl.slowuser.profilename" required /> 
+                                        <i ng-show="$ctrl.slowSignup.profilename.$invalid && $ctrl.slowSignup.profilename.$dirty" class="chkbx-ipt"></i>
+                                        <i ng-show="$ctrl.slowSignup.profilename.$valid && $ctrl.slowSignup.profilename.$dirty" class="chkbx-ipt"></i>
+                                        <label ng-show="$ctrl.slowSignup.profilename.$valid && $ctrl.slowSignup.profilename.$dirty" class="labl-instrct">This personalised web-link will be yours, like your very own teaching e-portfolio. </label>
+                                    </div>
+                                </div>
+                                <div class="form-action">
+                                    <input class="btn" type="submit" value="Start teaching!" ng-disabled="$ctrl.slowSignup.$invalid" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- TUTOR SIGNUP MODAL END -->

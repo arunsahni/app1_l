@@ -1,0 +1,204 @@
+<div class="container step-container">
+    <!-- step bar start -->
+    <div class="bar-outr">
+        <div class="progress-step progrs-fill progrs-fill3">
+            <span class="stepbx stepbx1"><a ui-sref="build.step1">1</a></span>
+            <span class="stepbx stepbx2"><a ui-sref="build.step2">2</a></span>
+            <span class="stepbx stepbx3">3</span>
+            <span class="stepbx stepbx4">4</span>
+            <span class="stepbx stepbx5">5</span>
+            <div class="progress"></div>
+        </div>
+    </div>
+    <!-- step bar END --> 
+
+    <!-- Step 3 start -->
+    <div class="wzrd-bx stptrgrbx">
+        <div class="vrfy-bx">
+            <h4 class="hlvtca-oblq"><span>Step 3 -</span>Continue creating your teaching portfolio</h4>
+        </div>
+        <div class="form-acad hlvetca-lyt">
+            <div class="form-group">
+                <label>Do you have expertise in teaching students who have:</label>
+                <div class="tech-st-lst max-tch-lst">
+                    <ul>
+                        <li>	
+                            <input id="stech1" type="checkbox" class="css-checkbox" />
+                            <label for="stech1" class="css-label sqr-chk">ADHD</label>
+                        </li>
+                        <li>	
+                            <input id="stech2" type="checkbox" class="css-checkbox" />
+                            <label for="stech2" class="css-label sqr-chk">Deafness</label>
+                        </li>
+                        <li>	
+                            <input id="stech3" type="checkbox" class="css-checkbox" />
+                            <label for="stech3" class="css-label sqr-chk">ADD</label>
+                        </li>
+                        <li class="slct-spcl-cht">	
+                            <input id="stech4" type="checkbox" class="css-checkbox" />
+                            <label for="stech4" class="css-label sqr-chk">&nbsp;</label>
+                            <select class="SlectBox">
+                                <option>Other special needs</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group grp-bx-shw">
+                <label>Kindly upload your supporting documents for these skills!</label>
+                <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.formSupport" >
+                        <div class="input-group ad-crtf-bx">
+                            <input type="text" class="form-control" name="supportName" ng-model="vm.tutor.supportName" required />
+                            <div class="file-adons">
+                                <input type="file" class="" ng-model="file" ngf-select="" name="file" ngf-pattern="'.pdf,.jpg,.png'" ngf-max-size="2MB" required ngf-model-invalid="errorFile" />   
+                                <a class="ad-certf-lnk" href="javascript:void(0);"><i></i> Add supporting document</a>
+                            </div>
+                            <span class="input-group-addon">
+                                <input type="submit" class="btn" value="Upload" ng-disabled="vm.formSupport.$invalid" ng-click="vm.uploadSupportDocs(file)" />
+                            </span>
+                        </div>
+                    </form>
+                <div ng-show="vm.tutor.supportingDocs.length > 0">
+                        
+                        <div id="supportdoc_{{$index}}" class="taglist sb-tglst-nm" ng-repeat="supportdoc in vm.tutor.supportingDocs track by $index" >
+                        <a href="javascript:void(0)" ng-click="vm.removeSupportDocs(supportdoc._id,$index)">{{supportdoc.name}} <span></span><i class='fa fa-remove' ></i></a>
+                    </div>
+                    </div>
+
+                <div class="form-note-bx"><p>Please ensure they are official
+                        or certified documents. We also
+                        accept letters of recommendation!</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Do you have expertise in teaching these specialised areas?</label>
+                <div class="tech-st-lst spcl-ara-bx">
+                    <ul>
+                        <li>	
+                            <input id="spcltech1" type="checkbox" class="css-checkbox" />
+                            <label for="spcltech1" class="css-label sqr-chk">IP</label>
+                        </li>
+                        <li>	
+                            <input id="spcltech2" type="checkbox" class="css-checkbox" />
+                            <label for="spcltech2" class="css-label sqr-chk">DSA</label>
+                        </li>
+                        <li>	
+                            <input id="spcltech3" type="checkbox" class="css-checkbox" />
+                            <label for="spcltech3" class="css-label sqr-chk">AP</label>
+                        </li>
+                        <li>	
+                            <input id="spcltech4" type="checkbox" class="css-checkbox" />
+                            <label for="spcltech4" class="css-label sqr-chk">ADD</label>
+                        </li>
+                        <li>	
+                            <input id="spcltech5" type="checkbox" class="css-checkbox" />
+                            <label for="spcltech5" class="css-label sqr-chk">GEP</label>
+                        </li>
+                        <li>	
+                            <input id="spcltech6" type="checkbox" class="css-checkbox" />
+                            <label for="spcltech6" class="css-label sqr-chk">Test Prep</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-group grp-bx-shw mxwdth-frmgrp">
+                <label class="rfnd-anchr">Choose your refund policy: <a href="javascript:void(0);">What’s this?</a></label>
+                <div class="three-stp-sldwrp">
+                    <div class="three-stp-sld">
+                        <label for="multistp1"><i></i>
+                            <p>Flexible</p>
+                        </label>
+                        <label for="multistp2"><i></i>
+                            <p>Moderate</p>
+                        </label>
+                        <label for="multistp3"><i></i>
+                            <p>Strict</p>
+                        </label>
+                        <input type="radio" name="rad" id="multistp1" value="flexible" ng-model="vm.tutor.refundPolicy" ng-click="vm.refundPolicy()"/>
+                        <input type="radio" name="rad" id="multistp2" value="moderate" ng-model="vm.tutor.refundPolicy" ng-click="vm.refundPolicy()" />
+                        <input type="radio" name="rad" id="multistp3" value="strict" ng-model="vm.tutor.refundPolicy" ng-click="vm.refundPolicy()" />
+                        <div class="toggleslider">
+                            <div class="rangemarker-in">
+                                <div class="rangemarker">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-note-bx">
+                    <p>Your refund policy determines what will happen in the case of cancellation from your students</p>
+                </div>
+            </div>    
+
+            <div class="form-group">
+                <label>Choose your tuition payout frequency:</label>
+                <div class="tech-st-lst tui-py-lst ">
+                    <ul>
+                        <li>	
+                            <input id="tuitech1" name="radiowk" type="radio" class="css-checkbox" value="Weekly" ng-model="vm.tutor.payoutFrequency" ng-click="vm.payoutFrequency();" />
+                            <label for="tuitech1" class="css-label sqr-chk">Weekly</label>
+                            <span>Credited every Friday</span>
+                        </li>
+                        <li>	
+                            <input id="tuitech2" name="radiowk" type="radio" class="css-checkbox" value="Fortnight" ng-model="vm.tutor.payoutFrequency" ng-click="vm.payoutFrequency();" />
+                            <label for="tuitech2" class="css-label sqr-chk">Fortnight</label>
+                            <span>Credited every 15th</span>
+                        </li>
+                        <li>	
+                            <input id="tuitech3" name="radiowk" type="radio" class="css-checkbox" value="Monthly" ng-model="vm.tutor.payoutFrequency" ng-click="vm.payoutFrequency();"/>
+                            <label for="tuitech3" class="css-label sqr-chk">Monthly</label>
+                            <span>Credited every 27th</span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div> 
+            <div class="form-group bnk-dtl-bxwt">
+                <span class="opt-bnk-dtl">
+                    <input type="radio" id="bnkdtlxhk" name="name" class="css-checkbox" />
+                    <label class="css-label sqr-chk" for="bnkdtlxhk">Set my banking details later</label>
+                </span>
+                <span class="opt-bnk-dtl">
+                    <input type="radio" id="bnkdtlxhk1" name="name" class="css-checkbox" />
+                    <label class="css-label sqr-chk" for="bnkdtlxhk1">Set my banking details now</label>
+                </span>
+                <div class="bank-dtl-frm">
+                    <form accept-charset="UTF-8" role="form" class="form-signin" novalidate name="vm.formBank" ng-submit="vm.saveBank(vm.formBank.$valid)">
+                        <div class="row">
+                            <div class="col-sm-7 col-xs-7">
+                                <span>Bank name</span>
+                                <selectize placeholder='select bank...' options='vm.banks' config="vm.banksConfig" ng-model="vm.tutor.bank.bankName" required='true'></selectize>
+                            </div>
+                            <div class="col-sm-5 col-xs-5">
+                                <span>Branch code</span>
+                                <input type="text" name="branchCode" class="form-control" ng-model="vm.tutor.bank.branchCode" required/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-xs-7">
+                                <span>Account number</span>
+                                <input type="text" name="accountNumber" class="form-control" ng-model="vm.tutor.bank.accountNumber" required />
+                            </div>
+                            <div class="col-sm-5 col-xs-5">
+                                <span>Account type</span>
+                                <selectize placeholder='account type...' options='vm.accountType' config="vm.accountTypeConfig" ng-model="vm.tutor.bank.accountType" required='true'></selectize>
+                            </div>
+                        </div>
+                        <div class="bnk-sbmt-wrp">
+                            <input class="ylw-slm-btn" type="submit" value="Add Banking Details" ng-disabled="vm.formBank.$invalid"/>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+            <div class="form-group text-right">
+                <input type="submit" class="btn btn-step" value="Go to last step!" ng-click="vm.saveStepThree();">                     
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Step 3 end -->        
+
+</div>

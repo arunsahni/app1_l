@@ -1,0 +1,97 @@
+<!--
+    view-tutors.html : Lising of Tutors.
+    @author : Arun Sahani
+    Date : 24-08-2016
+-->
+
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#!/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Tutors</li>
+    </ol>
+    <h2>
+        Manage Tutors
+    </h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div flash-message="5000" ></div> 
+                <div class="box-header">
+
+                    <div style="float:left">
+<!--                        <div class="input-group" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search" ng-model="text">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" ng-click="search(text, searchIn)"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>-->
+                    </div>
+                    <a ui-sref="admin.addtutor"  style="float:right">+ Add Tutor</a>
+
+                </div><!-- /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body table-responsive no-padding">
+                  <div  ng-show ="vm.status.message" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                    <table class="table table-hover">
+                        <tr ng-if="vm.tutorData.length > 0">
+                            <th>
+                                <!--<a href="javascript:void(0);" ng-click="vm.sort('personalInfo.firstName')">-->
+                                     Name
+<!--                                    <span class ="fa fa-caret-down" ng-show="vm.sortDir == 'desc' && vm.sortBy == 'personalInfo.firstName'"></span>
+                                    <span class ="fa fa-caret-up" ng-show="vm.sortDir == 'asc' && vm.sortBy == 'personalInfo.firstName'"></span>
+                                   
+                                </a>-->
+                            </th>
+                            <th>
+                                <!--<a href="javascript:void(0);" ng-click="vm.sort('email')">-->
+                                     Email
+<!--                                    <span class ="fa fa-caret-down" ng-show="vm.sortDir == 'desc' && vm.sortBy == 'email'"></span>
+                                    <span class ="fa fa-caret-up" ng-show="vm.sortDir == 'asc' && vm.sortBy == 'email'" ></span>
+                                   
+                                </a>-->
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                          
+                            <th>
+                                 <!--<a href="javascript:void(0);">--> 
+                                Action
+                                 <!--</a>--> 
+                            </th>
+                        </tr>
+                        <tr ng-repeat="tutor in vm.tutorData track by $index" ng-if="vm.tutorData.length > 0" id="row_{{$index}}" >
+
+                            <td>{{tutor.personalInfo.firstName}} &nbsp;&nbsp;{{tutor.personalInfo.lastName}}</td>
+                           
+                            <td>{{tutor.email}}</td>
+                            <td>
+                                <span ng-show="tutor.accountStatus == true">Active</span>
+                                <span ng-show="tutor.accountStatus == false">De-active</span>
+                            </td>
+                            
+                            <td>
+                                <a href="javascript:void(0);">
+                                    <i title="view details" class="fa fa-fw fa-file-o" ui-sref="admin.viewtutor({tutorId: tutor._id})"></i>
+                                </a>
+                                <a href="javascript:void(0);">
+                                    <i title="Edit" class="fa fa-fw fa-edit" ui-sref="admin.edittutor({tutorId: tutor._id})"></i>  
+                                </a> 
+                                <a href="javascript:void(0);">
+                                    <i title="Delete" class="fa fa-fw fa-remove" ng-click="vm.deleteTutor(tutor._id,$index)"></i>
+                                </a>
+                            </td>
+                        </tr>
+                         <tr ng-if="vm.tutorData.length == 0">
+                            <td colspan="6">No record found!!</td>
+                        </tr>
+                    </table>
+                </div><!-- /.box-body -->
+
+                <div class="box-footer clearfix pagination-fix">
+                    <ul  ng-show="vm.totalItems > 10" uib-pagination items-per-page="vm.pageLimit" total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxSize" ng-change="vm.setPage(vm.currentPage)"></ul>
+                </div>
+            </div><!-- /.box -->
+        </div>
+    </div>
+</section>

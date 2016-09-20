@@ -1,0 +1,55 @@
+<section class="content">
+    <ol class="breadcrumb">
+        <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Edit Badge</li>
+    </ol>
+    <h2>
+        Edit Badge
+    </h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <!--                <div class="box-header with-border">
+                                  
+                                </div> /.box-header -->
+                <span us-spinner="{radius:30, width:8, length: 16, scale:0.50}"></span>
+                <div class="box-body">
+
+                    <alert class="alert" ng-repeat="error in errors" type="danger">{{error}}</alert>
+
+                    <form role="form" name="badgeForm" novalidate>
+                        <div  ng-show ="vm.status.message" uib-alert ng-class="vm.status.class" close="vm.closeAlert()">{{vm.status.message}}</div>
+                        <div class="form-group">
+                            <label>Badge Name</label>
+                            <input type="text" class="form-control" name="name" ng-model="vm.badge.name" placeholder="Enter Badge Name" required>
+                            <span class="text-danger" ng-show="(badgeForm.name.$dirty) || badgeForm.$submitted">
+                                <span ng-show="badgeForm.name.$error.required">Badge Name is required.</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter Text</label>
+                            <input type="text" class="form-control" name="txttoDisplay" ng-model="vm.badge.texttoDisplay" placeholder="Enter Text" required>
+                            <span class="text-danger" ng-show="(badgeForm.txttoDisplay.$dirty) || badgeForm.$submitted">
+                                <span ng-show="badgeForm.txttoDisplay.$error.required">Text is required.</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" ngf-select name="file" ng-model="vm.badge.file" accept="image/*" ngf-max-size="2MB" required
+                           ngf-model-invalid="errorFiles">
+                            <span class="text-danger" ng-show="(badgeForm.file.$dirty) || badgeForm.$submitted">
+                                <span ng-show="badgeForm.file.$error.maxSize">File too large {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</span>
+                                <span ng-show="badgeForm.file.$error.required">Badge image is required.</span>
+                            </span>
+                            <img ng-show="badgeForm.file.$valid" ngf-thumbnail="vm.badge.file" class="thumb"> <button ng-click="vm.badge.file = null" ng-show="vm.badge.file">Remove</button>
+                        </div> 
+                        <div class="box-footer btn-catagory-fix">
+                            <button type="submit" class="btn btn-primary" ng-click="vm.updateBadge(badgeForm.$valid)" ng-disabled="!badgeForm.$valid">Submit</button>
+                            <a ui-sref="admin.badges">Cancel</a>
+                        </div>
+                    </form>
+                </div> <!-- box-body -->
+            </div> <!-- box -->
+        </div> <!-- col -->
+    </div> <!-- ..row -->
+</section>
